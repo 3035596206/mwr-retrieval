@@ -161,8 +161,8 @@ class MonoRTM:
         # Standard mole fractions (from U.S. Standard Atmosphere)
         # H2O will be scaled per layer
         lines = []
-        lines.append(f" 1 {n_layers}   {n_mol}  1.000000"
-                     f"USER ATMOSPHERE  H1=    0.00 H2=   20.00 "
+        lines.append(f" 1 {n_layers}   {n_mol}  1.000000 "
+                     f"USER ATMOSPHERE  H1=    0.00 H2=   10.00 "
                      f"ANG=   0.000 LEN= 0")
 
         for i in range(n_layers):
