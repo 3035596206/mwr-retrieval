@@ -133,22 +133,20 @@ mwr_retrieval/
 
 ## 下次继续的步骤
 
-> **2026-06-06 断点：** POC 管线已跑通，6/6 BRNN 模型训练完成。单层 84/84 月完成，气压层仅 1 天模板（CDS 不可靠），TAPE3 未下载。
-> **CDS API（6/4-6 测试结论）：小请求（1天574KB）能走通，连续请求触发 SSL EOF 错误。与 5/27-29 结论一致，仍不可靠。**
-> **POC 已完成：** `data/era5/era5_profiles_201301_poc.pkl` (744条93层廓线)，`models/brnn_*.pt` (6模型)。
+> **2026-06-08 断点：** POC 管线 + MP-3000A 真实数据训练均已完成。T RMSE 3.0K, RH RMSE 16.6%。
+> **MP-3000A：** 3,453 廓线, 22 通道 Obs_BT, `models_mp3000a/brnn_*.pt` (6个模型)
+> **CDS API：** 仍不可靠（6/4-8 多次确认）。
 > **详细断点文档：** `/Users/ink/test/工作进度6.6.md`
 
 ### 数据现状速查
 
 | 文件类型 | 命名格式 | 数量 | 变量 | 来源 |
 |---------|---------|------|------|------|
-| 单层 | `sl_YYYY_MM.nc` | 84 月 | `t2m`, `d2m`, `sp` (dim=valid_time) | CDS |
-| 气压层(模板) | `_pl_201301_d01.nc` | 1 天 | `t`, `z`, `q` (dim=valid_time) | CDS |
-| 气压层(ref,损坏) | `pl_2013_01_arco.nc` | 1 月 | 全部NaN,仅z有效 | ARCO |
-| 气压层(目标) | `pl_YYYY_MM.nc` | 0/84 | — | CDS(blocked) |
-| POC廓线 | `era5_profiles_201301_poc.pkl` | 744条 | T, RH, CLWC, 93层 | poc_pipeline.py |
-| POC亮温 | `era5_bt_sim_201301_poc.pkl` | 744条 | 14通道 | poc_pipeline.py |
-| BRNN模型 | `models/brnn_*.pt` | 6个 | — | poc_pipeline.py |
+| 单层 | `sl_YYYY_MM.nc` | 84 月 | `t2m`, `d2m`, `sp` | CDS |
+| 气压层(模板) | `_pl_201301_d01.nc` | 1 天 | `t`, `z`, `q` | CDS |
+| MP-3000A | `54623_MP_3000A_...nc` | 3,453廓线 | T, q, 22ch Obs_BT | 本地 |
+| BRNN(POC) | `models/brnn_*.pt` | 6个 | 14ch输入 | poc_pipeline.py |
+| BRNN(MP3000A) | `models_mp3000a/brnn_*.pt` | 6个 | 22ch+地表输入 | train_mp3000a.py |
 | TAPE3 | — | 0 | 光谱数据 | 未下载 |
 
 ### 第0步：激活环境
