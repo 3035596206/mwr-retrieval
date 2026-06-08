@@ -133,10 +133,11 @@ mwr_retrieval/
 
 ## 下次继续的步骤
 
-> **2026-06-08 断点：** 6 轮迭代完成。v4 当前最佳 (T=1.26K, RH=7.8%)，v6 将 Sim→Obs gap 压缩 68%。
+> **2026-06-08 断点：** 6 轮迭代完成。v4 最佳 (T=1.26K, RH=7.8%)。TAPE3 ✅ 下载成功。MonoRTM 🔧 FORMAT 调试中。
 > **推荐模型：** `models_mp3000a_v4/brnn_*.pt`
 > **GitHub：** https://github.com/3035596206/mwr-retrieval (tags: v2.0, v4.0, v6.0)
 > **详细断点文档：** `/Users/ink/test/工作进度6.8.md`
+> **MonoRTM 源码：** `/tmp/mrtm_src/src/monortm.f90` (FORMAT 925/975/978)
 
 ### 数据现状速查
 
