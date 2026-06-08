@@ -133,20 +133,19 @@ mwr_retrieval/
 
 ## 下次继续的步骤
 
-> **2026-06-08 断点：** POC 管线 + MP-3000A 真实数据训练均已完成。T RMSE 3.0K, RH RMSE 16.6%。
-> **MP-3000A：** 3,453 廓线, 22 通道 Obs_BT, `models_mp3000a/brnn_*.pt` (6个模型)
-> **CDS API：** 仍不可靠（6/4-8 多次确认）。
-> **详细断点文档：** `/Users/ink/test/工作进度6.6.md`
+> **2026-06-08 断点：** 6 轮迭代完成。v4 当前最佳 (T=1.26K, RH=7.8%)，v6 将 Sim→Obs gap 压缩 68%。
+> **推荐模型：** `models_mp3000a_v4/brnn_*.pt`
+> **GitHub：** https://github.com/3035596206/mwr-retrieval (tags: v2.0, v4.0, v6.0)
+> **详细断点文档：** `/Users/ink/test/工作进度6.8.md`
 
 ### 数据现状速查
 
 | 文件类型 | 命名格式 | 数量 | 变量 | 来源 |
 |---------|---------|------|------|------|
-| 单层 | `sl_YYYY_MM.nc` | 84 月 | `t2m`, `d2m`, `sp` | CDS |
-| 气压层(模板) | `_pl_201301_d01.nc` | 1 天 | `t`, `z`, `q` | CDS |
-| MP-3000A | `54623_MP_3000A_...nc` | 3,453廓线 | T, q, 22ch Obs_BT | 本地 |
-| BRNN(POC) | `models/brnn_*.pt` | 6个 | 14ch输入 | poc_pipeline.py |
-| BRNN(MP3000A) | `models_mp3000a/brnn_*.pt` | 6个 | 22ch+地表输入 | train_mp3000a.py |
+| 单层 | `sl_YYYY_MM.nc` | 84 月 | `t2m`, `d2m`, `sp` | CDS/ARCO |
+| MP-3000A | `54623_MP_3000A_...nc` | 3,453 廓线 | T, q, 22ch Obs_BT | 本地 |
+| BRNN(v4) ★ | `models_mp3000a_v4/brnn_*.pt` | 6个 | T=1.26K, RH=7.8% | train_mp3000a_v4.py |
+| BRNN(v6) | `models_mp3000a_v6/brnn_*.pt` | 6个 | T=1.92K, Sim→Obs gap 0.61K | train_mp3000a_v6.py |
 | TAPE3 | — | 0 | 光谱数据 | 未下载 |
 
 ### 第0步：激活环境
@@ -157,117 +156,40 @@ source .venv/bin/activate
 python3 -c "import torch, config; print(f'Torch {torch.__version__}, {config.N_LAYERS} layers ✓')"
 ```
 
-### 第1步：下载 TAPE3 光谱数据（当前最高优先级）
+### 第1步：复现 v4 训练（推荐）
 
 ```bash
-# 方案A: Zenodo 直链 (442MB)
-curl -L -o /tmp/aer_v3.8.1.tar.gz \
-  "https://zenodo.org/records/5120012/files/aer_v3.8.1.tar.gz?download=1"
+cd /Users/ink/test/mwr_retrieval && source .venv/bin/activate
+python train_mp3000a_v4.py
+# 预期: T_RMSE=1.26K, RH_RMSE=7.8%
+```
 
-# 方案B: GitHub monoRTM 预构建 TAPE3
+### 第2步：下载 TAPE3 + MonoRTM 批量模拟
+
+```bash
+# 下载 TAPE3 (135MB)
 curl -L -o data/TAPE3 \
   "https://raw.githubusercontent.com/AER-RC/monoRTM/main/run/TAPE3_spectral_lines.dat.0_55.v5.0_fast"
+
+# MonoRTM 批量模拟 (待编写)
+# python train_monortm_batch.py
 ```
 
-### 第2步：气压层数据补齐（CDS恢复后）
-
-```bash
-source .venv/bin/activate && python3 -u dl_pl_cds.py
-# 脚本已写好，支持断点续传，3天窗口，84月
-# 或手动逐天下载（1天≈275s），需稳定CDS连接
-```
-
-### 第3步：全量预处理 + 训练 + 评估
-
-```bash
-python run.py --stage preprocess && python run.py --stage qc
-python run.py --stage train && python run.py --stage evaluate
-```
-
-### POC 文件速查
-
-| 脚本 | 用途 |
-|------|------|
-| `poc_pipeline.py` | 完整POC管线（模板扩展→插值→BT→QC→训练），已跑通 |
-| `adapter_201301.py` | 通用数据适配器，自动检测CDS/ARCO变量名 |
-| `dl_pl_cds.py` | CDS气压层批量下载（3天窗口） |
-
-### 已知代码修复
-
-- `poc_pipeline.py` 修复了 `datetime64.month` 和 `sys.path` 两处问题
-- `torch 2.12.0` 已装回 venv（之前缺失），Apple MPS 可用
-
-## 关键模块 API 速查
+### 第3步：MonoRTM 预训练 + Obs_BT 微调 (v7)
 
 ```python
-# BT 模拟
-from src.brightness_temp import simulate_mwr_observation
-tb = simulate_mwr_observation(profile)                       # Python简化模型
-tb = simulate_mwr_observation(profile, backend='monortm')     # MonoRTM（需TAPE3）
-
-# QC 流程
-from src.qc_correction import apply_full_qc
-qc_profiles, qc_tbs, keep_mask, qc_info = apply_full_qc(profiles, tbs)
-
-# BRNN 训练
-from src.brnn_model import BRNNEnsemble
-ensemble = BRNNEnsemble(config.HEIGHT_GRID, device='cpu')
-# ... 见 train.py 完整流程
-
-# 评估
-from src.evaluate import evaluate_full_profile
-stats = evaluate_full_profile(T_pred, RH_pred, T_true, RH_true, heights, output_dir)
+# 路线: ~300K MonoRTM 样本预训练 → 15K Obs_BT 微调
+# 目标: T_RMSE < 1.1K
 ```
 
-## 环境信息
+### 训练脚本速查
 
-| 项目 | 详情 |
-|------|------|
-| OS | macOS Darwin 24.6.0, Apple Silicon arm64 |
-| Python | 3.14.4 (`.venv/` 虚拟环境，位于项目目录) |
-| Fortran | GNU Fortran 15.2.0_1 |
-| MonoRTM | v5.6, 编译于 bin/monortm |
-| CDS Key | 旧 `e088c69b-...` 和新 `a2179a74-...` **均 403 已失效** |
-| 代理 | `http://127.0.0.1:7897`（仅 CDS/ECMWF，不支持 Google 服务） |
-| 项目路径 | `/Users/ink/test/mwr_retrieval/` |
+| 脚本 | 用途 | 结果 |
+|------|------|------|
+| `train_mp3000a_v4.py` ★ | 当前最佳训练脚本 | T=1.26K, RH=7.8% |
+| `train_mp3000a_v6.py` | Sim_BT 两阶段训练 | T=1.92K, Sim→Obs gap 0.61K |
+| `train_mp3000a_v2.py` | 首版超论文的训练脚本 | T=1.45K, RH=9.0% |
+| `poc_pipeline.py` | POC 管线（模板扩展） | 已跑通 |
+| `dl_pl_cds.py` | CDS 气压层批量下载 | 3天窗口，待 CDS 恢复 |
 
-## RPG HATPRO 14通道
-
-| 波段 | 频率 (GHz) |
-|------|-----------|
-| K (水汽) | 22.24, 23.04, 23.84, 25.44, 26.24, 27.84, 31.40 |
-| V (氧气) | 51.26, 52.28, 53.86, 54.94, 56.66, 57.30, 58.00 |
-
-## BRNN 6模型配置
-
-| 模型 | 高度 | 输入维度 | 输出层数 | 输入特征 |
-|------|------|---------|---------|---------|
-| T_0-2km | 0-2km | 6 | 50 | 5×53-58GHz BT + 地面T |
-| T_2-8km | 2-8km | 17 | 37 | 14通道BT + 地面T/RH/P |
-| T_8-10km | 8-10km | 17 | 8 | 同上 |
-| RH_0-2km | 0-2km | 17 | 50 | 同上 |
-| RH_2-8km | 2-8km | 17 | 37 | 同上 |
-| RH_8-10km | 8-10km | 17 | 8 | 同上 |
-
-> 注：高度区间边界层(2km, 8km)在相邻模型中各被预测一次，总输出为 50+37+8=95 节点对应 93 个唯一高度层。
-
-## ERA5 质控4步流程
-
-1. 湿度整层缩放 ×0.9（IWV回归系数）
-2. 四季逐层RH偏差订正（vs探空统计）
-3. 液态水筛选：ICLWC>1250 g/m² 删除，750~1250 按比例缩放
-4. 14通道亮温逐通道线性回归订正
-
-## 93层高度网格 (RPG HATPRO Fig 3.10)
-
-| 高度范围 | 名义分辨率 | 层数(含边界) |
-|---------|----------|------------|
-| 0-500m | ~30m | 19 |
-| 500-1000m | ~40m | 15 |
-| 1000-1500m | ~60m | 11 |
-| 1500-2000m | ~90m | 8 |
-| 2000-3000m | ~120m | 11 |
-| 3000-5000m | ~160m | 14 |
-| 5000-6000m | ~200m | 7 |
-| 6000-10000m | ~250m | 15 |
-| **总计** | | **93层** |
+### 已知代码修复
