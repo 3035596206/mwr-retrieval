@@ -1,196 +1,227 @@
-# MWR大气温湿廓线反演 — 复现项目
+# MWR 大气温湿廓线反演系统
 
-复现论文：朱柳桦《基于地基微波辐射计的多方法反演大气温湿廓线研究》（2023，南京信息工程大学）第3章
+基于 BRNN + OEM 的地基多通道微波辐射计大气温湿廓线反演系统。利用 MP-3000A 微波辐射计 22 通道实测亮温反演 0-10 km 范围内 93 层高度网格上的温度 T(z) 和相对湿度 RH(z) 垂直廓线。
 
-**上次更新：2026-05-27**
+**核心论文**：朱柳桦《基于地基微波辐射计的多方法反演大气温湿廓线研究》（2023，南京信息工程大学）第 3 章  
+**仓库**：https://github.com/3035596206/mwr-retrieval  
+**上次更新**：2026-07-21
+
+---
+
+## 核心指标
+
+### BRNN v4（统计反演，当前最佳）
+
+| 指标 | 数值 | 论文基准 |
+|------|------|----------|
+| T RMSE | **1.26 K** | <1.5 K |
+| RH RMSE | **7.76%** | <13% |
+| 推理速度 | ~0.5 ms/廓线 | — |
+
+### MonoRTM OEM n=100（物理反演，self-consistent）
+
+| 指标 | Prior → Posterior |
+|------|-------------------|
+| T RMSE | 2.50 → **2.25 K** |
+| RH RMSE | 7.15 → **6.71%** |
+| BT RMS | 4.99 → **0.61 K** |
+| 收敛率 | **99%** |
+| DOFS | **2.21** |
 
 ---
 
 ## 当前进度总览
 
 ```
-代码框架  ████████████████████ 100%  全部模块完成并通过测试
-编译依赖  ████████████████████ 100%  gfortran + MonoRTM + Python包
-真实数据  █████████████████░░░░  75%  单层84/84完成，气压层仅2013-01
-  ├─ ERA5  ███████████████░░░░░  75%  单层84/84月，气压层0/84(仅2013-01参考)
-  ├─ TAPE3  ░░░░░░░░░░░░░░░░░░░░   0%  需GitHub/Zenodo外网
-  └─ MWR   ░░░░░░░░░░░░░░░░░░░░   0%  需联系论文作者
+BRNN 统计反演  ████████████████████ 100%  v4 当前最佳 (T=1.26K, RH=7.76%)
+OEM 物理反演    ███████████████░░░░░  75%  n=100 self-consistent 验证通过
+MonoRTM 编译    ████████████████████ 100%  macOS + Linux (WSL) 双平台
+TAPE3 光谱数据  ████████████████████ 100%  已下载并转二进制
+S_a 协方差      ████████████████░░░░  80%  v4-derived S_a (14x14) 已生成
+EOF/PCA 降维    ████████████░░░░░░░░  60%  T/RH 各 5 EOF，基础就绪
+LWC 云天 OEM    ████████░░░░░░░░░░░░  40%  21d synthetic 实验完成
+ERA5 气压层     ████████░░░░░░░░░░░░  05%  47/2556 天 (CDS 3天窗口)
+BRNN+OEM 桥接   █░░░░░░░░░░░░░░░░░░░  05%  待 MP-3000A Obs_BT 数据
 ```
+
+---
 
 ## 技术路线
 
 ```
-ERA5再分析资料 → 质控/偏差订正 → MonoRTM/Python模拟亮温 → BRNN神经网络训练 → 温湿廓线反演 → 探空验证
+                    ┌─ BRNN v4 ────────────→ T(z), RH(z) (统计反演，0.5ms)
+                    │
+Obs_BT ──→ QC/订正 ─┤
+                    │
+                    └─ OEM / 1D-Var ──────→ T(z), RH(z), 后验误差, AK, DOFS (物理反演)
+                         │
+                         ├─ x_a: ERA5 / BRNN v4 first guess
+                         ├─ H(x): MonoRTM v5.6 / simple RTM
+                         ├─ S_a: v4 残差协方差 / 指数相关
+                         └─ 状态: 14d 粗分层 → EOF/PCA → 21d T+RH+LWC
 ```
+
+---
 
 ## 项目结构
 
 ```
-mwr_retrieval/
-├── bin/monortm                  MonoRTM v5.6 可执行文件 (5.1 MB, arm64)
-├── setup_monortm.sh             TAPE3光谱数据一键安装脚本（待网络恢复后运行）
-├── download_era5.py             ERA5 CDS备选下载脚本（带代理，按月下载，CDS已失效）
-├── dl_one_month.py              ARCO单月下载（独立进程，供bash循环调用）
-├── dl_sync.py                  ARCO批量下载（subprocess隔离，5min超时）
-├── bulk_fast.py                ARCO批量下载（30s间隔，xarray会话级隔离）
-├── bulk_v3.py                  ARCO批量下载（显式清理连接池）
-├── bulk_sl.py                  ARCO批量下载（单会话版，有连接复用问题）
-├── download_all.py             CDS+ARCO混合下载（CDS已失效）
-├── run.py                       主流水线 (download → preprocess → qc → train → evaluate)
-├── config.py                    全局配置 (14通道/93层网格/QC阈值/超参数/站点坐标)
-├── requirements.txt             Python依赖
-├── README.md                    项目说明（本文件）
-├── CHANGES.md                   修复与变更记录
-├── .venv/                       Python 3.14 虚拟环境
-├── docs/
-│   └── lwc_extension_roadmap.md  液态水建模拓展方案（远期路线图）
+mwr-retrieval/
+├── src/                          核心代码
+│   ├── brnn_model.py             BRNN 网络定义 (PyTorch, 6 子模型)
+│   ├── train.py                  训练脚本
+│   ├── evaluate.py               评估/可视化
+│   ├── forward_model.py          前向模型统一接口 (simple/MonoRTM)
+│   ├── brightness_temp.py        Python 简化辐射传输模型
+│   ├── monortm_wrapper.py        MonoRTM v5.6 Python 封装
+│   ├── oem.py                    OEM 求解器 (LM/Gauss-Newton)
+│   ├── oem_state.py              状态向量打包/解包
+│   ├── oem_covariance.py         S_a / S_e 协方差构造
+│   ├── oem_observation.py        观测算子与 S_e
+│   ├── qc_correction.py          ERA5 质控 + 偏差订正
+│   ├── era5_preprocess.py        ERA5 下载/预处理
+│   └── sounding_process.py       探空数据处理/LWC 估算
+├── scripts/                      OEM 运行脚本
+│   ├── run_oem_synthetic.py      Synthetic closure test
+│   ├── run_oem_201301.py         2013-01 ERA5 OEM
+│   └── evaluate_oem.py           OEM 诊断评估
+├── models_mp3000a_v4/       ★   当前最佳 BRNN 模型 (6个 .pt)
+├── models_mp3000a_v6/            两阶段训练模型
+├── bin/
+│   ├── monortm                   MonoRTM macOS 版
+│   └── monortm_linux             MonoRTM Linux/WSL 版
 ├── data/
-│   └── era5/
-│       ├── sl_2013_01.nc        单层数据 (CDS, 529KB)
-│       ├── sl_2013_01_arco.nc   单层数据 (ARCO, 1.0MB)  
-│       └── pl_2013_01_arco.nc   气压层数据 (ARCO, 12MB)
-└── src/
-    ├── brightness_temp.py       亮温模拟 (simple/MonoRTM双后端)
-    ├── monortm_wrapper.py       MonoRTM Python封装
-    ├── brnn_model.py            BRNN网络定义 (PyTorch, 6个子模型)
-    ├── train.py                 训练脚本
-    ├── qc_correction.py         ERA5质控 + 偏差订正
-    ├── era5_preprocess.py       ERA5下载/预处理
-    ├── sounding_process.py      探空数据处理/LWC估算
-    └── evaluate.py              评估/可视化
+│   ├── TAPE3/TAPE3_bin           TAPE3 二进制光谱数据
+│   └── era5/                     ERA5 单层 84 月 + 气压层参考
+├── results/                      实验结果
+│   ├── mp3000a_v4_results.pkl   v4 完整测试结果
+│   ├── oem_201301_self_consistent_monortm_n100/  MonoRTM OEM n=100
+│   ├── oem_covariance/sa_v4.pkl  v4-derived S_a
+│   ├── oem_pca_state/            EOF/PCA 降维结果
+│   └── oem_lwc_synthetic/        LWC 云天合成实验
+├── docs/                         设计文档
+│   ├── oem_retrieval_plan.md     OEM 实施计划 (2026-07-13)
+│   ├── 论文方法融合下一阶段计划_2026-07-21.md   最新路线图
+│   ├── oem_cloudy_extension_design.md           云天扩展设计
+│   ├── brnn_oem_bridge_plan.md                  BRNN+OEM 桥接方案
+│   └── lwc_extension_roadmap.md                 液态水路线图
+├── reports/                      报告与进度记录
+│   ├── 技术报告/MWR_Retrieval_Report_v4_CN.docx
+│   └── 进度记录/
+├── config.py                     全局配置
+├── run.py                        主流水线
+├── train_mp3000a_v4.py      ★   当前最佳训练脚本
+└── requirements.txt              Python 依赖
 ```
+
+---
 
 ## 已完成事项
 
-### 开发环境
-- [x] Python 3.13 + PyTorch 2.11 + 全部科学计算包 (numpy, scipy, xarray, netCDF4 等)
-- [x] GNU Fortran 15.2.0 (Homebrew, Apple Silicon)
-- [x] CDS API 已安装并配置 `~/.cdsapirc`（Key: `e088c69b-...`）
+### BRNN 统计反演（v1-v6，6 轮迭代）
+- [x] **v1**：基础 BRNN，合成数据端到端验证
+- [x] **v2**：首个超论文模型 (T=1.45K, RH=9.0%)
+- [x] **v3**：Sim_BT 训练，确认 Sim->Obs domain gap 退化 3.7x
+- [x] **v4 ★**：Obs_BT 直接训练 + Winsorize BT 订正 + 廓线分组防泄露 (T=1.26K, RH=7.76%)
+- [x] **v6**：Sim_BT 两阶段训练 (T=1.92K, Sim->Obs gap 0.61K)
 
-### 代码模块（全部完成并通过测试）
-- [x] `config.py` — RPG HATPRO 14通道、93层高度网格、QC阈值、BRNN超参数、北京7站坐标
-- [x] `brightness_temp.py` — Python 简化辐射传输模型，14通道亮温模拟，物理输出验证通过（V波段192-287K, K波段13-25K）
-- [x] `monortm_wrapper.py` — MonoRTM v5.6 完整 Python 封装（TAPE5格式输入生成、可执行文件调用、输出解析）
-- [x] `qc_correction.py` — ERA5质控4步流程（湿度缩放0.9、四季逐层订正、LWC筛选、BT线性订正）
-- [x] `brnn_model.py` — BRNN网络 + 6子模型管理（3高度区间×2变量），修正了 T_0-2km 输入维度bug（6维，非7维）
-- [x] `train.py` — Adam优化 + MSE损失 + Early Stopping + 自动特征选择
-- [x] `evaluate.py` — 逐层RMSE/Bias/STD + 散点密度图 + BT箱线图 + CSV导出
-- [x] `era5_preprocess.py` — CDS下载 + 2mRH计算（Magnus公式）+ 93层插值
-- [x] `sounding_process.py` — Wyoming探空下载 + LWC估算 + 93层插值
-- [x] `run.py` — 5阶段流水线主控脚本
+### OEM 物理反演框架
+- [x] LM/Gauss-Newton OEM 求解器 + 有限差分 Jacobian
+- [x] 状态向量打包/解包（14d 粗分层 T7+RH7）
+- [x] S_a / S_e 协方差构造（指数相关 + v4-derived）
+- [x] 前向模型统一接口（simple RTM + MonoRTM 双后端）
+- [x] Averaging kernel、DOFS、posterior covariance 诊断
+- [x] Synthetic closure test 通过
+- [x] ERA5 2013-01 self-consistent / forward mismatch / MonoRTM 三类 POC
+- [x] MonoRTM self-consistent **n=100** 基线
+- [x] v4-derived S_a 生成 (14x14)
+- [x] EOF/PCA 状态降维基础
+- [x] 21 维 T+RH+LWC synthetic 实验
 
-### MonoRTM 编译
-- [x] 从 GitHub AER-RC/monoRTM clone 源码 v5.6
-- [x] 16个 Fortran 源文件编译通过，5.1MB 可执行文件
-- [x] 编译标志：`-fallow-argument-mismatch -std=legacy -fno-range-check -w -O2`
-- [x] 验证可执行文件能正确读取 MONORTM.IN 输入
+### MonoRTM & 环境
+- [x] MonoRTM v5.6 源码编译 (macOS ARM64 + Linux x86-64)
+- [x] TAPE3 下载 + ASCII->二进制转换 (convert_tape3.py)
+- [x] WSL Ubuntu-24.04 环境 + Python 3.12 venv
+- [x] MonoRTMForwardModel 接入 OEM
 
-### 端到端测试
-- [x] 500样本合成数据全流程：BT模拟 → QC → 6模型训练 → 反演 → 评估
-- [x] RH 整层 RMSE ~11.4%（论文12-13%，合成数据下合理）
-- [x] 所有模块协同工作正常
+### 报告与文档
+- [x] 技术报告 MWR_Retrieval_Report_v4_CN (Word + PDF)
+- [x] 专业实践报告
+- [x] OEM 实施计划 + 论文方法融合路线图
+- [x] 云天扩展 + BRNN-OEM 桥接设计文档
 
-## 待完成事项
+---
 
-### 阶段一：ERA5 数据下载 ✅ 单层完成 | ⏳ 气压层待下载
+## 下一阶段计划
 
-**单层 84/84 月完成（83 MB）：**
-| 年份 | 状态 | 来源 |
-|------|------|------|
-| 2013-2017 | 60/60 | ARCO GCS（周级策略） |
-| 2018-2019 | 24/24 | ARCO GCS（周级+dask单线程） |
+> 详见 [docs/论文方法融合下一阶段计划_2026-07-21.md](docs/论文方法融合下一阶段计划_2026-07-21.md)
 
-**气压层 0/84（仅参考文件）：**
-| 文件 | 大小 | 内容 | 来源 |
-|------|------|------|------|
-| `pl_2013_01_arco.nc` | 12 MB | 气压层 2013-01 (T, Z, q) | ARCO GCS |
+### P0（2 周）：闭环验证
+- [ ] 扩大 MonoRTM OEM 基线：n=200/500/744
+- [ ] 通道与 Obs_BT 资产审计：MP-3000A 22ch / HATPRO 14ch 映射表
+- [ ] 虚拟多仰角 OEM 机制试验：A/B/C 三组对照
 
-**CDS API 状态：新 Key 可用 ✅**
+### P1（3-6 周）：混合反演部件
+- [ ] EOF/PCA 状态向量对照：10d/14d/16d
+- [ ] S_a 三层递进：指数相关 -> v4 残差 -> 场景条件
+- [ ] BRNN 先验桥接：22ch 直接桥接 或 14ch 适配
 
-| Key | 状态 | 备注 |
-|-----|------|------|
-| `e088c69b-...` (旧) | 403 | 2026-05-22 成功1次后失效 |
-| `a2179a74-...` (新) | 403 | 已失效 |
-| `8dfcb2f7-...` (当前) | 可用 | 2026-05-26 测试通过，已接受许可证 |
+### P2（2-3 月）：Surrogate + 云天
+- [ ] MonoRTM residual surrogate (NN 加速 H(x))
+- [ ] LWC 云天分阶段 OEM：弱液云 -> 多云层 -> cloud-dependent S_e
+- [ ] 不确定度校准：PICP / MPIW / CRPS / reliability diagram
 
-**气压层下载策略（CDS 3天窗口）：**
-- 3天×24h×37层×3变量 = 7992字段 → 通过成本限制
-- 7天×24h×37层×3变量 = 18648字段 → 超限
-- 每次 ~1-2分钟，每月 ~10窗口，84月 ~28小时
+---
 
-**已废弃的 ARCO 方案：**
-- 周级 xarray/zarr 对单层有效（每批次 504 chunk 不触发限流）
-- 对气压层（37层）数据量 37x，dask 单线程可下载但 ~7h/月，太慢
-- aiohttp 内部并发会触发 GCS 隐式限流
+## 快速开始
 
-### 其他数据
-
-| 数据 | 状态 | 获取方式 |
-|------|------|---------|
-| TAPE3 (~135MB) | 待下载 | 运行 `bash setup_monortm.sh`（需GitHub/Zenodo） |
-| MWR一级亮温 | 未获取 | 联系朱柳桦/鲍艳松教授（南京信息工程大学） |
-| 北京南郊探空 | 代码就绪 | `python run.py --stage download`（Wyoming大学，公开） |
-
-## 下次继续的步骤
-
-> **2026-06-08 断点：** 6 轮迭代完成。v4 最佳 (T=1.26K, RH=7.8%)。TAPE3 ✅ 下载成功。MonoRTM 🔧 FORMAT 调试中。
-> **推荐模型：** `models_mp3000a_v4/brnn_*.pt`
-> **GitHub：** https://github.com/3035596206/mwr-retrieval (tags: v2.0, v4.0, v6.0)
-> **详细断点文档：** `/Users/ink/test/工作进度6.8.md`
-> **MonoRTM 源码：** `/tmp/mrtm_src/src/monortm.f90` (FORMAT 925/975/978)
-
-### 数据现状速查
-
-| 文件类型 | 命名格式 | 数量 | 变量 | 来源 |
-|---------|---------|------|------|------|
-| 单层 | `sl_YYYY_MM.nc` | 84 月 | `t2m`, `d2m`, `sp` | CDS/ARCO |
-| MP-3000A | `54623_MP_3000A_...nc` | 3,453 廓线 | T, q, 22ch Obs_BT | 本地 |
-| BRNN(v4) ★ | `models_mp3000a_v4/brnn_*.pt` | 6个 | T=1.26K, RH=7.8% | train_mp3000a_v4.py |
-| BRNN(v6) | `models_mp3000a_v6/brnn_*.pt` | 6个 | T=1.92K, Sim→Obs gap 0.61K | train_mp3000a_v6.py |
-| TAPE3 | — | 0 | 光谱数据 | 未下载 |
-
-### 第0步：激活环境
+### WSL / Linux 环境
 
 ```bash
-cd /Users/ink/test/mwr_retrieval
-source .venv/bin/activate
-python3 -c "import torch, config; print(f'Torch {torch.__version__}, {config.N_LAYERS} layers ✓')"
+cd /mnt/d/project-504/mwr-retrieval-main
+source .venv-wsl/bin/activate
+python3 -c "import torch, config; print(f'Torch {torch.__version__}, {config.N_LAYERS} layers ok')"
 ```
 
-### 第1步：复现 v4 训练（推荐）
+### 复现 BRNN v4 训练
 
 ```bash
-cd /Users/ink/test/mwr_retrieval && source .venv/bin/activate
 python train_mp3000a_v4.py
-# 预期: T_RMSE=1.26K, RH_RMSE=7.8%
+# 预期: T_RMSE=1.26K, RH_RMSE=7.76%
 ```
 
-### 第2步：下载 TAPE3 + MonoRTM 批量模拟
+### 运行 MonoRTM OEM (2013-01)
 
 ```bash
-# 下载 TAPE3 (135MB)
-curl -L -o data/TAPE3 \
-  "https://raw.githubusercontent.com/AER-RC/monoRTM/main/run/TAPE3_spectral_lines.dat.0_55.v5.0_fast"
-
-# MonoRTM 批量模拟 (待编写)
-# python train_monortm_batch.py
+python scripts/run_oem_201301.py
+# 使用 bin/monortm_linux + data/TAPE3/TAPE3_bin
 ```
 
-### 第3步：MonoRTM 预训练 + Obs_BT 微调 (v7)
+### 生成报告
 
-```python
-# 路线: ~300K MonoRTM 样本预训练 → 15K Obs_BT 微调
-# 目标: T_RMSE < 1.1K
+```bash
+python generate_report.py
 ```
 
-### 训练脚本速查
+---
 
-| 脚本 | 用途 | 结果 |
+## 关键决策记录
+
+| 决策 | 理由 | 结果 |
 |------|------|------|
-| `train_mp3000a_v4.py` ★ | 当前最佳训练脚本 | T=1.26K, RH=7.8% |
-| `train_mp3000a_v6.py` | Sim_BT 两阶段训练 | T=1.92K, Sim→Obs gap 0.61K |
-| `train_mp3000a_v2.py` | 首版超论文的训练脚本 | T=1.45K, RH=9.0% |
-| `poc_pipeline.py` | POC 管线（模板扩展） | 已跑通 |
-| `dl_pl_cds.py` | CDS 气压层批量下载 | 3天窗口，待 CDS 恢复 |
+| Obs_BT 直接训练 (v4) 而非 Sim_BT | v3 实验证明 Sim->Obs domain gap 退化 3.7x | v4 为当前最优 |
+| 6 个独立 BRNN (非单一多输出) | 各高度区间物理特性差异大 | T RMSE 1.26K |
+| 廓线分组划分 (非时间划分) | 同一廓线被重复观测 ~5.6 次，必须防泄露 | 测试集完全独立 |
+| Winsorize 回归 BT 订正 (非 OLS) | K 波段 OMB 厚尾分布 | OMB std -49% |
+| MonoRTM 物理前向为主 | Python simple RTM K 波段偏差 ~195K | 精度保证 |
+| 先做 self-consistent 验证 | Forward mismatch 会导致 T 严重退化 | 明确 H(x) 不一致风险 |
 
-### 已知代码修复
+---
+
+## 历史版本
+
+| Tag | 说明 | 指标 |
+|-----|------|------|
+| v2.0 | 首版超论文 | T=1.45K, RH=9.0% |
+| v4.0 ★ | 当前最佳 | T=1.26K, RH=7.76% |
+| v6.0 | Sim_BT 两阶段 | T=1.92K |
