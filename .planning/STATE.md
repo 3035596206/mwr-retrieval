@@ -2,49 +2,48 @@
 
 ## Current
 
-**Phase 5: 数据补齐** — ERA5 气压层 CDS 下载进行中
+**Phase 5→6 过渡** — P0 闭环验证已完成，OEM baseline 三组实验跑通
 
 ### Active Work
-- CDS 3 天窗口下载: 47/2556 天 (1.8%)
-- 进程: PID 63613, 日志 /tmp/cds_batch.log
-- 窗口: 3 天, 37 层, 3 变量
-- Key: new key (...d0c5e7)
+- BRNN v4 与 OEM MonoRTM n=100 分层精度诊断完成
+- RH S_a/S_e 参数敏感性扫描脚本就绪 (`scripts/scan_rh_sensitivity.py`)
 
-### Last Completed
-- Phase 4: MonoRTM 修复 + 报告体系建立
-- v4 可行性分析文档
-- K 波段液态水污染三阶段解决历程文档
+### Last Completed (2026-07-22)
+- P0-1: MonoRTM OEM baseline n=20/n=100（收敛率 99%, DOFS 2.21）
+- P0-2: 通道审计报告（HATPRO 14ch / MP-3000A 22ch / MonoRTM 映射）
+- P0-3: ForwardModel/MonoRTM frequencies 扩展 + oem_geometry.py
+- README + 断点更新
+- 新增数据：成都 ERA5 + 温江探空（待训练/测试）
+
+### Key Findings
+- OEM 改善集中在 0-2 km 近地层，5-10 km 几乎无改善（DOFS 仅 2.2/14）
+- BRNN v4 在全高度均优于 OEM（T=1.26K vs 2.02K, RH=7.76% vs 6.20%）
+- MonoRTM BT prior 5.03K → posterior 0.61K，BT 残差改善 87.9%
 
 ### Blocked
-- Phase 6 (规模训练): 等待 Phase 5 数据补齐
+- BRNN+OEM 桥接受阻：缺 MP-3000A Obs_BT
+- 仍在推进：ERA5/MonoRTM self-consistent OEM 路线
 
 ## Quick Resume
 
 ```bash
-cd /Users/ink/test/mwr_retrieval && source .venv/bin/activate
-python3 -c "import torch, config; print(f'Torch {torch.__version__}, {config.N_LAYERS} layers')"
+cd /mnt/d/project-504/mwr-retrieval-main && source .venv-wsl/bin/activate
+python -c "import torch, config; print(f'Torch {torch.__version__}, {config.N_LAYERS} layers')"
 ```
 
-### Check CDS progress
+### Run OEM baseline (simple RTM, 2 min)
 ```bash
-tail -20 /tmp/cds_batch.log
-ls data/era5/_daily/ | wc -l
+python scripts/run_oem_baseline.py --n-samples 100 --forward simple --seed 42
 ```
 
-### Restart CDS if needed
+### Run OEM baseline (MonoRTM, 8 min)
 ```bash
-nohup python3 -u dl_pl_batch.py > /tmp/cds_batch.log 2>&1 &
+python scripts/run_oem_baseline.py --n-samples 100 --forward monortm --seed 42
 ```
 
-### Run retrieval
+### Run RH sensitivity scan
 ```bash
-python3 retrieve_and_plot.py
-```
-
-### Generate reports
-```bash
-python3 generate_report.py
-python3 generate_practice_report.py
+python scripts/scan_rh_sensitivity.py --n-samples 30
 ```
 
 ## Key Paths
@@ -52,12 +51,13 @@ python3 generate_practice_report.py
 | 资源 | 路径 |
 |------|------|
 | v4 模型 | models_mp3000a_v4/ |
-| MonoRTM | bin/monortm |
+| MonoRTM | bin/monortm_linux |
 | TAPE3 | data/TAPE3/TAPE3_bin |
-| ERA5 单层 | data/era5/sl_*.nc (85 files) |
-| ERA5 气压层 | data/era5/_daily/ (47 files) |
-| 报告 | reports/ |
-| 结果 | results/ |
+| OEM baseline (new) | results/oem_baseline_*_n100_seed42/ |
+| OEM baseline (old) | results/oem_201301_self_consistent_monortm_n100/ |
+| v4-derived S_a | results/oem_covariance/sa_v4.pkl |
+| 通道审计 | reports/通道与观测数据审计_2026-07-21.md |
+| 复现指南 | ~/Desktop/MWR复现指南_2026-07-21.md |
 
 ---
-*最后更新: 2026-06-17*
+*最后更新: 2026-07-22*

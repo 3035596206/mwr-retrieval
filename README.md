@@ -225,3 +225,44 @@ python generate_report.py
 | v2.0 | 首版超论文 | T=1.45K, RH=9.0% |
 | v4.0 ★ | 当前最佳 | T=1.26K, RH=7.76% |
 | v6.0 | Sim_BT 两阶段 | T=1.92K |
+
+## 当前断点 (2026-07-22)
+
+### 已完成工作
+
+**P0 闭环验证（全部完成）**：
+- [x] MonoRTM OEM baseline：simple RTM n=100 + MonoRTM n=20/n=100 三组基线
+- [x] 通道审计：HATPRO 14ch / MP-3000A 22ch / MonoRTM 三套体系对照
+- [x] ForwardModel + MonoRTM 扩展自定义 frequencies 参数
+- [x] src/oem_geometry.py 仰角/通道几何筛选模块
+- [x] scripts/run_oem_baseline.py 固定配置基线脚本
+- [x] scripts/scan_rh_sensitivity.py RH S_a/S_e 参数敏感性扫描
+- [x] README 全面更新至 2026-07-21 状态
+
+**关键数值**：
+
+| 实验 | T prior→post | RH prior→post | BT prior→post | 收敛率 | DOFS |
+|------|-------------|---------------|---------------|--------|------|
+| BRNN v4 | — | — | — | — | — |
+|  | **1.26 K** (整层) | **7.76%** (整层) | — | — | — |
+| OEM simple n=100 | 2.64→**1.95K** | 6.43→6.06% | 1.59→0.54K | 97.0% | 2.10 |
+| OEM MonoRTM n=100 | 2.64→**2.02K** | 6.49→6.20% | 5.03→0.61K | 99.0% | 2.21 |
+
+**分层精度诊断**：
+
+| 高度区间 | BRNN v4 | OEM MonoRTM (ΔT/ΔRH) |
+|----------|---------|----------------------|
+| 0-0.5 km | T=1.09K, RH=5.78% | +0.42K, +0.67% |
+| 2-8 km | T=1.30K, RH=9.50% | +0.07K, +0.28% |
+| 5-10 km | T=1.50K, RH=10.31% | **−0.01K, +0.10%** |
+
+> **核心发现**：OEM 改善集中在 0-2 km 近地层；5-10 km T 反演完全依赖先验（不升反降）。DOFS 仅 2.2/14，高空信息量极低。
+
+### 下一阶段优先级
+
+1. **P1**: 改善 RH 约束 — `scripts/scan_rh_sensitivity.py` 参数扫描（代码就绪，待运行）
+2. **P1**: S_a 对比实验 — 指数相关 vs v4-derived S_a
+3. **P2**: 增强诊断输出 — 0-500m 指标 + posterior uncertainty
+4. **P3**: 扩大 MonoRTM baseline 到 n=200/500/744
+
+> **待用户提供**：D:\project-504 下新增的成都 ERA5 + 温江探空数据，用于新站点训练/测试。
