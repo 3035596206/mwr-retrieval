@@ -79,7 +79,7 @@ def run_baseline(n_samples, cfg, out_dir, verbose=False):
     n_samples = min(n_samples, n_total)
     indices = sorted(np.random.choice(n_total, n_samples, replace=False))
 
-    fm = ForwardModel(backend=cfg["forward_backend"])
+    fm = ForwardModel(backend=cfg["forward_backend"], monortm_path=cfg.get("monortm_path"), tape3_path=cfg.get("tape3_path"))
     packer = make_default_packer()
     S_a = build_sa_exponential(packer, sigma_T=cfg["sigma_T"], sigma_RH=cfg["sigma_RH"])
     S_e = build_se_diagonal(fm, sigma_K=cfg["sigma_K"], sigma_V=cfg["sigma_V"])
@@ -232,11 +232,17 @@ def main():
     parser.add_argument("--forward", type=str, default="simple",
                         choices=["simple", "monortm"])
     parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--monortm-path", type=str, default=None,
+                        help="Path to MonoRTM executable")
+    parser.add_argument("--tape3-path", type=str, default=None,
+                        help="Path to TAPE3 binary file")
     args = parser.parse_args()
 
     cfg = dict(BASELINE_CONFIG)
     cfg["random_seed"] = args.seed
     cfg["forward_backend"] = args.forward
+    cfg["monortm_path"] = args.monortm_path
+    cfg["tape3_path"] = args.tape3_path
     if args.forward != "simple":
         cfg["self_consistent"] = True
 

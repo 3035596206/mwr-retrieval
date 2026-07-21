@@ -61,6 +61,7 @@ class MonoRTM:
         candidates = [
             os.environ.get("MONORTM_PATH", ""),
             os.path.join(os.path.dirname(__file__), "..", "bin", "monortm_fixed"),
+            os.path.join(os.path.dirname(__file__), "..", "bin", "monortm_linux"),
             os.path.join(os.path.dirname(__file__), "..", "bin", "monortm"),
             "/usr/local/bin/monortm",
             "/opt/homebrew/bin/monortm",

@@ -1,0 +1,37 @@
+{
+  "random_seed": 42,
+  "state_mode": "coarse",
+  "coarse_T": [
+    500,
+    1000,
+    2000,
+    3000,
+    5000,
+    8000,
+    10000
+  ],
+  "coarse_RH": [
+    500,
+    1000,
+    2000,
+    3000,
+    5000,
+    8000,
+    10000
+  ],
+  "sa_type": "exponential",
+  "sigma_T": 2.0,
+  "sigma_RH": 8.0,
+  "se_type": "diagonal",
+  "sigma_K": 1.5,
+  "sigma_V": 0.5,
+  "noise_std": 0.5,
+  "max_iter": 15,
+  "cost_tol": 0.001,
+  "dx_tol": 0.0001,
+  "gamma_init": 1.0,
+  "forward_backend": "monortm",
+  "self_consistent": true,
+  "perturb_T_std": 3.0,
+  "perturb_RH_std": 10.0
+}
