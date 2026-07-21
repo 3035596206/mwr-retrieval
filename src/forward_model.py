@@ -41,10 +41,10 @@ class ForwardModel:
         """
         from brightness_temp import get_backend
 
-        self._backend = get_backend(backend, frequencies=self.frequencies, **backend_kwargs)
         self._backend_name = backend
         self.frequencies = frequencies or config.ALL_CHANNELS
         self.n_channels = len(self.frequencies)
+        self._backend = get_backend(backend, frequencies=self.frequencies, **backend_kwargs)
 
     # ---------------------------------------------------------------
     # Public API
