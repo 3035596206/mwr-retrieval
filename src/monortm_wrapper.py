@@ -39,7 +39,7 @@ class MonoRTM:
     # Conversion: wavenumber = frequency_GHz / 0.0299792458
     FREQ_GHZ_TO_CM1 = 1.0 / 0.0299792458
 
-    def __init__(self, monortm_path=None, tape3_path=None):
+    def __init__(self, monortm_path=None, tape3_path=None, frequencies=None):
         """
         Args:
             monortm_path: path to monoRTM executable
@@ -54,7 +54,7 @@ class MonoRTM:
             tape3_path = self._find_tape3()
         self.tape3_path = tape3_path
 
-        self.frequencies = config.ALL_CHANNELS  # GHz
+        self.frequencies = frequencies if frequencies is not None else config.ALL_CHANNELS  # GHz
 
     def _find_executable(self):
         """Find MonoRTM executable."""

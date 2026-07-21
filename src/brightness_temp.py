@@ -48,7 +48,7 @@ def get_backend(name="simple", **kwargs):
         backend = SimpleRadiativeTransfer()
     elif name == "monortm":
         from monortm_wrapper import MonoRTM
-        backend = MonoRTM(monortm_path=kwargs.get("monortm_path"), tape3_path=kwargs.get("tape3_path"))
+        backend = MonoRTM(monortm_path=kwargs.get("monortm_path"), tape3_path=kwargs.get("tape3_path"), frequencies=kwargs.get("frequencies"))
     elif name == "pamtra":
         raise NotImplementedError(
             "PAMTRA backend requires conda: conda install -c conda-forge pamtra"
