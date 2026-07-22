@@ -11,6 +11,27 @@ MWR_CHANNELS = {
 ALL_CHANNELS = MWR_CHANNELS["K_band"] + MWR_CHANNELS["V_band"]
 N_CHANNELS = 14
 
+# Chengdu 21-channel radiometer configuration (GHz), provided 2026-07-21.
+# The first 14 channels are identical to the project HATPRO configuration.
+CHENGDU_CHANNELS = {
+    "K_band": [22.24, 23.04, 23.84, 25.44, 26.24, 27.84, 31.40],
+    "V_band": [51.26, 52.28, 53.86, 54.94, 56.66, 57.30, 58.00],
+    "W_band": [89.00],
+    "G_band": [184.31, 185.11, 186.31, 187.81, 190.31],
+    "high_frequency_window": [229.00],
+}
+CHENGDU_ALL_CHANNELS = (
+    CHENGDU_CHANNELS["K_band"]
+    + CHENGDU_CHANNELS["V_band"]
+    + CHENGDU_CHANNELS["W_band"]
+    + CHENGDU_CHANNELS["G_band"]
+    + CHENGDU_CHANNELS["high_frequency_window"]
+)
+CHENGDU_N_CHANNELS = len(CHENGDU_ALL_CHANNELS)
+CHENGDU_HATPRO14_IDX = list(range(14))
+CHENGDU_HIGH7_IDX = list(range(14, 21))
+CHENGDU_183GHZ_IDX = list(range(15, 20))
+
 # 53-58 GHz channels (for 0-2km temperature model)
 V_SURFACE_CHANNELS = [53.86, 54.94, 56.66, 57.30, 58.00]
 V_SURFACE_IDX = [ALL_CHANNELS.index(f) for f in V_SURFACE_CHANNELS]
