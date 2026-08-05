@@ -93,6 +93,43 @@ D:\project-504-data\raw\radiosonde\wenjiang\station=56187\year=2026
 
 如果另一台机器的数据湖不在 `D:\project-504-data`，可以不改代码，运行时把 `--obs-json` 和 `--sounding-dir` 指向实际路径即可。
 
+## 3.1 没有同款数据湖时的最低数据要求
+
+学长那边不需要完全复刻 `D:\project-504-data`，但必须提供运行脚本需要的最低输入。
+
+严格复现当前 61 条探空验证，需要：
+
+```text
+obs_bt_filtered_20260726/chengdu_obs_bt_filtered.json
+wenjiang/station=56187/year=2026/*.txt
+```
+
+如果学长没有温江探空数据，则不能严格复现本文档的 `61 samples / 17 sounding groups` 结果，但可以做 **ERA5 + 实测亮温替代验证**。这种验证适合检查代码能否部署、亮温结构是否对齐、反演链路是否能跑通；但 ERA5 不是独立实测真值，不能把它等同于探空验证精度。
+
+推荐在 Linux 上整理成最小目录：
+
+```text
+/data/mwr_handoff/
+  obs/chengdu_obs_bt.json              # 实测亮温 JSON，records[].channels 为 21 维
+  era5/chengdu_era5.grib               # 覆盖亮温 timestamp 的 ERA5 GRIB
+  sounding/                            # 可选；有探空才用于偏差订正或严格验证
+```
+
+亮温 JSON 仍保持同样结构：
+
+```json
+{
+  "records": [
+    {
+      "timestamp": "2026_05_15 22:00:00",
+      "channels": [/* 21 个亮温值 */]
+    }
+  ]
+}
+```
+
+时间戳要能和 ERA5 文件中的时次匹配。`scripts/train_chengdu_era5_ridge.py` 是 exact-hour 匹配，所以亮温时间最好落在 ERA5 整点时次上。
+
 ## 4. 环境安装
 
 已验证环境为 Windows + Conda Python。推荐使用 CPU 版 PyTorch 即可。
@@ -114,6 +151,33 @@ print('torch', torch.__version__)
 ```
 
 本实验不需要 `eccodes`，因为当前脚本使用探空匹配数据，不读取 ERA5 GRIB。`scripts/train_chengdu_era5_ridge.py` 已做按需导入，避免无关 ERA5 依赖阻塞本流程。
+
+如果学长要在 Linux 上直接用 ERA5 GRIB + 实测亮温做替代验证，则需要安装 `eccodes`。推荐 Conda 方式：
+
+```bash
+conda create -n mwr-retrieval python=3.11 -y
+conda activate mwr-retrieval
+conda install -c conda-forge eccodes python-eccodes -y
+python -m pip install numpy matplotlib pillow torch --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+```
+
+如果不用 Conda，也可以在 Ubuntu/Debian 上尝试：
+
+```bash
+sudo apt-get update
+sudo apt-get install -y libeccodes0 libeccodes-dev
+python -m pip install eccodes numpy matplotlib pillow torch --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+```
+
+安装后检查：
+
+```bash
+python - <<'PY'
+import eccodes, numpy, torch
+print('eccodes ok')
+print('torch', torch.__version__)
+PY
+```
 
 ## 5. 代码结构
 
@@ -175,6 +239,66 @@ hybrid_all_sample:
   T: RMSE=1.075, Bias=+0.153, MAE=0.791
   RH: RMSE=20.227, Bias=+1.643, MAE=15.357
 ```
+
+## 6.1 Linux 上用 ERA5 + 实测亮温做替代检测
+
+如果没有温江探空目录，不能运行 `pipeline_sounding_48layer.py` 的严格探空验证。可以先跑 ERA5 exact-hour 基线，检查实测亮温和 ERA5 参考廓线是否能完成配对、训练、验证和输出。
+
+示例命令：
+
+```bash
+cd /path/to/mwr-retrieval-main
+git fetch origin
+git checkout master
+git pull origin master
+
+python scripts/train_chengdu_era5_ridge.py \
+  --grib /data/mwr_handoff/era5/chengdu_era5.grib \
+  --obs-json /data/mwr_handoff/obs/chengdu_obs_bt.json \
+  --output-dir results/linux_era5_ridge_check \
+  --channel-set all21
+```
+
+成功后检查：
+
+```text
+results/linux_era5_ridge_check/chengdu_era5_ridge_stats.json
+results/linux_era5_ridge_check/chengdu_era5_ridge_predictions.npz
+results/linux_era5_ridge_check/chengdu_era5_ridge_model.npz
+```
+
+读取预测：
+
+```bash
+python - <<'PY'
+import numpy as np
+p = 'results/linux_era5_ridge_check/chengdu_era5_ridge_predictions.npz'
+d = np.load(p)
+print(d.files)
+print('T_pred', d['T_pred'].shape)
+print('RH_pred', d['RH_pred'].shape)
+print('heights', d['heights'].shape)
+PY
+```
+
+这条路线的含义：
+
+- 输入是真实微波辐射计亮温。
+- 标签/参考廓线来自 ERA5，而不是探空。
+- 可以用于部署检测、数据结构对齐检查、模型训练链路冒烟测试。
+- 不能替代探空验证，也不能直接声称达到了本文档 61 条探空验证的 RH 精度。
+
+如果学长同时有 ERA5 和探空，可以进一步用 `scripts/build_chengdu_era5_layer48_dataset.py` 构建带探空偏差订正的 48 层 ERA5 数据集：
+
+```bash
+python scripts/build_chengdu_era5_layer48_dataset.py \
+  --grib /data/mwr_handoff/era5/chengdu_era5.grib \
+  --obs-json /data/mwr_handoff/obs/chengdu_obs_bt.json \
+  --sounding-dir /data/mwr_handoff/sounding \
+  --output-dir results/linux_era5_layer48_dataset
+```
+
+这一步要求 `--sounding-dir` 存在，因为脚本会使用探空-ERA5 配对估计偏差订正。
 
 ## 7. 输出文件说明
 
@@ -281,6 +405,7 @@ figures/profile_all_cases/montage_cases_page06.png
 - 当前样本量仍小，只有 61 条匹配样本、17 个探空组。
 - 全量指标包含训练和验证样本，不能作为严格泛化精度。
 - 4-8 km 中高层 RH 仍是主要短板，不能说湿度全层已经高精度可用。
+- 如果换成 ERA5 + 实测亮温检测，那是替代参考验证；可用于部署和数据链路检查，但不能和 61 条探空验证指标直接等价比较。
 
 ## 10. 常见问题
 
@@ -301,6 +426,12 @@ python -m pip install matplotlib pillow
 ### 10.3 `eccodes` 报错
 
 当前 `pipeline_sounding_48layer.py` 不需要 `eccodes`。如果仍然报错，确认运行的是 `pipeline_sounding_48layer.py`，不是 ERA5 GRIB 流程。
+
+如果运行的是 ERA5 GRIB 流程，则必须安装 `eccodes` 和 Python 绑定。Linux 上优先使用：
+
+```bash
+conda install -c conda-forge eccodes python-eccodes -y
+```
 
 ### 10.4 匹配样本不是 61 条
 
@@ -325,3 +456,11 @@ python -m pip install matplotlib pillow
 6. 检查 `chengdu_filtered48_hybrid_predictions_all.npz` 中 `T_pred/RH_pred` 是否为 `(61, 48)`。
 7. 检查 `figures/profile_all_cases` 是否有 61 张 `case_*.png` 和 6 页 `montage_cases_page*.png`。
 8. 对照 `chengdu_filtered48_hybrid_stats.json`，测试集 RH RMSE 应约为 `22.25 %`。
+
+如果接手方没有同款数据湖但有 Linux、ERA5 和实测亮温，则使用替代清单：
+
+1. 准备 `/data/mwr_handoff/obs/chengdu_obs_bt.json` 和 `/data/mwr_handoff/era5/chengdu_era5.grib`。
+2. 安装 `eccodes/python-eccodes/numpy/torch/matplotlib/pillow`。
+3. 运行 `scripts/train_chengdu_era5_ridge.py --grib ... --obs-json ... --channel-set all21`。
+4. 检查输出 `chengdu_era5_ridge_stats.json` 和 `chengdu_era5_ridge_predictions.npz`。
+5. 报告中明确写作“ERA5 替代参考验证”，不要写成“探空真值验证”。
