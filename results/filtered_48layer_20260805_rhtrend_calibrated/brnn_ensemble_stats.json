@@ -1,0 +1,87 @@
+[
+  {
+    "seed": 42,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 297,
+        "best_val": 0.013619493693113327
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 67,
+        "best_val": 0.0683038979768753
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 17,
+        "best_val": 0.03392862528562546
+      }
+    }
+  },
+  {
+    "seed": 1,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 251,
+        "best_val": 0.012753278017044067
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 100,
+        "best_val": 0.0841066911816597
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 15,
+        "best_val": 0.0277448371052742
+      }
+    }
+  },
+  {
+    "seed": 7,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 10,
+        "best_val": 0.05685286223888397
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 12,
+        "best_val": 0.0862344279885292
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 22,
+        "best_val": 0.02832050435245037
+      }
+    }
+  },
+  {
+    "seed": 21,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 247,
+        "best_val": 0.012371750548481941
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 13,
+        "best_val": 0.0876770094037056
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 14,
+        "best_val": 0.03152837976813316
+      }
+    }
+  },
+  {
+    "seed": 84,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 258,
+        "best_val": 0.01029419619590044
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 44,
+        "best_val": 0.07861537486314774
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 11,
+        "best_val": 0.031801074743270874
+      }
+    }
+  }
+]

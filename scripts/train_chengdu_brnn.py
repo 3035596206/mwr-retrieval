@@ -215,7 +215,7 @@ def grouped_split(groups: np.ndarray, seed: int) -> tuple[np.ndarray, np.ndarray
 def train_one_model(
     name: str,
     variable: str,
-    height_range: tuple[int, int],
+    height_range: tuple[float, float],
     X: np.ndarray,
     T: np.ndarray,
     RH: np.ndarray,
@@ -229,11 +229,23 @@ def train_one_model(
     patience_limit: int,
     device: str,
     height_grid: np.ndarray | list[float] | None = None,
+    trend_weight: float | None = None,
+    smooth_weight: float | None = None,
 ) -> tuple[BRNN, dict]:
     grid = config.HEIGHT_GRID if height_grid is None else height_grid
     start, end = get_height_range_indices(*height_range, grid)
     target = T[:, start:end] if variable == "T" else RH[:, start:end]
     target_norm = (target - 200.0) / 100.0 if variable == "T" else target / 100.0
+
+    if trend_weight is None:
+        trend_weight = 0.25 if variable == "RH" else 0.0
+    if smooth_weight is None:
+        smooth_weight = 0.003 if variable == "RH" else 0.001
+
+    if trend_weight < 0.0:
+        raise ValueError("trend_weight must be non-negative")
+    if smooth_weight < 0.0:
+        raise ValueError("smooth_weight must be non-negative")
 
     train_loader = DataLoader(
         TensorDataset(torch.from_numpy(X[train_mask]), torch.from_numpy(target_norm[train_mask])),
@@ -248,12 +260,23 @@ def train_one_model(
 
     model = BRNN(X.shape[1], end - start, hidden_size, dropout).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)
-    criterion = nn.MSELoss()
+    criterion = nn.MSELoss(reduction="none")
     best_state = None
     best_val = float("inf")
     best_epoch = 0
     patience = 0
     history = []
+
+    def objective(pred: torch.Tensor, yb: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+        data_loss = criterion(pred, yb).mean()
+        trend_loss = pred.new_tensor(0.0)
+        smooth_loss = pred.new_tensor(0.0)
+        if trend_weight > 0.0 and pred.shape[1] >= 2:
+            trend_loss = torch.mean((torch.diff(pred, dim=1) - torch.diff(yb, dim=1)) ** 2)
+        if smooth_weight > 0.0 and pred.shape[1] >= 3:
+            smooth_loss = torch.mean(torch.diff(pred, n=2, dim=1) ** 2)
+        total = data_loss + trend_weight * trend_loss + smooth_weight * smooth_loss
+        return total, data_loss, trend_loss, smooth_loss
 
     for epoch in range(1, max_epochs + 1):
         model.train()
@@ -263,18 +286,20 @@ def train_one_model(
             yb = yb.to(device)
             optimizer.zero_grad()
             pred = model(xb)
-            smooth = torch.mean(torch.diff(pred, n=2, dim=1) ** 2) if pred.shape[1] >= 3 else 0.0
-            loss = criterion(pred, yb) + 0.001 * smooth
+            loss, _, _, _ = objective(pred, yb)
             loss.backward()
             optimizer.step()
-            train_sum += criterion(pred, yb).item() * xb.shape[0]
+            train_sum += loss.item() * xb.shape[0]
 
         model.eval()
         val_sum = 0.0
         with torch.no_grad():
             for xb, yb in val_loader:
-                pred = model(xb.to(device))
-                val_sum += criterion(pred, yb.to(device)).item() * xb.shape[0]
+                xb = xb.to(device)
+                yb = yb.to(device)
+                pred = model(xb)
+                loss, _, _, _ = objective(pred, yb)
+                val_sum += loss.item() * xb.shape[0]
 
         train_loss = train_sum / int(train_mask.sum())
         val_loss = val_sum / int(val_mask.sum())
@@ -294,7 +319,6 @@ def train_one_model(
         raise RuntimeError(f"No valid checkpoint produced for {name}")
     model.load_state_dict(best_state)
     return model, {"best_epoch": best_epoch, "best_val": best_val, "history": history}
-
 
 def predict_full(
     models: dict[str, BRNN],

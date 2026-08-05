@@ -18,12 +18,20 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 import config
 from train_chengdu_brnn import load_observations, rmse_bias
-from train_chengdu_era5_brnn import (
-    build_exact_dataset,
-    chronological_date_split,
-    date_mean_metrics,
-    load_era5_profiles,
-)
+try:
+    from train_chengdu_era5_brnn import (
+        build_exact_dataset,
+        chronological_date_split,
+        date_mean_metrics,
+        load_era5_profiles,
+    )
+    _ERA5_IMPORT_ERROR = None
+except ModuleNotFoundError as exc:
+    build_exact_dataset = None
+    chronological_date_split = None
+    date_mean_metrics = None
+    load_era5_profiles = None
+    _ERA5_IMPORT_ERROR = exc
 
 
 ALPHAS = [1e-4, 1e-3, 1e-2, 0.1, 1.0, 10.0, 100.0]
@@ -120,6 +128,9 @@ def main() -> None:
     )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
+
+    if load_era5_profiles is None:
+        raise RuntimeError("ERA5 Ridge training requires train_chengdu_era5_brnn dependencies, including eccodes") from _ERA5_IMPORT_ERROR
 
     records = load_observations(args.obs_json)
     heights = np.asarray(config.HEIGHT_GRID, dtype=np.float32)
