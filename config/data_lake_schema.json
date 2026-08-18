@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "organization": {
+    "organization_id": "project-504",
+    "name": "Project 504",
+    "description": "Research institute shared data lake"
+  },
+  "default_project": {
+    "project_id": "project-brnn",
+    "name": "BRNN temperature and humidity retrieval"
+  },
+  "data_root": "D:\\project-504-data",
+  "environment_override": "MWR_DATA_ROOT",
+  "shared_layers": {
+    "raw": ["era5", "radiosonde", "mwr", "gnss", "satellite", "ancillary"],
+    "interim": ["era5", "radiosonde", "mwr", "gnss"]
+  },
+  "project_layout": {
+    "path_template": "projects/{project_id}",
+    "directories": ["curated/datasets", "curated/models", "curated/predictions", "curated/reports", "configs", "manifests"]
+  },
+  "asset_roles": ["input", "intermediate", "dataset", "model", "prediction", "report", "archive"],
+  "integrity": {
+    "hash_algorithm": "sha256",
+    "copy_policy": "copy_to_staging_then_verify_then_atomic_replace",
+    "source_policy": "never_modify_or_delete_legacy_sources",
+    "deduplication": "catalog_reuses_identical_content_hashes_without_deleting_logical_copies"
+  }
+}

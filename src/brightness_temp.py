@@ -1,18 +1,16 @@
-"""Brightness temperature simulation for RPG HATPRO 14-channel MWR.
+"""Brightness temperature simulation for ground-based MWR channels.
 
 Supports multiple radiative transfer backends:
-  - 'simple': Python-based simplified model (no external dependencies)
-  - 'monortm': MonoRTM Fortran model (requires compiled executable)
-  - 'pamtra': PAMTRA Python/Fortran package (requires conda/pip install)
+  - 'arts': ARTS / pyarts workflow adapter (primary research backend)
+  - 'simple': Python-based simplified model (debug/closure only)
+  - 'monortm': MonoRTM Fortran model (legacy comparison backend)
+  - 'pamtra': PAMTRA Python/Fortran package (not wired)
 
 Usage:
     from brightness_temp import get_backend, simulate_mwr_observation
 
-    # Use Python simplified model (default, always available)
-    tb = simulate_mwr_observation(profile)
-
-    # Use MonoRTM
-    backend = get_backend('monortm', monortm_path='/usr/local/bin/monortm')
+    # Use ARTS primary backend
+    backend = get_backend('arts', arts_command='python run_arts_profile.py')
     tb = backend.simulate(profile)
 """
 
@@ -26,26 +24,58 @@ import config
 _backends = {}
 
 
-def register_backend(name, backend_instance):
+def _backend_cache_key(name, kwargs):
+    frequencies = kwargs.get("frequencies")
+    if frequencies is None:
+        frequencies = config.DEFAULT_FORWARD_CHANNELS if name == "arts" else config.ALL_CHANNELS
+    return (
+        name,
+        tuple(float(item) for item in frequencies),
+        kwargs.get("monortm_path"),
+        kwargs.get("tape3_path"),
+        kwargs.get("arts_command"),
+        kwargs.get("arts_runner"),
+        kwargs.get("elevation_angle_deg"),
+        kwargs.get("arts_persistent"),
+    )
+
+
+def register_backend(key, backend_instance):
     """Register a named backend."""
-    _backends[name] = backend_instance
+    _backends[key] = backend_instance
 
 
-def get_backend(name="simple", **kwargs):
+def get_backend(name=None, **kwargs):
     """Get or create a radiative transfer backend.
 
     Args:
-        name: 'simple', 'monortm', or 'pamtra'
+        name: 'arts', 'simple', 'monortm', or 'pamtra'
         **kwargs: backend-specific arguments
+            arts_runner: Python callable for local ARTS workflow
+            arts_command: command that reads JSON profile from stdin
             monortm_path: path to MonoRTM executable
     Returns:
         backend object with .simulate(profile) -> tb and .simulate_batch(profiles) -> tb
     """
-    if name in _backends:
-        return _backends[name]
+    name = name or config.DEFAULT_FORWARD_BACKEND
+    key = _backend_cache_key(name, kwargs)
+    if key in _backends:
+        return _backends[key]
 
-    if name == "simple":
-        backend = SimpleRadiativeTransfer()
+    if name == "arts":
+        from arts_forward_model import ARTSForwardModel
+        backend = ARTSForwardModel(
+            frequencies=kwargs.get("frequencies"),
+            arts_runner=kwargs.get("arts_runner"),
+            arts_command=kwargs.get("arts_command"),
+            elevation_angle_deg=kwargs.get("elevation_angle_deg", 90.0),
+            channel_response=kwargs.get("channel_response"),
+            timeout=kwargs.get("timeout", 120.0),
+            require_pyarts=kwargs.get("require_pyarts", False),
+            arts_persistent=kwargs.get("arts_persistent"),
+        )
+    elif name == "simple":
+        backend = SimpleRadiativeTransfer(frequencies=kwargs.get("frequencies"))
     elif name == "monortm":
         from monortm_wrapper import MonoRTM
         backend = MonoRTM(monortm_path=kwargs.get("monortm_path"), tape3_path=kwargs.get("tape3_path"), frequencies=kwargs.get("frequencies"))
@@ -54,9 +84,9 @@ def get_backend(name="simple", **kwargs):
             "PAMTRA backend requires conda: conda install -c conda-forge pamtra"
         )
     else:
-        raise ValueError(f"Unknown backend: {name}. Options: simple, monortm, pamtra")
+        raise ValueError(f"Unknown backend: {name}. Options: arts, simple, monortm, pamtra")
 
-    register_backend(name, backend)
+    register_backend(key, backend)
     return backend
 
 
@@ -72,8 +102,8 @@ class SimpleRadiativeTransfer:
     external Fortran models.
     """
 
-    def __init__(self):
-        self.frequencies = config.ALL_CHANNELS
+    def __init__(self, frequencies=None):
+        self.frequencies = list(frequencies if frequencies is not None else config.ALL_CHANNELS)
 
     def simulate(self, profile, add_noise=False, noise_std=0.5):
         """Simulate 14-channel brightness temperatures.
@@ -106,7 +136,7 @@ class SimpleRadiativeTransfer:
             tb_batch: shape (n_time, 14)
         """
         n_time = profiles_dict["T"].shape[0]
-        tb_batch = np.zeros((n_time, config.N_CHANNELS))
+        tb_batch = np.zeros((n_time, len(self.frequencies)))
 
         for t in range(n_time):
             profile = {
@@ -227,35 +257,35 @@ def _compute_brightness_temperature_downgoing(T_profile, P_profile, RH_profile,
 
 
 # ============================================================
-# Convenience functions (use default 'simple' backend)
+# Convenience functions (use configured default backend)
 # ============================================================
 
 def simulate_mwr_observation(profile, add_noise=False, noise_std=0.5,
-                              backend="simple", **backend_kwargs):
+                              backend=None, **backend_kwargs):
     """Simulate RPG HATPRO 14-channel observation from atmospheric profile.
 
     Args:
         profile: dict with 'T', 'P'/'P_hPa', 'RH', 'CLWC', 'height'
         add_noise: add Gaussian instrument noise
         noise_std: instrument noise std [K] (default 0.5K for HATPRO)
-        backend: 'simple', 'monortm', or 'pamtra'
+        backend: 'arts', 'simple', 'monortm', or 'pamtra'
     Returns:
-        Tb: 14-channel brightness temperatures [K]
+        Tb: brightness temperatures [K]
     """
     rt = get_backend(backend, **backend_kwargs)
     return rt.simulate(profile, add_noise=add_noise, noise_std=noise_std)
 
 
-def simulate_batch(profiles_dict, add_noise=False, backend="simple",
+def simulate_batch(profiles_dict, add_noise=False, backend=None,
                    **backend_kwargs):
     """Simulate BT for a batch of profiles.
 
     Args:
         profiles_dict: dict with arrays of shape (n_time, n_layers)
         add_noise: add instrument noise
-        backend: 'simple', 'monortm', or 'pamtra'
+        backend: 'arts', 'simple', 'monortm', or 'pamtra'
     Returns:
-        Tb_batch: shape (n_time, 14)
+        Tb_batch: shape (n_time, n_channels)
     """
     rt = get_backend(backend, **backend_kwargs)
     return rt.simulate_batch(profiles_dict, add_noise=add_noise)
@@ -276,7 +306,7 @@ if __name__ == "__main__":
 
     # Test simple backend
     print("Simple Python Backend:")
-    Tb = simulate_mwr_observation(test)
+    Tb = simulate_mwr_observation(test, backend="simple", frequencies=config.ALL_CHANNELS)
     for f, tb in zip(config.ALL_CHANNELS, Tb):
         band = "K" if f < 40 else "V"
         print(f"  {band}-band {f:.2f} GHz: {tb:.2f} K")

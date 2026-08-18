@@ -1,0 +1,38 @@
+{
+  "instruments": [
+    {
+      "instrument_id": "chengdu-21ch",
+      "site_id": "chengdu",
+      "description": "Chengdu 21-channel MWR schema inferred from the project inventory; verify against instrument calibration metadata before operational use.",
+      "channels": [
+        {"index": 0, "frequency_ghz": 22.24, "band": "K"},
+        {"index": 1, "frequency_ghz": 23.04, "band": "K"},
+        {"index": 2, "frequency_ghz": 23.84, "band": "K"},
+        {"index": 3, "frequency_ghz": 25.44, "band": "K"},
+        {"index": 4, "frequency_ghz": 26.24, "band": "K"},
+        {"index": 5, "frequency_ghz": 27.84, "band": "K"},
+        {"index": 6, "frequency_ghz": 31.40, "band": "K"},
+        {"index": 7, "frequency_ghz": 51.26, "band": "V"},
+        {"index": 8, "frequency_ghz": 52.28, "band": "V"},
+        {"index": 9, "frequency_ghz": 53.86, "band": "V"},
+        {"index": 10, "frequency_ghz": 54.94, "band": "V"},
+        {"index": 11, "frequency_ghz": 56.66, "band": "V"},
+        {"index": 12, "frequency_ghz": 57.30, "band": "V"},
+        {"index": 13, "frequency_ghz": 58.00, "band": "V"},
+        {"index": 14, "frequency_ghz": 89.00, "band": "W"},
+        {"index": 15, "frequency_ghz": 184.31, "band": "G"},
+        {"index": 16, "frequency_ghz": 185.11, "band": "G"},
+        {"index": 17, "frequency_ghz": 186.31, "band": "G"},
+        {"index": 18, "frequency_ghz": 187.81, "band": "G"},
+        {"index": 19, "frequency_ghz": 190.31, "band": "G"},
+        {"index": 20, "frequency_ghz": 229.00, "band": "window"}
+      ],
+      "channel_sets": {
+        "all21": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "hatpro14": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        "high7": [14, 15, 16, 17, 18, 19, 20],
+        "vapor183": [15, 16, 17, 18, 19]
+      }
+    }
+  ]
+}

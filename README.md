@@ -6,6 +6,28 @@
 **仓库**：https://github.com/3035596206/mwr-retrieval  
 **上次更新**：2026-07-21
 
+> **数据与实验状态说明**：历史 BRNN/OEM 数字来自不同数据集和部分 self-consistent 实验，不能替代严格独立探空验证。成都 21 通道 48 层流程当前仍为小样本研究验证；其 RH 产品尚未通过基线与独立性检验。详见 [`docs/data-catalog.md`](docs/data-catalog.md) 和 [`docs/workflows.md`](docs/workflows.md)。
+
+---
+
+## 数据目录与新工作流
+
+新数据默认保存在独立目录 `D:\project-504-data`（可通过 `MWR_DATA_ROOT` 覆盖），原始科学文件保留在文件系统，SQLite catalog 保存哈希、覆盖范围、来源和谱系。初始化与历史资产只读登记：
+
+```powershell
+python -m mwr_retrieval.cli.data init
+python -m mwr_retrieval.cli.data register-existing
+```
+
+工作区根目录 `D:\project-504` 下的成都 ERA5、成都亮温和温江探空源文件，先生成入湖计划，再复制、校验、登记并关联到 `project-brnn`：
+
+```powershell
+python -m mwr_retrieval.cli.data workspace-ingest-plan
+python -m mwr_retrieval.cli.data migrate-workspace-sources
+```
+
+新 ERA5 下载请使用 `python scripts/download_era5.py ...`；根目录的 `dl_*`、`bulk_*` 和版本化 MP-3000A 脚本保留为 legacy 历史工作流，不建议用于新增任务。
+
 ---
 
 ## 核心指标
@@ -18,7 +40,11 @@
 | RH RMSE | **7.76%** | <13% |
 | 推理速度 | ~0.5 ms/廓线 | — |
 
-### MonoRTM OEM n=100（物理反演，self-consistent）
+### ARTS OEM（物理反演，当前主线）
+
+前向模型主线已切换为 ARTS，以对齐研究所和同组工作流。`ForwardModel()` 默认使用 `backend="arts"` 和成都 21 通道；本地 ARTS agenda 通过 `ARTS_FORWARD_MODEL_COMMAND` 或 `arts_runner` 接入。MonoRTM 结果保留为历史基线。详见 [`docs/arts-forward-model.md`](docs/arts-forward-model.md)。
+
+### MonoRTM OEM n=100（历史基线，self-consistent）
 
 | 指标 | Prior → Posterior |
 |------|-------------------|
@@ -34,7 +60,7 @@
 
 ```
 BRNN 统计反演  ████████████████████ 100%  v4 当前最佳 (T=1.26K, RH=7.76%)
-OEM 物理反演    ████████████████░░░░  80%  simple n=100 + MonoRTM n=100 基线完成
+OEM 物理反演    ████████████████░░░░  80%  ARTS 主后端已切换，待跑 ARTS baseline
 MonoRTM 编译    ████████████████████ 100%  macOS + Linux (WSL) 双平台
 TAPE3 光谱数据  ████████████████████ 100%  已下载并转二进制
 S_a 协方差      ████████████████░░░░  80%  v4-derived S_a (14x14) 已生成
@@ -56,7 +82,7 @@ Obs_BT ──→ QC/订正 ─┤
                     └─ OEM / 1D-Var ──────→ T(z), RH(z), 后验误差, AK, DOFS (物理反演)
                          │
                          ├─ x_a: ERA5 / BRNN v4 first guess
-                         ├─ H(x): MonoRTM v5.6 / simple RTM
+                         ├─ H(x): ARTS / pyarts（主线）；MonoRTM/simple 为历史/调试后端
                          ├─ S_a: v4 残差协方差 / 指数相关
                          └─ 状态: 14d 粗分层 → EOF/PCA → 21d T+RH+LWC
 ```
@@ -71,7 +97,8 @@ mwr-retrieval/
 │   ├── brnn_model.py             BRNN 网络定义 (PyTorch, 6 子模型)
 │   ├── train.py                  训练脚本
 │   ├── evaluate.py               评估/可视化
-│   ├── forward_model.py          前向模型统一接口 (simple/MonoRTM)
+│   ├── forward_model.py          前向模型统一接口 (ARTS 主线，simple/MonoRTM legacy)
+│   ├── arts_forward_model.py     ARTS runner/pyarts 适配层
 │   ├── brightness_temp.py        Python 简化辐射传输模型
 │   ├── monortm_wrapper.py        MonoRTM v5.6 Python 封装
 │   ├── oem.py                    OEM 求解器 (LM/Gauss-Newton)
@@ -129,7 +156,7 @@ mwr-retrieval/
 - [x] LM/Gauss-Newton OEM 求解器 + 有限差分 Jacobian
 - [x] 状态向量打包/解包（14d 粗分层 T7+RH7）
 - [x] S_a / S_e 协方差构造（指数相关 + v4-derived）
-- [x] 前向模型统一接口（simple RTM + MonoRTM 双后端）
+- [x] 前向模型统一接口（ARTS 主后端 + simple/MonoRTM legacy 后端）
 - [x] Averaging kernel、DOFS、posterior covariance 诊断
 - [x] Synthetic closure test 通过
 - [x] ERA5 2013-01 self-consistent / forward mismatch / MonoRTM 三类 POC
@@ -138,7 +165,8 @@ mwr-retrieval/
 - [x] EOF/PCA 状态降维基础
 - [x] 21 维 T+RH+LWC synthetic 实验
 
-### MonoRTM & 环境
+### ARTS / MonoRTM & 环境
+- [x] ARTS 被设为默认 OEM 前向模型后端（通过 runner/command 接入本地 agenda）
 - [x] MonoRTM v5.6 源码编译 (macOS ARM64 + Linux x86-64)
 - [x] TAPE3 下载 + ASCII->二进制转换 (convert_tape3.py)
 - [x] WSL Ubuntu-24.04 环境 + Python 3.12 venv
@@ -157,7 +185,7 @@ mwr-retrieval/
 > 详见 [docs/论文方法融合下一阶段计划_2026-07-21.md](docs/论文方法融合下一阶段计划_2026-07-21.md)
 
 ### P0（2 周）：闭环验证
-- [ ] 扩大 MonoRTM OEM 基线：n=200/500/744
+- [ ] 接入研究组 ARTS runner，并建立成都 21 通道 ARTS OEM 基线：n=100/200/500
 - [ ] 通道与 Obs_BT 资产审计：MP-3000A 22ch / HATPRO 14ch 映射表
 - [ ] 虚拟多仰角 OEM 机制试验：A/B/C 三组对照
 
@@ -167,7 +195,7 @@ mwr-retrieval/
 - [ ] BRNN 先验桥接：22ch 直接桥接 或 14ch 适配
 
 ### P2（2-3 月）：Surrogate + 云天
-- [ ] MonoRTM residual surrogate (NN 加速 H(x))
+- [ ] ARTS residual surrogate (NN 加速 H(x))
 - [ ] LWC 云天分阶段 OEM：弱液云 -> 多云层 -> cloud-dependent S_e
 - [ ] 不确定度校准：PICP / MPIW / CRPS / reliability diagram
 
@@ -190,11 +218,12 @@ python train_mp3000a_v4.py
 # 预期: T_RMSE=1.26K, RH_RMSE=7.76%
 ```
 
-### 运行 MonoRTM OEM (2013-01)
+### 运行 ARTS OEM (2013-01)
 
 ```bash
-python scripts/run_oem_201301.py
-# 使用 bin/monortm_linux + data/TAPE3/TAPE3_bin
+python scripts/run_oem_201301.py --forward arts --n-samples 100
+# 本机默认通过 WSL Ubuntu-24.04 调用持久 ARTS runner:
+# /home/inkp/miniconda3/envs/arts/bin/python scripts/run_arts_profile.py --server
 ```
 
 ### 生成报告
@@ -213,7 +242,8 @@ python generate_report.py
 | 6 个独立 BRNN (非单一多输出) | 各高度区间物理特性差异大 | T RMSE 1.26K |
 | 廓线分组划分 (非时间划分) | 同一廓线被重复观测 ~5.6 次，必须防泄露 | 测试集完全独立 |
 | Winsorize 回归 BT 订正 (非 OLS) | K 波段 OMB 厚尾分布 | OMB std -49% |
-| MonoRTM 物理前向为主 | Python simple RTM K 波段偏差 ~195K | 精度保证 |
+| ARTS 物理前向为主 | 对齐研究所和同组 ARTS 工作流，支持成都 21 通道和后续云天扩展 | 新主线 |
+| MonoRTM 保留为历史基线 | 已有 n=100 self-consistent 结果，可用于交叉验证 | legacy |
 | 先做 self-consistent 验证 | Forward mismatch 会导致 T 严重退化 | 明确 H(x) 不一致风险 |
 
 ---
@@ -260,9 +290,9 @@ python generate_report.py
 
 ### 下一阶段优先级
 
-1. **P1**: 改善 RH 约束 — `scripts/scan_rh_sensitivity.py` 参数扫描（代码就绪，待运行）
-2. **P1**: S_a 对比实验 — 指数相关 vs v4-derived S_a
-3. **P2**: 增强诊断输出 — 0-500m 指标 + posterior uncertainty
-4. **P3**: 扩大 MonoRTM baseline 到 n=200/500/744
+1. **P1**: 接入研究组 ARTS runner，完成成都 21 通道 self-consistent baseline
+2. **P1**: 改善 RH 约束 — `scripts/scan_rh_sensitivity.py --forward arts` 参数扫描
+3. **P1**: S_a 对比实验 — 指数相关 vs v4-derived S_a
+4. **P2**: 增强诊断输出 — 0-500m 指标 + posterior uncertainty
 
 > **待用户提供**：D:\project-504 下新增的成都 ERA5 + 温江探空数据，用于新站点训练/测试。

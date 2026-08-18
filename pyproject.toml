@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mwr-retrieval"
+version = "0.1.0"
+description = "Ground-based microwave radiometer temperature and humidity profile retrieval"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "xarray>=2023.1",
+  "netCDF4>=1.6",
+  "torch>=2.0",
+  "matplotlib>=3.7",
+  "scikit-learn>=1.3",
+  "cdsapi>=0.5",
+  "eccodes>=1.6",
+  "tqdm>=4.65",
+]
+
+[project.scripts]
+mwr-data = "mwr_retrieval.cli.data:main"
+mwr-download-era5 = "mwr_retrieval.downloads.era5:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mwr_retrieval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,78 @@
+{
+  "status": "external_domain_test",
+  "warning": "The existing model was trained on simulated/legacy HATPRO data and is evaluated without Chengdu-specific BT bias correction. Surface features come from matched soundings.",
+  "dataset": {
+    "n_samples": 83,
+    "n_sounding_groups": 18,
+    "max_delta_hours": 3.0
+  },
+  "frequencies_ghz": [
+    22.24,
+    23.04,
+    23.84,
+    25.44,
+    26.24,
+    27.84,
+    31.4,
+    51.26,
+    52.28,
+    53.86,
+    54.94,
+    56.66,
+    57.3,
+    58.0
+  ],
+  "models": {
+    "brnn_T_0-2km": {
+      "n_input": 6,
+      "n_output": 50
+    },
+    "brnn_T_2-8km": {
+      "n_input": 17,
+      "n_output": 37
+    },
+    "brnn_T_8-10km": {
+      "n_input": 17,
+      "n_output": 8
+    },
+    "brnn_RH_0-2km": {
+      "n_input": 17,
+      "n_output": 50
+    },
+    "brnn_RH_2-8km": {
+      "n_input": 17,
+      "n_output": 37
+    },
+    "brnn_RH_8-10km": {
+      "n_input": 17,
+      "n_output": 8
+    }
+  },
+  "metrics": {
+    "sample": {
+      "T": {
+        "rmse": 29.37592124938965,
+        "mae": 24.12205696105957,
+        "bias": 8.704057693481445
+      },
+      "RH": {
+        "rmse": 42.495819091796875,
+        "mae": 36.14753341674805,
+        "bias": 36.049278259277344
+      }
+    },
+    "grouped": {
+      "n_groups": 18,
+      "T": {
+        "rmse": 29.37232208251953,
+        "mae": 24.102941513061523,
+        "bias": 8.76433277130127
+      },
+      "RH": {
+        "rmse": 41.198394775390625,
+        "mae": 34.51787567138672,
+        "bias": 34.37323760986328
+      }
+    }
+  }
+}

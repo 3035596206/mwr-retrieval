@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "default_backend": "arts",
+  "default_channel_set": "chengdu_all21",
+  "default_frequencies_ghz": [
+    22.24,
+    23.04,
+    23.84,
+    25.44,
+    26.24,
+    27.84,
+    31.4,
+    51.26,
+    52.28,
+    53.86,
+    54.94,
+    56.66,
+    57.3,
+    58.0,
+    89.0,
+    184.31,
+    185.11,
+    186.31,
+    187.81,
+    190.31,
+    229.0
+  ],
+  "geometry": {
+    "platform": "ground-based",
+    "default_elevation_angle_deg": 90.0,
+    "viewing_direction": "upwelling/downwelling brightness temperature for zenith-looking MWR"
+  },
+  "arts": {
+    "status": "primary",
+    "python_package": "pyarts",
+    "recommended_install": "mamba install -c rttools pyarts",
+    "local_runner": {
+      "status": "available",
+      "wsl_distro": "Ubuntu-24.04",
+      "python": "/home/inkp/miniconda3/envs/arts/bin/python",
+      "script": "scripts/run_arts_profile.py",
+      "command": "wsl -d Ubuntu-24.04 -- /home/inkp/miniconda3/envs/arts/bin/python /mnt/d/project-504/mwr-retrieval-main/scripts/run_arts_profile.py --server",
+      "pyarts_version_verified": "2.6.18",
+      "verified_on": "2026-07-27",
+      "persistent_process": true
+    },
+    "runner_protocol": {
+      "input": "JSON on stdin with profile.temperature_k, profile.pressure_hpa, profile.relative_humidity_percent, profile.cloud_liquid_water_g_m3, profile.height_m, and instrument.frequencies_ghz",
+      "output": "JSON on stdout with brightness_temperature_k"
+    },
+    "environment_variables": {
+      "ARTS_FORWARD_MODEL_COMMAND": "External command used by ForwardModel(backend='arts')",
+      "ARTS_FORWARD_MODEL_RUNNER": "Optional Python dotted callable, e.g. package.module:function",
+      "ARTS_FORWARD_MODEL_PERSISTENT": "Set to 1/true when ARTS_FORWARD_MODEL_COMMAND runs in JSON-lines server mode"
+    }
+  },
+  "legacy_backends": {
+    "simple": {
+      "status": "debug_only",
+      "reason": "Fast closure tests, not for physical conclusions"
+    },
+    "monortm": {
+      "status": "legacy_baseline",
+      "reason": "Historical OEM comparison backend retained for reproducibility"
+    }
+  }
+}

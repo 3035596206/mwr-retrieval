@@ -1,0 +1,426 @@
+{
+  "T": [
+    {
+      "method": "direct",
+      "alpha": 0.0001,
+      "n_eof": null,
+      "val_rmse": 1.6865417882168878
+    },
+    {
+      "method": "direct",
+      "alpha": 0.001,
+      "n_eof": null,
+      "val_rmse": 1.6662060285129112
+    },
+    {
+      "method": "direct",
+      "alpha": 0.01,
+      "n_eof": null,
+      "val_rmse": 1.5298689753068508
+    },
+    {
+      "method": "direct",
+      "alpha": 0.1,
+      "n_eof": null,
+      "val_rmse": 1.2563932507110152
+    },
+    {
+      "method": "direct",
+      "alpha": 1.0,
+      "n_eof": null,
+      "val_rmse": 1.2018112782755228
+    },
+    {
+      "method": "direct",
+      "alpha": 10.0,
+      "n_eof": null,
+      "val_rmse": 1.7372041117167472
+    },
+    {
+      "method": "direct",
+      "alpha": 100.0,
+      "n_eof": null,
+      "val_rmse": 2.3214443325538956
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 3,
+      "val_rmse": 1.5626741107690139
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 3,
+      "val_rmse": 1.545435033055851
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 3,
+      "val_rmse": 1.4329276209455593
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 3,
+      "val_rmse": 1.2266552651610314
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 3,
+      "val_rmse": 1.203095775202459
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 3,
+      "val_rmse": 1.736395047153429
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 3,
+      "val_rmse": 2.3215550784856585
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 5,
+      "val_rmse": 1.664194038672675
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 5,
+      "val_rmse": 1.6449902404707353
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 5,
+      "val_rmse": 1.5162129255197352
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 5,
+      "val_rmse": 1.2560299758163422
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 5,
+      "val_rmse": 1.2110687125424062
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 5,
+      "val_rmse": 1.7445343517297662
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 5,
+      "val_rmse": 2.3224940157817437
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 8,
+      "val_rmse": 1.6814456907042845
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 8,
+      "val_rmse": 1.6612945845067164
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 8,
+      "val_rmse": 1.5262641494640168
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 8,
+      "val_rmse": 1.2558622256661238
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 8,
+      "val_rmse": 1.2025570484337353
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 8,
+      "val_rmse": 1.7376562237525879
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 8,
+      "val_rmse": 2.32173847893685
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 10,
+      "val_rmse": 1.684524039813501
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 10,
+      "val_rmse": 1.6642314728260081
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 10,
+      "val_rmse": 1.5283274615151385
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 10,
+      "val_rmse": 1.2561396541610876
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 10,
+      "val_rmse": 1.2016055485524744
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 10,
+      "val_rmse": 1.736977346460567
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 10,
+      "val_rmse": 2.321470129792498
+    }
+  ],
+  "RH": [
+    {
+      "method": "direct",
+      "alpha": 0.0001,
+      "n_eof": null,
+      "val_rmse": 29.28235431758645
+    },
+    {
+      "method": "direct",
+      "alpha": 0.001,
+      "n_eof": null,
+      "val_rmse": 28.894804817807334
+    },
+    {
+      "method": "direct",
+      "alpha": 0.01,
+      "n_eof": null,
+      "val_rmse": 26.241974125600798
+    },
+    {
+      "method": "direct",
+      "alpha": 0.1,
+      "n_eof": null,
+      "val_rmse": 20.39008126884757
+    },
+    {
+      "method": "direct",
+      "alpha": 1.0,
+      "n_eof": null,
+      "val_rmse": 14.857905014315746
+    },
+    {
+      "method": "direct",
+      "alpha": 10.0,
+      "n_eof": null,
+      "val_rmse": 11.238544850094279
+    },
+    {
+      "method": "direct",
+      "alpha": 100.0,
+      "n_eof": null,
+      "val_rmse": 11.272659550692573
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 3,
+      "val_rmse": 26.959823287353185
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 3,
+      "val_rmse": 26.642056628011947
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 3,
+      "val_rmse": 24.41951719673034
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 3,
+      "val_rmse": 19.38508919277595
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 3,
+      "val_rmse": 14.279835180035601
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 3,
+      "val_rmse": 10.942497249657576
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 3,
+      "val_rmse": 11.348969211073243
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 5,
+      "val_rmse": 29.064633849291486
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 5,
+      "val_rmse": 28.67932020400295
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 5,
+      "val_rmse": 26.032829071925782
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 5,
+      "val_rmse": 20.158462980914067
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 5,
+      "val_rmse": 14.600802102904167
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 5,
+      "val_rmse": 11.135217442375541
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 5,
+      "val_rmse": 11.257860576237059
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 8,
+      "val_rmse": 29.25432347495256
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 8,
+      "val_rmse": 28.868119744405504
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 8,
+      "val_rmse": 26.22272168832056
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 8,
+      "val_rmse": 20.380917780853125
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 8,
+      "val_rmse": 14.875783211525485
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 8,
+      "val_rmse": 11.248877966000068
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 8,
+      "val_rmse": 11.249973756704286
+    },
+    {
+      "method": "eof",
+      "alpha": 0.0001,
+      "n_eof": 10,
+      "val_rmse": 29.2592652068269
+    },
+    {
+      "method": "eof",
+      "alpha": 0.001,
+      "n_eof": 10,
+      "val_rmse": 28.87285242865337
+    },
+    {
+      "method": "eof",
+      "alpha": 0.01,
+      "n_eof": 10,
+      "val_rmse": 26.227030902621447
+    },
+    {
+      "method": "eof",
+      "alpha": 0.1,
+      "n_eof": 10,
+      "val_rmse": 20.383263786027058
+    },
+    {
+      "method": "eof",
+      "alpha": 1.0,
+      "n_eof": 10,
+      "val_rmse": 14.846642700475337
+    },
+    {
+      "method": "eof",
+      "alpha": 10.0,
+      "n_eof": 10,
+      "val_rmse": 11.220213063285094
+    },
+    {
+      "method": "eof",
+      "alpha": 100.0,
+      "n_eof": 10,
+      "val_rmse": 11.260142359392908
+    }
+  ]
+}

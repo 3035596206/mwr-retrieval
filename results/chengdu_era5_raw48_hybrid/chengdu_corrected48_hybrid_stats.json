@@ -1,0 +1,75 @@
+{
+  "status": "best_current_chengdu_corrected48_hybrid",
+  "temperature_model": "all21 Ridge/EOF",
+  "humidity_model": "all21 BRNN segment-wise top-2 ensemble selected by validation loss",
+  "height_layers": 48,
+  "n_test_samples": 48,
+  "test_dates": [
+    "20260528",
+    "20260529",
+    "20260530"
+  ],
+  "metrics_corrected_label": {
+    "T": {
+      "rmse": 1.5326043367385864,
+      "mae": 1.1955901384353638,
+      "bias": 0.5731967091560364
+    },
+    "RH": {
+      "rmse": 25.264368057250977,
+      "mae": 19.484663009643555,
+      "bias": -10.188823699951172
+    }
+  },
+  "metrics_raw_era5_reference": {
+    "T": {
+      "rmse": 1.5326043367385864,
+      "mae": 1.1955901384353638,
+      "bias": 0.5731967091560364
+    },
+    "RH": {
+      "rmse": 25.264368057250977,
+      "mae": 19.484663009643555,
+      "bias": -10.188823699951172
+    }
+  },
+  "ridge_prediction_source": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_ridge_all21\\chengdu_corrected48_ridge_predictions.npz",
+  "brnn_prediction_sources": [
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21\\chengdu_corrected48_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed1\\chengdu_corrected48_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed7\\chengdu_corrected48_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed21\\chengdu_corrected48_brnn_predictions.npz"
+  ],
+  "brnn_ensemble_selection": {
+    "brnn_RH_0.5-2km": [
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed1\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.010065934705463324
+      },
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.011478585106405344
+      }
+    ],
+    "brnn_RH_2.25-8km": [
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed21\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.011997141959992323
+      },
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.013678453016010199
+      }
+    ],
+    "brnn_RH_8.25-10km": [
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed21\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.0073947283778000965
+      },
+      {
+        "prediction": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_raw48_all21_seed1\\chengdu_corrected48_brnn_predictions.npz",
+        "validation_loss": 0.008545298213985834
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "source": "D:\\project-504\\mwr-retrieval-main\\results\\filtered_48layer_20260726\\predictions\\chengdu_filtered48_hybrid_predictions.npz",
+  "selected_cases": [
+    {
+      "index": 0,
+      "tag": "representative",
+      "timestamp": "2026_05_18 03:00:00",
+      "T_bias_K": 0.51686030626297,
+      "T_rmse_K": 2.1539618968963623,
+      "RH_bias_pct": -22.403093338012695,
+      "RH_rmse_pct": 32.4295654296875
+    },
+    {
+      "index": 2,
+      "tag": "best_overall",
+      "timestamp": "2026_05_26 02:00:00",
+      "T_bias_K": 0.3026053011417389,
+      "T_rmse_K": 0.9959536194801331,
+      "RH_bias_pct": -3.2795639038085938,
+      "RH_rmse_pct": 21.030376434326172
+    },
+    {
+      "index": 1,
+      "tag": "typical",
+      "timestamp": "2026_05_26 00:00:00",
+      "T_bias_K": -0.18624655902385712,
+      "T_rmse_K": 1.040332317352295,
+      "RH_bias_pct": 6.6419525146484375,
+      "RH_rmse_pct": 21.972431182861328
+    },
+    {
+      "index": 6,
+      "tag": "worst_T",
+      "timestamp": "2026_05_29 10:00:00",
+      "T_bias_K": 1.4844897985458374,
+      "T_rmse_K": 2.087871551513672,
+      "RH_bias_pct": -21.391082763671875,
+      "RH_rmse_pct": 29.395729064941406
+    },
+    {
+      "index": 10,
+      "tag": "worst_RH_alt",
+      "timestamp": "2026_05_29 14:00:00",
+      "T_bias_K": 0.4134330749511719,
+      "T_rmse_K": 1.0350261926651,
+      "RH_bias_pct": -20.98573112487793,
+      "RH_rmse_pct": 27.563961029052734
+    }
+  ],
+  "montage": "D:\\project-504\\mwr-retrieval-main\\results\\filtered_48layer_20260726\\figures\\profile_cases\\montage_cases.png",
+  "output_dir": "D:\\project-504\\mwr-retrieval-main\\results\\filtered_48layer_20260726\\figures\\profile_cases"
+}

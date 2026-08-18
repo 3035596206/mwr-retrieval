@@ -18,3 +18,12 @@ data/TAPE3/
 *.egg-info/
 
 .venv-wsl/
+
+# Local scratch / temp working dirs
+.pytest_cache/
+.matplotlib-cache/
+.ppt_edit_tmp_brnn_oem/
+.ppt_review_tmp/
+
+# Stray pip output file accidentally redirected to "=8.0.0"
+=8.0.0

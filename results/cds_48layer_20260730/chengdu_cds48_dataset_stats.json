@@ -1,0 +1,21 @@
+{
+  "status": "cds_netcdf_48layer_dataset",
+  "n_observations": 128,
+  "n_matched": 128,
+  "train": 74,
+  "val": 15,
+  "test": 39,
+  "n_layers": 48,
+  "deltas_mean": 0.0,
+  "deltas_max": 0.0,
+  "audit": {
+    "netcdf_files": 31,
+    "messages_processed": 384,
+    "requested_times": 128,
+    "valid_profiles": 128,
+    "rejected": {},
+    "site_altitude_m": 548.0,
+    "grid_lat": 30.75,
+    "grid_lon": 104.0
+  }
+}

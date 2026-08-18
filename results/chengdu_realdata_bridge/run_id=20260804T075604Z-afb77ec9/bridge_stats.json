@@ -1,0 +1,368 @@
+{
+  "status": "chengdu_realdata_bridge_ready",
+  "run_id": "20260804T075604Z-afb77ec9",
+  "generated_at_utc": "2026-08-04T07:56:13.599813+00:00",
+  "inputs": {
+    "obs_json": "/mnt/d/project-504-data/raw/mwr/chengdu/chengdu_obs_bt.json",
+    "era5_root": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels",
+    "instrument_id": "chengdu-21ch",
+    "site_id": "chengdu"
+  },
+  "configuration": {
+    "max_delta_hours": 1.0,
+    "site_altitude_m": 548.0,
+    "site_latitude": 30.63,
+    "site_longitude": 104.04,
+    "n_channels": 21,
+    "channel_frequencies_ghz": [
+      22.239999771118164,
+      23.040000915527344,
+      23.84000015258789,
+      25.440000534057617,
+      26.239999771118164,
+      27.84000015258789,
+      31.399999618530273,
+      51.2599983215332,
+      52.279998779296875,
+      53.86000061035156,
+      54.939998626708984,
+      56.65999984741211,
+      57.29999923706055,
+      58.0,
+      89.0,
+      184.30999755859375,
+      185.11000061035156,
+      186.30999755859375,
+      187.80999755859375,
+      190.30999755859375,
+      229.0
+    ],
+    "vertical_grid": "project 48-layer physical grid, 0-10 km AGL",
+    "n_layers": 48
+  },
+  "dataset": {
+    "n_observations_total": 163,
+    "n_observations_usable": 163,
+    "n_matched": 163,
+    "n_unmatched": 0,
+    "first_timestamp": "2026_05_13 16:00:00",
+    "last_timestamp": "2026_05_30 15:00:00",
+    "bt_shape": [
+      163,
+      21
+    ],
+    "T_shape": [
+      163,
+      48
+    ],
+    "RH_shape": [
+      163,
+      48
+    ],
+    "bt_range_k": [
+      19.72260093688965,
+      302.8721923828125
+    ],
+    "T_range_k": [
+      230.49085998535156,
+      300.88470458984375
+    ],
+    "RH_range_percent": [
+      3.1205828189849854,
+      99.87944030761719
+    ],
+    "layer_centers_m": [
+      250.0,
+      550.0,
+      650.0,
+      750.0,
+      850.0,
+      950.0,
+      1050.0,
+      1150.0,
+      1250.0,
+      1350.0,
+      1450.0,
+      1550.0,
+      1650.0,
+      1750.0,
+      1850.0,
+      1950.0,
+      2125.0,
+      2375.0,
+      2625.0,
+      2875.0,
+      3125.0,
+      3375.0,
+      3625.0,
+      3875.0,
+      4125.0,
+      4375.0,
+      4625.0,
+      4875.0,
+      5125.0,
+      5375.0,
+      5625.0,
+      5875.0,
+      6125.0,
+      6375.0,
+      6625.0,
+      6875.0,
+      7125.0,
+      7375.0,
+      7625.0,
+      7875.0,
+      8125.0,
+      8375.0,
+      8625.0,
+      8875.0,
+      9125.0,
+      9375.0,
+      9625.0,
+      9875.0
+    ],
+    "layer_edges_m": [
+      0.0,
+      500.0,
+      600.0,
+      700.0,
+      800.0,
+      900.0,
+      1000.0,
+      1100.0,
+      1200.0,
+      1300.0,
+      1400.0,
+      1500.0,
+      1600.0,
+      1700.0,
+      1800.0,
+      1900.0,
+      2000.0,
+      2250.0,
+      2500.0,
+      2750.0,
+      3000.0,
+      3250.0,
+      3500.0,
+      3750.0,
+      4000.0,
+      4250.0,
+      4500.0,
+      4750.0,
+      5000.0,
+      5250.0,
+      5500.0,
+      5750.0,
+      6000.0,
+      6250.0,
+      6500.0,
+      6750.0,
+      7000.0,
+      7250.0,
+      7500.0,
+      7750.0,
+      8000.0,
+      8250.0,
+      8500.0,
+      8750.0,
+      9000.0,
+      9250.0,
+      9500.0,
+      9750.0,
+      10000.0
+    ]
+  },
+  "obs_audit": {
+    "input_records": 163,
+    "usable_records": 163,
+    "skipped_records": [],
+    "channel_length_histogram": {
+      "21": 163
+    },
+    "first_timestamp": "2026-05-13T16:00:00",
+    "last_timestamp": "2026-05-30T15:00:00",
+    "source_file_count": 18,
+    "source_files": [
+      {
+        "file": "2026_05_13_utc_整点平均.xlsx",
+        "valid_records": 0
+      },
+      {
+        "file": "2026_05_14_utc_整点平均.xlsx",
+        "valid_records": 2
+      },
+      {
+        "file": "2026_05_15_utc_整点平均.xlsx",
+        "valid_records": 0
+      },
+      {
+        "file": "2026_05_16_utc_整点平均.xlsx",
+        "valid_records": 9
+      },
+      {
+        "file": "2026_05_17_utc_整点平均.xlsx",
+        "valid_records": 0
+      },
+      {
+        "file": "2026_05_18_utc_整点平均.xlsx",
+        "valid_records": 1
+      },
+      {
+        "file": "2026_05_19_utc_整点平均.xlsx",
+        "valid_records": 13
+      },
+      {
+        "file": "2026_05_20_utc_整点平均.xlsx",
+        "valid_records": 19
+      },
+      {
+        "file": "2026_05_21_utc_整点平均.xlsx",
+        "valid_records": 8
+      },
+      {
+        "file": "2026_05_22_utc_整点平均.xlsx",
+        "valid_records": 7
+      },
+      {
+        "file": "2026_05_23_utc_整点平均.xlsx",
+        "valid_records": 2
+      },
+      {
+        "file": "2026_05_24_utc_整点平均.xlsx",
+        "valid_records": 7
+      },
+      {
+        "file": "2026_05_25_utc_整点平均.xlsx",
+        "valid_records": 11
+      },
+      {
+        "file": "2026_05_26_utc_整点平均.xlsx",
+        "valid_records": 18
+      },
+      {
+        "file": "2026_05_27_utc_整点平均.xlsx",
+        "valid_records": 8
+      },
+      {
+        "file": "2026_05_28_utc_整点平均.xlsx",
+        "valid_records": 15
+      },
+      {
+        "file": "2026_05_29_utc_整点平均.xlsx",
+        "valid_records": 20
+      },
+      {
+        "file": "2026_05_30_utc_整点平均.xlsx",
+        "valid_records": 23
+      }
+    ]
+  },
+  "era5_audit": {
+    "era5_root": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels",
+    "files_total": 77,
+    "files_used": 18,
+    "used_files": [
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d13-13/era5_pressure_202605_d13-13.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d14-14/era5_pressure_202605_d14-14.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d15-15/era5_pressure_202605_d15-15.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d16-16/era5_pressure_202605_d16-16.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d17-17/era5_pressure_202605_d17-17.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d18-18/era5_pressure_202605_d18-18.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d19-19/era5_pressure_202605_d19-19.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d20-20/era5_pressure_202605_d20-20.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d21-21/era5_pressure_202605_d21-21.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d22-22/era5_pressure_202605_d22-22.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d23-23/era5_pressure_202605_d23-23.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d24-24/era5_pressure_202605_d24-24.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d25-25/era5_pressure_202605_d25-25.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d26-26/era5_pressure_202605_d26-26.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d27-27/era5_pressure_202605_d27-27.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d28-28/era5_pressure_202605_d28-28.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d29-29/era5_pressure_202605_d29-29.nc",
+      "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d30-30/era5_pressure_202605_d30-30.nc"
+    ],
+    "loaded_profiles": 410,
+    "rejected_profiles": {},
+    "requested_window_start": "2026-05-13T15:00:00",
+    "requested_window_end": "2026-05-30T16:00:00",
+    "target_lat": 30.63,
+    "target_lon": 104.04,
+    "grid_points_used": [
+      {
+        "lat": 30.75,
+        "lon": 104.0
+      }
+    ],
+    "mean_below_ground_pressure_levels_removed": 2.873170731707317,
+    "surface_anchor": "lowest valid above-ground ERA5 pressure level copied to 0 m AGL when needed"
+  },
+  "match_audit": {
+    "n_matched": 163,
+    "n_unmatched": 0,
+    "unmatched": [],
+    "unmatched_truncated": false,
+    "exact_matches": 163,
+    "nearest_matches": 0,
+    "delta_hours_mean": 0.0,
+    "delta_hours_max": 0.0,
+    "split": {
+      "strategy": "chronological_by_obs_date",
+      "train_dates": [
+        "2026-05-13",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-18",
+        "2026-05-19",
+        "2026-05-20",
+        "2026-05-21",
+        "2026-05-22",
+        "2026-05-23",
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "val_dates": [
+        "2026-05-26",
+        "2026-05-27"
+      ],
+      "test_dates": [
+        "2026-05-28",
+        "2026-05-29",
+        "2026-05-30"
+      ],
+      "train_samples": 84,
+      "val_samples": 24,
+      "test_samples": 55
+    }
+  },
+  "catalog_registration": {
+    "status": "registered",
+    "data_root": "/mnt/d/project-504-data",
+    "project_id": "project-brnn",
+    "processing_run_id": "20260804T075604Z-afb77ec9",
+    "input_asset_count": 19,
+    "input_asset_ids": [
+      "04928a83-23c1-4a13-bbd4-f2e9c2f7c1e5",
+      "0696ed7b-c227-4d08-a401-0a971f39dfbf",
+      "c9c79499-417f-4f79-9a23-b48c208875cd",
+      "236ff8eb-cae7-454e-ad43-dc59cde91884",
+      "5dddb2cb-30ff-47e6-8c87-b40c2f8627af",
+      "0a9b6103-05ab-48f4-a858-83c1caeb6d85",
+      "8eb5bc97-519b-4419-a2b4-1023d52da088",
+      "4faca01d-33cd-4efd-bcd0-29c76b5d88d2",
+      "03029e62-6c9c-4469-9919-a0f52c52c6d9",
+      "6e4ead96-1ddb-4464-95a1-d53d61d740d3",
+      "62045f2b-88ab-43e7-806e-ae6b181b77c6",
+      "476b9446-bf7f-451d-83cd-4de180a3dde7",
+      "54d0bfed-1d53-462b-aa93-fdcc21cb280b",
+      "1a9c5813-711d-4b2a-8071-7bd3ba8e86df",
+      "7f5c8365-5c86-4d40-be29-ed566be14071",
+      "096f2228-d544-4d9e-a9a6-27f0a3e16a42",
+      "2e53bf81-6ef2-4e01-b5a4-331691361b34",
+      "efc4d405-6536-447a-8f1b-bd2c127e261c",
+      "b6205a97-d114-465d-abb8-f2ce69771db0"
+    ],
+    "output_asset_id": "29f7f823-f9c5-4bbc-a9fb-f213b9dc7500",
+    "output_asset_uri": "legacy://results/chengdu_realdata_bridge/run_id=20260804T075213Z-1956834d/bridge_dataset.npz"
+  }
+}

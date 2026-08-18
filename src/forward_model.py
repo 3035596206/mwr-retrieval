@@ -7,9 +7,9 @@ with state vectors of varying dimensionality.
 Usage:
     from forward_model import ForwardModel
 
-    fm = ForwardModel(backend="simple")
-    tb = fm.simulate(profile)               # single profile → (14,)
-    tb_batch = fm.simulate_batch(profiles)   # (n,93) → (n,14)
+    fm = ForwardModel()
+    tb = fm.simulate(profile)               # single profile → (n_channels,)
+    tb_batch = fm.simulate_batch(profiles)   # (n,93) → (n,n_channels)
 """
 
 import numpy as np
@@ -30,21 +30,22 @@ class ForwardModel:
         - height: heights [m]
     """
 
-    def __init__(self, backend="simple", frequencies=None, **backend_kwargs):
+    def __init__(self, backend=None, frequencies=None, **backend_kwargs):
         """Initialise the forward model.
 
         Args:
-            backend: "simple", "monortm", or "pamtra"
+            backend: "arts", "simple", "monortm", or "pamtra".
+                     Defaults to config.DEFAULT_FORWARD_BACKEND ("arts").
             frequencies: list of channel frequencies [GHz].
-                         Defaults to config.ALL_CHANNELS (14-ch HATPRO).
+                         Defaults to config.DEFAULT_FORWARD_CHANNELS.
             **backend_kwargs: passed to get_backend (e.g. monortm_path=...)
         """
         from brightness_temp import get_backend
 
-        self._backend_name = backend
-        self.frequencies = frequencies or config.ALL_CHANNELS
+        self._backend_name = backend or config.DEFAULT_FORWARD_BACKEND
+        self.frequencies = list(frequencies if frequencies is not None else config.DEFAULT_FORWARD_CHANNELS)
         self.n_channels = len(self.frequencies)
-        self._backend = get_backend(backend, frequencies=self.frequencies, **backend_kwargs)
+        self._backend = get_backend(self._backend_name, frequencies=self.frequencies, **backend_kwargs)
 
     # ---------------------------------------------------------------
     # Public API
@@ -146,6 +147,6 @@ def forward_model_from_backend(backend_instance, frequencies=None):
     fm = ForwardModel.__new__(ForwardModel)
     fm._backend = backend_instance
     fm._backend_name = getattr(backend_instance, "__class__", type(backend_instance)).__name__
-    fm.frequencies = frequencies or config.ALL_CHANNELS
+    fm.frequencies = list(frequencies if frequencies is not None else config.DEFAULT_FORWARD_CHANNELS)
     fm.n_channels = len(fm.frequencies)
     return fm

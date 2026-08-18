@@ -1,5 +1,21 @@
 """Configuration for MWR atmospheric profile retrieval (Chapter 3)."""
 
+import os
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+
+def _path_for_wsl(path: Path) -> str:
+    """Convert a local Windows path to the matching WSL /mnt path."""
+    resolved = path.resolve()
+    if resolved.drive:
+        drive = resolved.drive.rstrip(":").lower()
+        rest = str(resolved)[3:].replace("\\", "/")
+        return f"/mnt/{drive}/{rest}"
+    return resolved.as_posix()
+
 # ============================================================
 # RPG HATPRO 14-channel frequencies (GHz)
 # ============================================================
@@ -31,6 +47,32 @@ CHENGDU_N_CHANNELS = len(CHENGDU_ALL_CHANNELS)
 CHENGDU_HATPRO14_IDX = list(range(14))
 CHENGDU_HIGH7_IDX = list(range(14, 21))
 CHENGDU_183GHZ_IDX = list(range(15, 20))
+
+# ============================================================
+# Forward-model policy
+# ============================================================
+# The project now aligns with the research-group ARTS workflow as the primary
+# radiative transfer backend. MonoRTM is kept only as a legacy comparison
+# backend for historical experiments.
+DEFAULT_FORWARD_BACKEND = "arts"
+DEFAULT_FORWARD_CHANNEL_SET = "chengdu_all21"
+DEFAULT_FORWARD_CHANNELS = CHENGDU_ALL_CHANNELS
+DEFAULT_FORWARD_N_CHANNELS = len(DEFAULT_FORWARD_CHANNELS)
+
+# Local ARTS runner. This machine already has WSL Ubuntu-24.04 with
+# pyarts 2.6.18 in /home/inkp/miniconda3/envs/arts. Override with
+# ARTS_FORWARD_MODEL_COMMAND when using a different workstation or agenda.
+DEFAULT_ARTS_WSL_DISTRO = "Ubuntu-24.04"
+DEFAULT_ARTS_PYTHON = "/home/inkp/miniconda3/envs/arts/bin/python"
+DEFAULT_ARTS_RUNNER = PROJECT_ROOT / "scripts" / "run_arts_profile.py"
+if os.name == "nt":
+    DEFAULT_ARTS_COMMAND = (
+        f"wsl -d {DEFAULT_ARTS_WSL_DISTRO} -- "
+        f"{DEFAULT_ARTS_PYTHON} {_path_for_wsl(DEFAULT_ARTS_RUNNER)} --server"
+    )
+else:
+    DEFAULT_ARTS_COMMAND = f"{DEFAULT_ARTS_PYTHON} {DEFAULT_ARTS_RUNNER.as_posix()} --server"
+DEFAULT_ARTS_COMMAND_PERSISTENT = True
 
 # 53-58 GHz channels (for 0-2km temperature model)
 V_SURFACE_CHANNELS = [53.86, 54.94, 56.66, 57.30, 58.00]

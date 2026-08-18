@@ -60,7 +60,8 @@ def select_samples(profiles, bt_sim, n_samples, seed=42):
 
 
 def run_retrievals(profiles, bt_sim, indices, noise_std=0.5, self_consistent=False, max_iter=15, verbose=False,
-                   forward_backend="simple", monortm_path=None, tape3_path=None):
+                   forward_backend=None, monortm_path=None, tape3_path=None,
+                   arts_command=None, elevation_angle_deg=90.0):
     """Run OEM retrieval on selected profiles.
 
     Args:
@@ -76,10 +77,13 @@ def run_retrievals(profiles, bt_sim, indices, noise_std=0.5, self_consistent=Fal
         x_a_list: list of background state vectors
         x_true_list: list of truth state vectors
     """
-    if forward_backend == "monortm":
-        fm = ForwardModel(backend="monortm", monortm_path=monortm_path, tape3_path=tape3_path)
-    else:
-        fm = ForwardModel(backend="simple")
+    fm = ForwardModel(
+        backend=forward_backend or config.DEFAULT_FORWARD_BACKEND,
+        monortm_path=monortm_path,
+        tape3_path=tape3_path,
+        arts_command=arts_command,
+        elevation_angle_deg=elevation_angle_deg,
+    )
     packer = make_default_packer()
     S_a = build_sa_exponential(packer, sigma_T=2.0, sigma_RH=8.0)
     S_e = build_se_diagonal(fm, sigma_K=1.5, sigma_V=0.5)
@@ -324,17 +328,24 @@ def main():
     parser.add_argument("--verbose", action="store_true",
                         help="Print per-profile diagnostics")
     parser.add_argument("--self-consistent", action="store_true",
-                        help="Use self-consistent BT (simple RTM) instead of stored BT")
-    parser.add_argument("--forward", type=str, default="simple",
-                        choices=["simple", "monortm"],
-                        help="Forward model backend (default: simple)")
+                        help="Use self-consistent BT from the selected forward model instead of stored BT")
+    parser.add_argument("--forward", type=str, default=config.DEFAULT_FORWARD_BACKEND,
+                        choices=["arts", "simple", "monortm"],
+                        help=f"Forward model backend (default: {config.DEFAULT_FORWARD_BACKEND})")
     parser.add_argument("--monortm-path", type=str,
                         default="/mnt/d/project-504/mwr-retrieval-main/bin/monortm_linux",
                         help="Path to MonoRTM executable")
     parser.add_argument("--tape3-path", type=str,
                         default="/mnt/d/project-504/mwr-retrieval-main/data/TAPE3/TAPE3_bin",
                         help="Path to TAPE3 binary file")
+    parser.add_argument("--arts-command", type=str, default=None,
+                        help="External ARTS runner command; reads profile JSON on stdin")
+    parser.add_argument("--elevation-angle", type=float, default=90.0,
+                        help="Ground-based elevation angle for ARTS [deg]")
     args = parser.parse_args()
+
+    if args.forward == "arts":
+        args.self_consistent = True
 
     exp_name = "oem_201301"
     if args.self_consistent:
@@ -365,6 +376,7 @@ def main():
         self_consistent=args.self_consistent,
         forward_backend=args.forward,
         monortm_path=args.monortm_path, tape3_path=args.tape3_path,
+        arts_command=args.arts_command, elevation_angle_deg=args.elevation_angle,
     )
 
     # Compute statistics

@@ -1,0 +1,370 @@
+{
+  "status": "chengdu_realdata_arts_validation_complete",
+  "run_id": "20260804T080315Z-ccf49d3d",
+  "generated_at_utc": "2026-08-04T08:03:17.951303+00:00",
+  "bridge_dataset": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_bridge/run_id=20260804T075728Z-d5b0fa9c/bridge_dataset.npz",
+  "bridge_run_id": "20260804T075728Z-d5b0fa9c",
+  "validation_scope": "clear_sky_arts_forward_observed_minus_background_audit",
+  "dataset": {
+    "n_bridge_samples": 163,
+    "n_requested": 5,
+    "n_success": 5,
+    "n_failed": 0,
+    "sample_indices": [
+      0,
+      40,
+      81,
+      121,
+      162
+    ],
+    "success_indices": [
+      0,
+      40,
+      81,
+      121,
+      162
+    ],
+    "first_timestamp": "2026_05_13 16:00:00",
+    "last_timestamp": "2026_05_30 15:00:00"
+  },
+  "forward_model": {
+    "backend": "arts",
+    "clear_sky": true,
+    "cloud_liquid_water_g_m3": "zero profile",
+    "n_channels": 21,
+    "channel_frequencies_ghz": [
+      22.239999771118164,
+      23.040000915527344,
+      23.84000015258789,
+      25.440000534057617,
+      26.239999771118164,
+      27.84000015258789,
+      31.399999618530273,
+      51.2599983215332,
+      52.279998779296875,
+      53.86000061035156,
+      54.939998626708984,
+      56.65999984741211,
+      57.29999923706055,
+      58.0,
+      89.0,
+      184.30999755859375,
+      185.11000061035156,
+      186.30999755859375,
+      187.80999755859375,
+      190.30999755859375,
+      229.0
+    ],
+    "height_grid_m": [
+      250.0,
+      550.0,
+      650.0,
+      750.0,
+      850.0,
+      950.0,
+      1050.0,
+      1150.0,
+      1250.0,
+      1350.0,
+      1450.0,
+      1550.0,
+      1650.0,
+      1750.0,
+      1850.0,
+      1950.0,
+      2125.0,
+      2375.0,
+      2625.0,
+      2875.0,
+      3125.0,
+      3375.0,
+      3625.0,
+      3875.0,
+      4125.0,
+      4375.0,
+      4625.0,
+      4875.0,
+      5125.0,
+      5375.0,
+      5625.0,
+      5875.0,
+      6125.0,
+      6375.0,
+      6625.0,
+      6875.0,
+      7125.0,
+      7375.0,
+      7625.0,
+      7875.0,
+      8125.0,
+      8375.0,
+      8625.0,
+      8875.0,
+      9125.0,
+      9375.0,
+      9625.0,
+      9875.0
+    ]
+  },
+  "performance": {
+    "elapsed_sec": 0.8838582038879395,
+    "mean_sample_sec": 0.17668628692626953,
+    "first_sample_sec": 0.8634567260742188,
+    "remaining_mean_sample_sec": 0.0049936771392822266
+  },
+  "failures": [],
+  "residual_definition": "obs_minus_arts_k",
+  "residual_stats": {
+    "overall": {
+      "bias_obs_minus_arts_k": 7.787554302129088,
+      "rmse_obs_minus_arts_k": 10.88050972603585,
+      "std_obs_minus_arts_k": 7.598650530834503,
+      "median_abs_obs_minus_arts_k": 5.278830124732501
+    },
+    "bands": {
+      "K_22_31GHz": {
+        "n_channels": 7,
+        "bias_obs_minus_arts_k": 7.264139676969877,
+        "rmse_obs_minus_arts_k": 8.086321789247332,
+        "std_obs_minus_arts_k": 3.5525870619491027
+      },
+      "V_51_58GHz": {
+        "n_channels": 7,
+        "bias_obs_minus_arts_k": 8.29600839725651,
+        "rmse_obs_minus_arts_k": 10.712785103030651,
+        "std_obs_minus_arts_k": 6.777905969867456
+      },
+      "W_89GHz": {
+        "n_channels": 1,
+        "bias_obs_minus_arts_k": 24.026850885732276,
+        "rmse_obs_minus_arts_k": 28.10231165407332,
+        "std_obs_minus_arts_k": 14.57567689054101
+      },
+      "G_183GHz": {
+        "n_channels": 5,
+        "bias_obs_minus_arts_k": 2.329919432035399,
+        "rmse_obs_minus_arts_k": 2.651147428644637,
+        "std_obs_minus_arts_k": 1.2649340412183216
+      },
+      "window_229GHz": {
+        "n_channels": 1,
+        "bias_obs_minus_arts_k": 18.94115577921687,
+        "rmse_obs_minus_arts_k": 20.003648240260176,
+        "std_obs_minus_arts_k": 6.432616937724747
+      }
+    },
+    "channels": [
+      {
+        "channel_index": 0,
+        "frequency_ghz": 22.239999771118164,
+        "bias_obs_minus_arts_k": 7.504893854885395,
+        "rmse_obs_minus_arts_k": 7.69739137255746,
+        "std_obs_minus_arts_k": 1.7106730164544697,
+        "median_abs_obs_minus_arts_k": 7.845602828959059,
+        "min_obs_minus_arts_k": 5.1188346237689615,
+        "max_obs_minus_arts_k": 9.901887721485053
+      },
+      {
+        "channel_index": 1,
+        "frequency_ghz": 23.040000915527344,
+        "bias_obs_minus_arts_k": 8.551751642104062,
+        "rmse_obs_minus_arts_k": 8.892476705443444,
+        "std_obs_minus_arts_k": 2.4379675569262083,
+        "median_abs_obs_minus_arts_k": 9.770702145118854,
+        "min_obs_minus_arts_k": 5.278830124732501,
+        "max_obs_minus_arts_k": 11.341741356083787
+      },
+      {
+        "channel_index": 2,
+        "frequency_ghz": 23.84000015258789,
+        "bias_obs_minus_arts_k": 9.056670819824204,
+        "rmse_obs_minus_arts_k": 10.031605880970204,
+        "std_obs_minus_arts_k": 4.313911242997562,
+        "median_abs_obs_minus_arts_k": 8.529716368334846,
+        "min_obs_minus_arts_k": 2.491595287702566,
+        "max_obs_minus_arts_k": 14.279463163172558
+      },
+      {
+        "channel_index": 3,
+        "frequency_ghz": 25.440000534057617,
+        "bias_obs_minus_arts_k": 8.129878455885775,
+        "rmse_obs_minus_arts_k": 8.695014589921632,
+        "std_obs_minus_arts_k": 3.083562065448721,
+        "median_abs_obs_minus_arts_k": 6.12286588634619,
+        "min_obs_minus_arts_k": 5.333232608307256,
+        "max_obs_minus_arts_k": 12.258875714801853
+      },
+      {
+        "channel_index": 4,
+        "frequency_ghz": 26.239999771118164,
+        "bias_obs_minus_arts_k": 5.040491412862638,
+        "rmse_obs_minus_arts_k": 5.6102897806519705,
+        "std_obs_minus_arts_k": 2.46349299567625,
+        "median_abs_obs_minus_arts_k": 4.53359479982948,
+        "min_obs_minus_arts_k": 2.178859279783225,
+        "max_obs_minus_arts_k": 8.355518178437116
+      },
+      {
+        "channel_index": 5,
+        "frequency_ghz": 27.84000015258789,
+        "bias_obs_minus_arts_k": 6.935478308594656,
+        "rmse_obs_minus_arts_k": 7.890202787903887,
+        "std_obs_minus_arts_k": 3.7622387836578497,
+        "median_abs_obs_minus_arts_k": 5.35836068189807,
+        "min_obs_minus_arts_k": 3.158080506300603,
+        "max_obs_minus_arts_k": 11.503542147377967
+      },
+      {
+        "channel_index": 6,
+        "frequency_ghz": 31.399999618530273,
+        "bias_obs_minus_arts_k": 5.629813244632401,
+        "rmse_obs_minus_arts_k": 7.030446495665595,
+        "std_obs_minus_arts_k": 4.210983348219065,
+        "median_abs_obs_minus_arts_k": 3.248260515811431,
+        "min_obs_minus_arts_k": 1.1223731706758002,
+        "max_obs_minus_arts_k": 11.323981460338185
+      },
+      {
+        "channel_index": 7,
+        "frequency_ghz": 51.2599983215332,
+        "bias_obs_minus_arts_k": 16.95855338739112,
+        "rmse_obs_minus_arts_k": 17.811455176238983,
+        "std_obs_minus_arts_k": 5.445677414443091,
+        "median_abs_obs_minus_arts_k": 14.205973052416425,
+        "min_obs_minus_arts_k": 11.679295132312077,
+        "max_obs_minus_arts_k": 24.816691476337468
+      },
+      {
+        "channel_index": 8,
+        "frequency_ghz": 52.279998779296875,
+        "bias_obs_minus_arts_k": 14.939565189349906,
+        "rmse_obs_minus_arts_k": 16.2060503319511,
+        "std_obs_minus_arts_k": 6.280562022215594,
+        "median_abs_obs_minus_arts_k": 14.61954215616717,
+        "min_obs_minus_arts_k": 6.972682228280888,
+        "max_obs_minus_arts_k": 23.02535144866482
+      },
+      {
+        "channel_index": 9,
+        "frequency_ghz": 53.86000061035156,
+        "bias_obs_minus_arts_k": 13.063873650864712,
+        "rmse_obs_minus_arts_k": 13.105902732947639,
+        "std_obs_minus_arts_k": 1.0487572072348519,
+        "median_abs_obs_minus_arts_k": 12.697841353047068,
+        "min_obs_minus_arts_k": 11.847259833080415,
+        "max_obs_minus_arts_k": 14.444034877472802
+      },
+      {
+        "channel_index": 10,
+        "frequency_ghz": 54.939998626708984,
+        "bias_obs_minus_arts_k": 5.45385472245124,
+        "rmse_obs_minus_arts_k": 5.51576172934067,
+        "std_obs_minus_arts_k": 0.8240728858878249,
+        "median_abs_obs_minus_arts_k": 5.547457425026778,
+        "min_obs_minus_arts_k": 4.166499037792164,
+        "max_obs_minus_arts_k": 6.4674431257982405
+      },
+      {
+        "channel_index": 11,
+        "frequency_ghz": 56.65999984741211,
+        "bias_obs_minus_arts_k": 2.7546048947191593,
+        "rmse_obs_minus_arts_k": 2.8730807593874292,
+        "std_obs_minus_arts_k": 0.8165445021255704,
+        "median_abs_obs_minus_arts_k": 2.874251832861887,
+        "min_obs_minus_arts_k": 1.6096599450185067,
+        "max_obs_minus_arts_k": 3.8740759089698713
+      },
+      {
+        "channel_index": 12,
+        "frequency_ghz": 57.29999923706055,
+        "bias_obs_minus_arts_k": 2.6319031467995844,
+        "rmse_obs_minus_arts_k": 2.7337333934312045,
+        "std_obs_minus_arts_k": 0.7391779841332763,
+        "median_abs_obs_minus_arts_k": 2.902077661969656,
+        "min_obs_minus_arts_k": 1.2747926107172702,
+        "max_obs_minus_arts_k": 3.3347672112089413
+      },
+      {
+        "channel_index": 13,
+        "frequency_ghz": 58.0,
+        "bias_obs_minus_arts_k": 2.2697037892198524,
+        "rmse_obs_minus_arts_k": 2.355025386792818,
+        "std_obs_minus_arts_k": 0.6281634195332513,
+        "median_abs_obs_minus_arts_k": 2.252000851719629,
+        "min_obs_minus_arts_k": 1.2354710715304122,
+        "max_obs_minus_arts_k": 3.20282746877632
+      },
+      {
+        "channel_index": 14,
+        "frequency_ghz": 89.0,
+        "bias_obs_minus_arts_k": 24.026850885732276,
+        "rmse_obs_minus_arts_k": 28.10231165407332,
+        "std_obs_minus_arts_k": 14.57567689054101,
+        "median_abs_obs_minus_arts_k": 14.710503505488077,
+        "min_obs_minus_arts_k": 8.354718360289198,
+        "max_obs_minus_arts_k": 44.252529803744466
+      },
+      {
+        "channel_index": 15,
+        "frequency_ghz": 184.30999755859375,
+        "bias_obs_minus_arts_k": 0.9903891906084027,
+        "rmse_obs_minus_arts_k": 1.4102260586037034,
+        "std_obs_minus_arts_k": 1.0039256882314394,
+        "median_abs_obs_minus_arts_k": 0.8609721211921055,
+        "min_obs_minus_arts_k": -0.08657233402391284,
+        "max_obs_minus_arts_k": 2.8664721472933934
+      },
+      {
+        "channel_index": 16,
+        "frequency_ghz": 185.11000061035156,
+        "bias_obs_minus_arts_k": 2.1186419115350987,
+        "rmse_obs_minus_arts_k": 2.3819839223612007,
+        "std_obs_minus_arts_k": 1.0886706834824538,
+        "median_abs_obs_minus_arts_k": 1.9725231740512754,
+        "min_obs_minus_arts_k": 0.3150573671019288,
+        "max_obs_minus_arts_k": 3.5815413235651476
+      },
+      {
+        "channel_index": 17,
+        "frequency_ghz": 186.30999755859375,
+        "bias_obs_minus_arts_k": 2.4275481671507464,
+        "rmse_obs_minus_arts_k": 2.5524559025533766,
+        "std_obs_minus_arts_k": 0.7886957782584013,
+        "median_abs_obs_minus_arts_k": 2.2614816399456004,
+        "min_obs_minus_arts_k": 1.3452746745583113,
+        "max_obs_minus_arts_k": 3.655989539756547
+      },
+      {
+        "channel_index": 18,
+        "frequency_ghz": 187.80999755859375,
+        "bias_obs_minus_arts_k": 2.687460484742792,
+        "rmse_obs_minus_arts_k": 2.8170577184875483,
+        "std_obs_minus_arts_k": 0.8446125337906782,
+        "median_abs_obs_minus_arts_k": 3.060660910752347,
+        "min_obs_minus_arts_k": 1.3252677209877106,
+        "max_obs_minus_arts_k": 3.721248731637104
+      },
+      {
+        "channel_index": 19,
+        "frequency_ghz": 190.30999755859375,
+        "bias_obs_minus_arts_k": 3.425557406139956,
+        "rmse_obs_minus_arts_k": 3.609637540740528,
+        "std_obs_minus_arts_k": 1.137998081177216,
+        "median_abs_obs_minus_arts_k": 3.818914439409241,
+        "min_obs_minus_arts_k": 1.7691899112410283,
+        "max_obs_minus_arts_k": 4.963411563528609
+      },
+      {
+        "channel_index": 20,
+        "frequency_ghz": 229.0,
+        "bias_obs_minus_arts_k": 18.94115577921687,
+        "rmse_obs_minus_arts_k": 20.003648240260176,
+        "std_obs_minus_arts_k": 6.432616937724747,
+        "median_abs_obs_minus_arts_k": 18.76680146346783,
+        "min_obs_minus_arts_k": 9.69257295440039,
+        "max_obs_minus_arts_k": 28.37612709424198
+      }
+    ]
+  },
+  "interpretation_note": "Large residuals are expected where clouds, calibration offsets, channel response, or site/ERA5 representativeness differ; this run validates the real-data-to-ARTS interface, not final retrieval accuracy."
+}

@@ -293,7 +293,7 @@ python3 -u dl_weekly.py  # 自动跳过 2013-2014，从 2015-01 开始
 ### CDS API 方案（当前采用）
 
 - 旧 key `e088c69b` 和 `a2179a74` 已 403
-- **新 key**：`8dfcb2f7-7a3f-46be-9907-c2958db7b0b6`
+- **新 key**：`8dfcb2f7-****`（完整 key 已从文档移除，请在 CDS 后台轮换）
 - 2026-05-26 测试：1天×1层×1变量 28KB，~11s → 可用
 - 许可证：已接受 `reanalysis-era5-pressure-levels` 和 `reanalysis-era5-single-levels`
 

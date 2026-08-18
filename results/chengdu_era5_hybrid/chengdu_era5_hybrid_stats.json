@@ -1,0 +1,39 @@
+{
+  "status": "best_current_chengdu_hybrid",
+  "temperature_model": "all21 Ridge + 5 EOF",
+  "humidity_model": "all21 BRNN ensemble (4 seeds)",
+  "n_test_samples": 48,
+  "test_dates": [
+    "20260528",
+    "20260529",
+    "20260530"
+  ],
+  "metrics": {
+    "T": {
+      "rmse": 1.4793637990951538,
+      "mae": 1.1443766355514526,
+      "bias": 0.7239246368408203
+    },
+    "RH": {
+      "rmse": 20.96634292602539,
+      "mae": 16.25105094909668,
+      "bias": -0.18912836909294128
+    }
+  },
+  "ridge_prediction_source": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_ridge_all21\\chengdu_era5_ridge_predictions.npz",
+  "brnn_prediction_sources": [
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_all21\\chengdu_era5_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_all21_seed1\\chengdu_era5_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_all21_seed21\\chengdu_era5_brnn_predictions.npz",
+    "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_all21_seed7\\chengdu_era5_brnn_predictions.npz"
+  ],
+  "deployment_components": {
+    "T_model": "D:\\project-504\\mwr-retrieval-main\\results\\chengdu_era5_ridge_all21\\chengdu_era5_ridge_model.npz",
+    "RH_model_dirs": [
+      "D:\\project-504\\mwr-retrieval-main\\models_chengdu_era5_all21",
+      "D:\\project-504\\mwr-retrieval-main\\models_chengdu_era5_all21_seed1",
+      "D:\\project-504\\mwr-retrieval-main\\models_chengdu_era5_all21_seed7",
+      "D:\\project-504\\mwr-retrieval-main\\models_chengdu_era5_all21_seed21"
+    ]
+  }
+}

@@ -20,25 +20,20 @@ sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from train_chengdu_brnn import load_observations, sounding_time_from_name
 from train_chengdu_era5_brnn import chronological_date_split
+from mwr_retrieval.grids import build_layer48_grid, layer_average
+from mwr_retrieval.thermodynamics import (
+    Q_FLOOR,
+    rh_to_specific_humidity,
+    saturation_vapor_pressure_hpa,
+    specific_humidity_to_rh,
+)
 
 
 G = 9.80665
-EPSILON = 0.622
-Q_FLOOR = 1e-8
 
 
 def build_layer_grid() -> tuple[np.ndarray, np.ndarray]:
-    edges = np.concatenate(
-        [
-            np.asarray([0.0, 500.0]),
-            np.arange(600.0, 2000.0 + 1.0, 100.0),
-            np.arange(2250.0, 10000.0 + 1.0, 250.0),
-        ]
-    ).astype(np.float32)
-    centers = ((edges[:-1] + edges[1:]) / 2.0).astype(np.float32)
-    if len(edges) != 49 or len(centers) != 48:
-        raise RuntimeError(f"Expected 49 edges and 48 layers, got {len(edges)} and {len(centers)}")
-    return edges, centers
+    return build_layer48_grid()
 
 
 def saturation_vapor_pressure_hpa(temperature_k: np.ndarray) -> np.ndarray:
@@ -71,13 +66,7 @@ def specific_humidity_to_rh(
 def layer_average_from_interpolated(
     source_height: np.ndarray, source_value: np.ndarray, edges: np.ndarray
 ) -> np.ndarray:
-    values = []
-    for low, high in zip(edges[:-1], edges[1:]):
-        interior = source_height[(source_height > low) & (source_height < high)]
-        sample_height = np.concatenate(([low], interior, [high]))
-        sample_value = np.interp(sample_height, source_height, source_value)
-        values.append(float(np.trapezoid(sample_value, sample_height) / (high - low)))
-    return np.asarray(values, dtype=np.float32)
+    return layer_average(source_height, source_value, edges)
 
 
 def raw_profile_to_layers(

@@ -6,7 +6,8 @@ Sweeps over:
   - S_e K-band / V-band weight ratios
   - Channel subset experiments (K-only, V-only, full)
 
-Uses simple RTM for speed. Outputs CSV and summary table.
+Uses the configured forward backend. ARTS is the project default; pass
+``--forward simple`` for quick algorithm-only scans.
 
 Usage:
   python scripts/scan_rh_sensitivity.py --n-samples 30
@@ -119,6 +120,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--n-samples", type=int, default=30)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--forward", default=config.DEFAULT_FORWARD_BACKEND,
+                        choices=["arts", "simple", "monortm"])
+    parser.add_argument("--arts-command", default=None,
+                        help="External ARTS runner command; reads profile JSON on stdin")
+    parser.add_argument("--elevation-angle", type=float, default=90.0,
+                        help="Ground-based elevation angle for ARTS [deg]")
     args = parser.parse_args()
 
     np.random.seed(args.seed)
@@ -126,7 +133,11 @@ def main():
     n_total = profiles["T"].shape[0]
     indices = sorted(np.random.choice(n_total, min(args.n_samples, n_total), replace=False))
 
-    fm = ForwardModel(backend="simple")
+    fm = ForwardModel(
+        backend=args.forward,
+        arts_command=args.arts_command,
+        elevation_angle_deg=args.elevation_angle,
+    )
     packer = make_default_packer()
     all_results = []
 
@@ -189,7 +200,12 @@ def main():
     }
 
     for name, freqs in channel_configs.items():
-        fm_sub = ForwardModel(backend="simple", frequencies=freqs)
+        fm_sub = ForwardModel(
+            backend=args.forward,
+            frequencies=freqs,
+            arts_command=args.arts_command,
+            elevation_angle_deg=args.elevation_angle,
+        )
         S_e_sub = build_se_diagonal(fm_sub, sigma_K=1.5, sigma_V=0.5)
         label = f"ch_{name}"
         r = run_one_config(profiles, indices, fm_sub, packer, S_a_best, S_e_sub, label)

@@ -1,0 +1,29 @@
+{
+  "status": "era5_trained_brnn_independent_sounding_evaluation",
+  "model_source": "results/era5_brnn_rerun_20260818 (trained on CDS ERA5 48-layer labels, 74/15/39)",
+  "evaluation_label": "Wenjiang radiosonde station 56187 (2026-05), 48-layer grid",
+  "full_matched": {
+    "n_samples": 61,
+    "n_groups": 17,
+    "T_rmse_k": 1.395,
+    "T_bias_k": 0.638,
+    "T_clim_rmse_k": 2.844,
+    "RH_rmse_pct": 20.71,
+    "RH_bias_pct": -5.46,
+    "RH_clim_rmse_pct": 26.0,
+    "note": "Includes timestamps that may overlap the ERA5 chronological training period."
+  },
+  "held_out_test_period": {
+    "n_samples": 23,
+    "T_rmse_k": 1.616,
+    "T_bias_k": 0.82,
+    "RH_rmse_pct": 27.1,
+    "RH_bias_pct": -13.67,
+    "note": "Soundings whose timestamps fall in the bridge dataset's held-out test split (55 timestamps)."
+  },
+  "reference_sounding_trained_stable": {
+    "T_rmse_k": 1.6,
+    "RH_rmse_pct": 22.25,
+    "source": "results/filtered_48layer_20260805_rhtrend_calibrated"
+  }
+}

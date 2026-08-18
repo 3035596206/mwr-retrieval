@@ -1,0 +1,163 @@
+{
+  "manifest_version": 1,
+  "run_id": "20260804T075213Z-1956834d",
+  "pipeline": "scripts/build_chengdu_realdata_bridge.py",
+  "generated_at_utc": "2026-08-04T07:52:21.894321+00:00",
+  "artifact_type": "dataset",
+  "outputs": {
+    "dataset": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_bridge/run_id=20260804T075213Z-1956834d/bridge_dataset.npz",
+    "stats": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_bridge/run_id=20260804T075213Z-1956834d/bridge_stats.json"
+  },
+  "sources": {
+    "obs_json": {
+      "path": "/mnt/d/project-504-data/raw/mwr/chengdu/chengdu_obs_bt.json",
+      "size_bytes": 87434,
+      "mtime_utc": "2026-07-27T07:55:03.610671+00:00",
+      "sha256": "595c4649eda6ff7cd4e563451d208f472668e88b4b8b2f1f58df96dc465fed41"
+    },
+    "era5_pressure_files": [
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d13-13/era5_pressure_202605_d13-13.nc",
+        "size_bytes": 1031299,
+        "mtime_utc": "2026-07-29T10:36:15.342350+00:00",
+        "sha256": "9729931aa18a0e611da9e8b71ae14a27be9281194e260c3ee03e7e10cffd1e20"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d14-14/era5_pressure_202605_d14-14.nc",
+        "size_bytes": 1022518,
+        "mtime_utc": "2026-07-29T10:42:15.166312+00:00",
+        "sha256": "74a0bdc2d2ccd1ae3910a8900c9dfa11c4dc3246ebbd43ba7c56c549b7cf8700"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d15-15/era5_pressure_202605_d15-15.nc",
+        "size_bytes": 1017354,
+        "mtime_utc": "2026-07-29T10:49:08.433881+00:00",
+        "sha256": "4ea84120c5e3e2b25df7fcf9f93dbcf0eae67f73357d7b38ece0801401823148"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d16-16/era5_pressure_202605_d16-16.nc",
+        "size_bytes": 1017509,
+        "mtime_utc": "2026-07-29T11:00:43.160078+00:00",
+        "sha256": "7867cea23e2a3796e334141bf04e576498e84b81b338a7ca81a9b713f8328d62"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d17-17/era5_pressure_202605_d17-17.nc",
+        "size_bytes": 1027233,
+        "mtime_utc": "2026-07-29T11:10:42.238509+00:00",
+        "sha256": "a999b5d165fffded38e778848189f8aed29a471fd57b40ba8067dd6b92445134"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d18-18/era5_pressure_202605_d18-18.nc",
+        "size_bytes": 1027473,
+        "mtime_utc": "2026-07-29T11:16:27.060918+00:00",
+        "sha256": "d470d6084c008f98072e16089b4eaae223518fff0fcd5402630a5a4434fedc03"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d19-19/era5_pressure_202605_d19-19.nc",
+        "size_bytes": 1042552,
+        "mtime_utc": "2026-07-29T11:25:54.535809+00:00",
+        "sha256": "ba4b03821a0c02d6052f4410e23709b95d9c2017c48e2d74bbac36a3415e71ee"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d20-20/era5_pressure_202605_d20-20.nc",
+        "size_bytes": 1039616,
+        "mtime_utc": "2026-07-29T11:34:10.306550+00:00",
+        "sha256": "9bad0c46ae5e7c334dc12eea7728b392a5ffd7cf9bd07d44b73ba05d03b00820"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d21-21/era5_pressure_202605_d21-21.nc",
+        "size_bytes": 1034625,
+        "mtime_utc": "2026-07-30T06:16:40.703291+00:00",
+        "sha256": "70da3179c7a9b03c190abd2b9a0e624c035505be04e9b3e965f8148e6ff06cd0"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d22-22/era5_pressure_202605_d22-22.nc",
+        "size_bytes": 1033126,
+        "mtime_utc": "2026-07-30T07:24:29.258440+00:00",
+        "sha256": "ec4f36ddefd540e7e2a75b4a9a95ac388e7d629921f4aca1aba0e2f3a8a6ca05"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d23-23/era5_pressure_202605_d23-23.nc",
+        "size_bytes": 1024511,
+        "mtime_utc": "2026-07-30T08:26:14.921469+00:00",
+        "sha256": "abb36fe8250a04d037728e5c37d49d3207ba11c1ad68e07250876a95b69db79c"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d24-24/era5_pressure_202605_d24-24.nc",
+        "size_bytes": 1025643,
+        "mtime_utc": "2026-07-30T08:42:24.437388+00:00",
+        "sha256": "a763ede7f6f432a5937ac838cb7001565ee8a334cca8455a0cdd19f48d921bc4"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d25-25/era5_pressure_202605_d25-25.nc",
+        "size_bytes": 1033291,
+        "mtime_utc": "2026-07-30T09:15:38.726306+00:00",
+        "sha256": "380dcc2bd4a3935f781d7d24231c8e5f65dc7aa79414f4f03fbb2c61a68975a9"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d26-26/era5_pressure_202605_d26-26.nc",
+        "size_bytes": 1020967,
+        "mtime_utc": "2026-07-30T09:46:50.735924+00:00",
+        "sha256": "652705e2e36ad9a5a165d207f7f33132acc9b33346fbd79e22d7c7115f51ee7d"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d27-27/era5_pressure_202605_d27-27.nc",
+        "size_bytes": 1023002,
+        "mtime_utc": "2026-07-30T09:55:59.369570+00:00",
+        "sha256": "d4d0eeeec20ce8cec2bb2b6ee3a3e7388c5cf93f4cdca8983e47efa9a8d01189"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d28-28/era5_pressure_202605_d28-28.nc",
+        "size_bytes": 1033846,
+        "mtime_utc": "2026-07-30T10:09:07.069051+00:00",
+        "sha256": "ed1721310e11f40a3245ccfa6f3c3088aeed58e622cdc3337b6823bd0d66df91"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d29-29/era5_pressure_202605_d29-29.nc",
+        "size_bytes": 1029482,
+        "mtime_utc": "2026-07-30T10:22:13.027016+00:00",
+        "sha256": "6189e4f8173aeaaea702590924a7bde81b31bcab38fcd90e5dd64ce30d8911db"
+      },
+      {
+        "path": "/mnt/d/project-504-data/raw/era5/cds/chengdu/pressure-levels/year=2026/month=05/part=d30-30/era5_pressure_202605_d30-30.nc",
+        "size_bytes": 1017798,
+        "mtime_utc": "2026-07-30T10:39:25.309963+00:00",
+        "sha256": "bb896eca09b6344a00a6f255ee674afe48bf03f5deaef80d9ff22ee254d73cea"
+      }
+    ]
+  },
+  "summary": {
+    "status": "chengdu_realdata_bridge_ready",
+    "n_matched": 163,
+    "n_channels": 21,
+    "n_layers": 48,
+    "split": {
+      "strategy": "chronological_by_obs_date",
+      "train_dates": [
+        "2026-05-13",
+        "2026-05-15",
+        "2026-05-16",
+        "2026-05-18",
+        "2026-05-19",
+        "2026-05-20",
+        "2026-05-21",
+        "2026-05-22",
+        "2026-05-23",
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "val_dates": [
+        "2026-05-26",
+        "2026-05-27"
+      ],
+      "test_dates": [
+        "2026-05-28",
+        "2026-05-29",
+        "2026-05-30"
+      ],
+      "train_samples": 84,
+      "val_samples": 24,
+      "test_samples": 55
+    }
+  }
+}

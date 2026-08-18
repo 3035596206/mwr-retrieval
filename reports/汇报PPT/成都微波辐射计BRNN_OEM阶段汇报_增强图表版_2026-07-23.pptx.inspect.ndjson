@@ -1,0 +1,672 @@
+{"kind":"deck","id":"pr/htiexy","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"标题幻灯片","type":"title","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"subtitle","type":"subtitle","textPreview":"单击此处编辑母版副标题样式"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"标题和内容","type":"obj","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"2","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"节标题","type":"secHead","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"两栏内容","type":"twoObj","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"2","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"3","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"比较","type":"twoTxTwoObj","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式"},{"name":"3","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式"},{"name":"5","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"仅标题","type":"titleOnly","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout7.xml","name":"空白","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout8.xml","name":"内容与标题","type":"objTx","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"2","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout9.xml","name":"图片与标题","type":"picTx","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"picture","type":"picture"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout10.xml","name":"标题和竖排文字","type":"vertTx","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout11.xml","name":"竖排标题与文本","type":"vertTitleAndTx","placeholders":[{"name":"title","type":"title","textPreview":"单击此处编辑母版标题样式"},{"name":"body","type":"body","textPreview":"单击此处编辑母版文本样式 | 二级 | 三级 | 四级 | 五级"},{"name":"dateTime","type":"dateTime"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"空间科学与技术学院","textShapes":9}
+{"kind":"shape","id":"sh/65g3298r","slide":1,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/utg3698n","slide":1,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/wn6dc7eh","slide":1,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/vmdcj2xw","slide":1,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/sfqdkrep","slide":1,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/dgzetcfa","slide":1,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/1cvuxc7e","slide":1,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/zadcv2p8","slide":1,"name":"文本框 21","text":"主题","textPreview":"主题","textChars":2,"textLines":1,"bbox":[44.98,241.03,1111.38,87.24]}
+{"kind":"textbox","id":"sh/e94v2hon","slide":1,"name":"文本框 4","text":"报 告 人：\n导    师： \n年    级： ","textPreview":"报 告 人： | 导    师：  | 年    级：","textChars":24,"textLines":3,"bbox":[796.97,437.89,394.25,205.27]}
+{"kind":"shape","id":"sh/90ve1w7q","slide":1,"name":"直接连接符 23","bbox":[53.09,360,506.17,0]}
+{"kind":"shape","id":"sh/ozmd8r65","slide":1,"name":"直接连接符 24","bbox":[559.25,360,578.83,1.84]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"文本框 2","text":"汇报","textPreview":"汇报","textChars":2,"textLines":1,"bbox":[903.36,10.45,321.94,54.93]}
+{"kind":"shape","id":"sh/432dwn6l","slide":1,"bbox":[40,128,1180,550]}
+{"kind":"textbox","id":"sh/uxgjq907","slide":1,"text":"神经网络与OEM融合的微波辐射计廓线反演研究","textPreview":"神经网络与OEM融合的微波辐射计廓线反演研究","textChars":22,"textLines":1,"bbox":[58,210,1060,74]}
+{"kind":"shape","id":"sh/vyp0je1s","slide":1,"bbox":[58,304,470,9]}
+{"kind":"textbox","id":"sh/wzy1szid","slide":1,"text":"成都站21通道实测亮温迁移测试、效果诊断与下一步方案","textPreview":"成都站21通道实测亮温迁移测试、效果诊断与下一步方案","textChars":26,"textLines":1,"bbox":[58,330,900,42]}
+{"kind":"textbox","id":"sh/h072l4jy","slide":1,"text":"阶段汇报 | 2026年7月","textPreview":"阶段汇报 | 2026年7月","textChars":14,"textLines":1,"bbox":[58,400,420,32]}
+{"kind":"textbox","id":"sh/i1gje90j","slide":1,"text":"汇报人：\n导师：\n年级：","textPreview":"汇报人： | 导师： | 年级：","textChars":12,"textLines":3,"bbox":[790,430,340,126]}
+{"kind":"shape","id":"sh/j2pkne14","slide":1,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/43y1gji9","slide":1,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/54r2poju","slide":1,"text":"阶段汇报","textPreview":"阶段汇报","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"image","id":"im/0jmxony1","slide":1,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/1kvyhsfm","slide":1,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/mlofqdgr","slide":1,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"空间科学与技术学院","textShapes":18}
+{"kind":"shape","id":"sh/a10jqpsj","slide":2,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/nu58f2hs","slide":2,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/do3q9szq","slide":2,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/t8byxkn2","slide":2,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"文本框 2","text":"汇 报 目 录","textPreview":"汇 报 目 录","textChars":7,"textLines":1,"bbox":[898.36,10.15,321.94,54.93]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"name":"Rectangle 33","text":"内","textPreview":"内","textChars":1,"textLines":1,"bbox":[86.34,172.29,94.47,94.87]}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"name":"Rectangle 33","text":"容","textPreview":"容","textChars":1,"textLines":1,"bbox":[152.01,227.76,163.87,94.87]}
+{"kind":"textbox","id":"sh/u94fqp4n","slide":2,"name":"Rectangle 33","text":"CONTENTS","textPreview":"CONTENTS","textChars":8,"textLines":1,"bbox":[-63.66,425.03,394.8,94.87]}
+{"kind":"textbox","id":"sh/p0vy54na","slide":2,"name":"Rectangle 33","text":"一、            研 究 背 景 及 意 义","textPreview":"一、            研 究 背 景 及 意 义","textChars":27,"textLines":1,"bbox":[356.69,128.25,723.82,77.35]}
+{"kind":"textbox","id":"sh/mlgvq147","slide":2,"name":"Rectangle 35","text":"二、            国 内 外 研 究 现 状","textPreview":"二、            国 内 外 研 究 现 状","textChars":27,"textLines":1,"bbox":[356.95,247.66,723.55,77.35]}
+{"kind":"textbox","id":"sh/nmpcj6ls","slide":2,"name":"Rectangle 35","text":"三、            关键问题及研究内容","textPreview":"三、            关键问题及研究内容","textChars":23,"textLines":1,"bbox":[356.69,367.07,723.55,77.35]}
+{"kind":"textbox","id":"sh/onydsbmd","slide":2,"name":"Rectangle 35","text":"四、                拟 研 究 思 路","textPreview":"四、                拟 研 究 思 路","textChars":27,"textLines":1,"bbox":[356.69,486.48,723.55,77.35]}
+{"kind":"textbox","id":"sh/hcvy14ne","slide":2,"name":"Rectangle 35","text":"五、        研 究 计 划 及 论 文 大 纲","textPreview":"五、        研 究 计 划 及 论 文 大 纲","textChars":27,"textLines":1,"bbox":[356.69,605.89,723.55,77.35]}
+{"kind":"shape","id":"sh/wbidwb29","slide":2,"bbox":[320,110,850,570]}
+{"kind":"shape","id":"sh/xcrupg3u","slide":2,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/id0vylkf","slide":2,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/je9crql0","slide":2,"text":"汇报目录","textPreview":"汇报目录","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/ru5cbqd4","slide":2,"text":"内容","textPreview":"内容","textChars":2,"textLines":1,"bbox":[85,180,150,120]}
+{"kind":"textbox","id":"sh/69wbilcj","slide":2,"text":"CONTENTS","textPreview":"CONTENTS","textChars":8,"textLines":1,"bbox":[42,410,180,60]}
+{"kind":"shape","id":"sh/tw7ud0va","slide":2,"bbox":[380,128,660,56]}
+{"kind":"textbox","id":"sh/svedkvup","slide":2,"text":"一、    研究背景及国内外现状","textPreview":"一、    研究背景及国内外现状","textChars":16,"textLines":1,"bbox":[410,140,580,30]}
+{"kind":"shape","id":"sh/fypcfqdg","slide":2,"bbox":[380,233,660,56]}
+{"kind":"textbox","id":"sh/exgvmlcv","slide":2,"text":"二、    研究要解决的问题","textPreview":"二、    研究要解决的问题","textChars":14,"textLines":1,"bbox":[410,245,580,30]}
+{"kind":"shape","id":"sh/107uh0v6","slide":2,"bbox":[380,338,660,56]}
+{"kind":"textbox","id":"sh/gzydovul","slide":2,"text":"三、    成都迁移与当前结果分析","textPreview":"三、    成都迁移与当前结果分析","textChars":17,"textLines":1,"bbox":[410,350,580,30]}
+{"kind":"shape","id":"sh/v2lc36dw","slide":2,"bbox":[380,443,660,56]}
+{"kind":"textbox","id":"sh/a1cba1wb","slide":2,"text":"四、    结果不合适的原因诊断","textPreview":"四、    结果不合适的原因诊断","textChars":16,"textLines":1,"bbox":[410,455,580,30]}
+{"kind":"shape","id":"sh/0vq1o36x","slide":2,"bbox":[380,548,660,56]}
+{"kind":"textbox","id":"sh/1wzix87i","slide":2,"text":"五、    后续改进方向与实施计划","textPreview":"五、    后续改进方向与实施计划","textChars":17,"textLines":1,"bbox":[410,560,580,30]}
+{"kind":"image","id":"im/algza9on","slide":2,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/5sripona","slide":2,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/kry1gjmp","slide":2,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":""}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"空间科学与技术学院","textShapes":16}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/m5cra54z","slide":3,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/n6ls3alk","slide":3,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/n2l4fq98","slide":3,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/i9w3u58v","slide":3,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/e10f2twf","slide":3,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/l4fi9cza","slide":3,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/x0vi5czy","slide":3,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/czmhc7id","slide":3,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/byd032h8","slide":3,"text":"研究现状","textPreview":"研究现状","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/ax4zax0n","slide":3,"text":"国内外研究正在从经验统计反演转向“物理前向 + 数据驱动”的融合框架","textPreview":"国内外研究正在从经验统计反演转向“物理前向 + 数据驱动”的融合框架","textChars":34,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/hwzihwzi","slide":3,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/wv61obyx","slide":3,"text":"国外强调OEM/1DVAR、前向模型和不确定度闭环；国内近年更多使用多年站点资料训练机器学习模型，并开始关注偏差订正和资料同化。内容取向必须服务成都站本地化。 ","textPreview":"国外强调OEM/1DVAR、前向模型和不确定度闭环；国内近年更多使用多年站点资料训练机器学习模型，并开始关注偏差订正和资料同化。内容取向必须服务成都站本地化。","textChars":80,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/4nuhs7uh","slide":3,"bbox":[70,235,220,160]}
+{"kind":"shape","id":"sh/po3ilcvm","slide":3,"bbox":[70,235,8,160]}
+{"kind":"textbox","id":"sh/21szqxcb","slide":3,"text":"经典统计反演","textPreview":"经典统计反演","textChars":6,"textLines":1,"bbox":[90,247,184,28]}
+{"kind":"textbox","id":"sh/32l0j2dw","slide":3,"text":"线性回归、厂商神经网络\n依赖历史样本和本地气候统计","textPreview":"线性回归、厂商神经网络 | 依赖历史样本和本地气候统计","textChars":25,"textLines":2,"bbox":[90,283,184,102]}
+{"kind":"shape","id":"sh/cruhwrud","slide":3,"bbox":[330,235,220,160]}
+{"kind":"shape","id":"sh/ds3ipcvy","slide":3,"bbox":[330,235,8,160]}
+{"kind":"textbox","id":"sh/qpczuhc7","slide":3,"text":"OEM / 1DVAR","textPreview":"OEM / 1DVAR","textChars":11,"textLines":1,"bbox":[350,247,184,28]}
+{"kind":"textbox","id":"sh/rql0nmds","slide":3,"text":"Rodgers框架 + RTM\n显式使用S_a / S_e\n和敏感度矩阵","textPreview":"Rodgers框架 + RTM | 显式使用S_a / S_e | 和敏感度矩阵","textChars":36,"textLines":3,"bbox":[350,283,184,102]}
+{"kind":"shape","id":"sh/0ve10ru9","slide":3,"bbox":[590,235,220,160]}
+{"kind":"shape","id":"sh/1wnitwvu","slide":3,"bbox":[590,235,8,160]}
+{"kind":"textbox","id":"sh/v29cfu18","slide":3,"text":"机器学习反演","textPreview":"机器学习反演","textChars":6,"textLines":1,"bbox":[610,247,184,28]}
+{"kind":"textbox","id":"sh/a10b6p03","slide":3,"text":"DL / RF / XGBoost / BRNN\n要求多年亮温-探空/再分析配对","textPreview":"DL / RF / XGBoost / BRNN | 要求多年亮温-探空/再分析配对","textChars":40,"textLines":2,"bbox":[610,283,184,102]}
+{"kind":"shape","id":"sh/xoruhkje","slide":3,"bbox":[850,235,220,160]}
+{"kind":"shape","id":"sh/w3it8zit","slide":3,"bbox":[850,235,8,160]}
+{"kind":"textbox","id":"sh/nypcba1c","slide":3,"text":"融合趋势","textPreview":"融合趋势","textChars":4,"textLines":1,"bbox":[870,247,184,28]}
+{"kind":"textbox","id":"sh/mxgb250r","slide":3,"text":"NN提供先验，OEM做物理修正\n高频通道需可信RTM校验","textPreview":"NN提供先验，OEM做物理修正 | 高频通道需可信RTM校验","textChars":28,"textLines":2,"bbox":[870,283,184,102]}
+{"kind":"shape","id":"sh/90rudkji","slide":3,"bbox":[288,315,38,0]}
+{"kind":"shape","id":"sh/8zit4fix","slide":3,"bbox":[548,315,38,0]}
+{"kind":"shape","id":"sh/7utcne1g","slide":3,"bbox":[808,315,38,0]}
+{"kind":"textbox","id":"sh/6tkve90v","slide":3,"text":"国内现状：广州4年资料ML对比、武汉9年资料ANN偏差订正、北方GMR/RTM模拟和资料同化均说明：样本量、QC、站点偏差订正是工程落地关键。","textPreview":"国内现状：广州4年资料ML对比、武汉9年资料ANN偏差订正、北方GMR/RTM模拟和资料同化均说明：样本量、QC、站点偏差订正是工程落地关键。","textChars":71,"textLines":1,"bbox":[78,450,1060,70]}
+{"kind":"textbox","id":"sh/2p4f6dk3","slide":3,"text":"国外现状：HATPRO长期业务评估、复杂地形检验、雨天低层温度扫描角增强、PAMTRA/MonoRTM/RTTOV-gb等前向模型形成物理约束基础。","textPreview":"国外现状：HATPRO长期业务评估、复杂地形检验、雨天低层温度扫描角增强、PAMTRA/MonoRTM/RTTOV-gb等前向模型形成物理约束基础。","textChars":74,"textLines":1,"bbox":[78,525,1060,70]}
+{"kind":"textbox","id":"sh/3qxwfilo","slide":3,"text":"来源：Rodgers 2000；Löhnert & Maier 2012；Massaro et al. 2015；Remote Sens. 2023/2025；GMD 2020/2025；AMT 2024/2026。第14页列出链接。 ","textPreview":"来源：Rodgers 2000；Löhnert & Maier 2012；Massaro et al. 2015；Remote Sens. 2023/2025；GMD 2020/2025；AMT 2024/2026。第14页列出链接。","textChars":118,"textLines":1,"bbox":[62,686,1120,20]}
+{"kind":"image","id":"im/3ipsru1c","slide":3,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/4jyt0zix","slide":3,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/547at4zi","slide":3,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":""}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"空间科学与技术学院","textShapes":13}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/doj29oba","slide":4,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/3ihk3et8","slide":4,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/ih8ju9sn","slide":4,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/kbm987y5","slide":4,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/g36tgryd","slide":4,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/h4fa9wfy","slide":4,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/p0batw72","slide":4,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/ilwf69kv","slide":4,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/axcf29kj","slide":4,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/vy5gbe14","slide":4,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/wzex4z2p","slide":4,"text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/xknyx4ja","slide":4,"text":"本研究要解决的是：让成都站反演从“能跑”变成“可解释、可迁移、可物理约束”","textPreview":"本研究要解决的是：让成都站反演从“能跑”变成“可解释、可迁移、可物理约束”","textChars":37,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/mtcfypkn","slide":4,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/nulw7u18","slide":4,"text":"目标不是简单追求一次测试RMSE最低，而是建立能被探空验证、能进入OEM、能解释通道贡献的反演链路。","textPreview":"目标不是简单追求一次测试RMSE最低，而是建立能被探空验证、能进入OEM、能解释通道贡献的反演链路。","textChars":50,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/fm5c3q54","slide":4,"bbox":[78,235,315,185]}
+{"kind":"shape","id":"sh/elwba54j","slide":4,"bbox":[78,235,8,185]}
+{"kind":"textbox","id":"sh/18nu50nu","slide":4,"text":"问题1：站点迁移","textPreview":"问题1：站点迁移","textChars":8,"textLines":1,"bbox":[98,247,279,28]}
+{"kind":"textbox","id":"sh/0netcvm9","slide":4,"text":"旧站点/天津模型能否直接用到成都？如果不行，失败来自通道、气候还是标签？","textPreview":"旧站点/天津模型能否直接用到成都？如果不行，失败来自通道、气候还是标签？","textChars":36,"textLines":1,"bbox":[98,283,279,127]}
+{"kind":"shape","id":"sh/rilczq5s","slide":4,"bbox":[420,235,315,185]}
+{"kind":"shape","id":"sh/qhcb6l47","slide":4,"bbox":[420,235,8,185]}
+{"kind":"textbox","id":"sh/dknu10ny","slide":4,"text":"问题2：BRNN与OEM如何结合","textPreview":"问题2：BRNN与OEM如何结合","textChars":16,"textLines":1,"bbox":[440,247,279,28]}
+{"kind":"textbox","id":"sh/sjut8vmd","slide":4,"text":"BRNN适合作为先验/first guess，还是直接输出最终廓线？OEM需要哪些误差协方差？","textPreview":"BRNN适合作为先验/first guess，还是直接输出最终廓线？OEM需要哪些误差协方差？","textChars":47,"textLines":1,"bbox":[440,283,279,127]}
+{"kind":"shape","id":"sh/3elcv65w","slide":4,"bbox":[762,235,315,185]}
+{"kind":"shape","id":"sh/idcb2lob","slide":4,"bbox":[762,235,8,185]}
+{"kind":"textbox","id":"sh/8jq9c72t","slide":4,"text":"问题3：21通道如何利用","textPreview":"问题3：21通道如何利用","textChars":12,"textLines":1,"bbox":[782,247,279,28]}
+{"kind":"textbox","id":"sh/tkjq5c3e","slide":4,"text":"前14通道可接MonoRTM，高频89/183/229 GHz是否能稳定提升中高层湿度？","textPreview":"前14通道可接MonoRTM，高频89/183/229 GHz是否能稳定提升中高层湿度？","textChars":44,"textLines":1,"bbox":[782,283,279,127]}
+{"kind":"textbox","id":"sh/6x8rahk3","slide":4,"text":"当前策略：先用成都本地数据训练稳定统计先验，再以前14通道接入MonoRTM/OEM；高频通道作为待验证增量信息，不提前放入物理反演闭环。","textPreview":"当前策略：先用成都本地数据训练稳定统计先验，再以前14通道接入MonoRTM/OEM；高频通道作为待验证增量信息，不提前放入物理反演闭环。","textChars":69,"textLines":1,"bbox":[92,470,990,70]}
+{"kind":"textbox","id":"sh/7ih83mlo","slide":4,"text":"项目依据：config.py、reports/进度记录/OEM阶段进度.md、成都ERA5精确配对训练与物理48层优化报告。 ","textPreview":"项目依据：config.py、reports/进度记录/OEM阶段进度.md、成都ERA5精确配对训练与物理48层优化报告。","textChars":63,"textLines":1,"bbox":[62,686,1120,20]}
+{"kind":"image","id":"im/s3etcnmd","slide":4,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/725s3il8","slide":4,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/61wbax4n","slide":4,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"空间科学与技术学院","textShapes":16}
+{"kind":"shape","id":"sh/yhkbe1o7","slide":5,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/m5kbi1oj","slide":5,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/v2twb6dw","slide":5,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/sb6xsvu9","slide":5,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/tcfel0vu","slide":5,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/hgrmpwj2","slide":5,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/atcjidg7","slide":5,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/ihw3mxg3","slide":5,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/ji5kf2ho","slide":5,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/kjelony9","slide":5,"text":"方法路线","textPreview":"方法路线","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/5kn2hszu","slide":5,"text":"推荐路线是“成都本地BRNN/Ridge先验 + 前14通道OEM修正 + 高频通道逐步验证”","textPreview":"推荐路线是“成都本地BRNN/Ridge先验 + 前14通道OEM修正 + 高频通道逐步验证”","textChars":47,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/e1sjatgz","slide":5,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/zmlk3yhk","slide":5,"text":"BRNN不是直接替代OEM，而是提供更好的x_a；OEM再用前向模型和观测亮温残差进行物理校正。","textPreview":"BRNN不是直接替代OEM，而是提供更好的x_a；OEM再用前向模型和观测亮温残差进行物理校正。","textChars":48,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/fid07u98","slide":5,"bbox":[80,260,145,90]}
+{"kind":"textbox","id":"sh/ehkzepsn","slide":5,"text":"实测亮温\n21通道","textPreview":"实测亮温 | 21通道","textChars":9,"textLines":2,"bbox":[90,280,125,50]}
+{"kind":"shape","id":"sh/1kvi94re","slide":5,"bbox":[280,260,145,90]}
+{"kind":"textbox","id":"sh/gjmhgzqt","slide":5,"text":"ERA5/探空\n配对标签","textPreview":"ERA5/探空 | 配对标签","textChars":12,"textLines":2,"bbox":[290,280,125,50]}
+{"kind":"shape","id":"sh/3md0bu94","slide":5,"bbox":[480,260,145,90]}
+{"kind":"textbox","id":"sh/2l4zip8j","slide":5,"text":"Ridge/BRNN\n成都先验","textPreview":"Ridge/BRNN | 成都先验","textChars":15,"textLines":2,"bbox":[490,280,125,50]}
+{"kind":"shape","id":"sh/povid4ra","slide":5,"bbox":[700,260,145,90]}
+{"kind":"textbox","id":"sh/onmhkzqp","slide":5,"text":"MonoRTM\n前14通道","textPreview":"MonoRTM | 前14通道","textChars":13,"textLines":2,"bbox":[710,280,125,50]}
+{"kind":"shape","id":"sh/bqx0fe9g","slide":5,"bbox":[920,260,145,90]}
+{"kind":"textbox","id":"sh/qp4jm98v","slide":5,"text":"OEM\n物理修正","textPreview":"OEM | 物理修正","textChars":8,"textLines":2,"bbox":[930,280,125,50]}
+{"kind":"shape","id":"sh/8f6hcj6t","slide":5,"bbox":[225,305,53,0]}
+{"kind":"shape","id":"sh/9gfy5o7e","slide":5,"bbox":[425,305,53,0]}
+{"kind":"shape","id":"sh/mdoza9o3","slide":5,"bbox":[625,305,73,0]}
+{"kind":"shape","id":"sh/nexg3epo","slide":5,"bbox":[845,305,73,0]}
+{"kind":"textbox","id":"sh/0r6h8z6x","slide":5,"text":"S_a：由成都ERA5/探空误差统计估计","textPreview":"S_a：由成都ERA5/探空误差统计估计","textChars":20,"textLines":1,"bbox":[440,385,270,28]}
+{"kind":"textbox","id":"sh/lcfy147i","slide":5,"text":"S_e / OMB：由观测-模拟亮温偏差估计","textPreview":"S_e / OMB：由观测-模拟亮温偏差估计","textChars":22,"textLines":1,"bbox":[705,385,330,28]}
+{"kind":"shape","id":"sh/yp4z69or","slide":5,"bbox":[90,470,480,118]}
+{"kind":"shape","id":"sh/zqxgzupc","slide":5,"bbox":[90,470,8,118]}
+{"kind":"textbox","id":"sh/cnmh4z61","slide":5,"text":"当前已完成","textPreview":"当前已完成","textChars":5,"textLines":1,"bbox":[110,482,444,28]}
+{"kind":"textbox","id":"sh/dovyx476","slide":5,"text":"成都21通道配置、ERA5精确配对、本地训练、物理48层处理、独立探空评估。","textPreview":"成都21通道配置、ERA5精确配对、本地训练、物理48层处理、独立探空评估。","textChars":38,"textLines":1,"bbox":[110,518,444,60]}
+{"kind":"shape","id":"sh/t8n6lwvy","slide":5,"bbox":[620,470,480,118]}
+{"kind":"shape","id":"sh/s7u5crud","slide":5,"bbox":[620,470,8,118]}
+{"kind":"textbox","id":"sh/r6lojmds","slide":5,"text":"下一步关键","textPreview":"下一步关键","textChars":5,"textLines":1,"bbox":[640,482,444,28]}
+{"kind":"textbox","id":"sh/65cnahc7","slide":5,"text":"补surface变量与QC，先跑前14通道真实观测OEM，再验证89/183/229 GHz。","textPreview":"补surface变量与QC，先跑前14通道真实观测OEM，再验证89/183/229 GHz。","textChars":47,"textLines":1,"bbox":[640,518,444,60]}
+{"kind":"image","id":"im/4f6hgfq1","slide":5,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/jex07a9g","slide":5,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/id4ze58b","slide":5,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"空间科学与技术学院","textShapes":36}
+{"kind":"shape","id":"sh/98rqt4r6","slide":6,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/ml07i9sv","slide":6,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/pc76hkr2","slide":6,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/h4bupgn6","slide":6,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/u1kbu1ov","slide":6,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/twfux0ne","slide":6,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/svmt4v6t","slide":6,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/jet8nm1c","slide":6,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/va98j210","slide":6,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/u907axkf","slide":6,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/hcrqlcj6","slide":6,"text":"数据资产","textPreview":"数据资产","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/wbipc72l","slide":6,"text":"成都站数据链路已经打通，但样本规模仍不足以支撑强泛化神经网络","textPreview":"成都站数据链路已经打通，但样本规模仍不足以支撑强泛化神经网络","textChars":30,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/7698f214","slide":6,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/m5076xkj","slide":6,"text":"当前训练样本只有69条，能做阶段验证，但不能作为最终部署精度证明。","textPreview":"当前训练样本只有69条，能做阶段验证，但不能作为最终部署精度证明。","textChars":33,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/2dkbalg3","slide":6,"bbox":[72,220,170,120]}
+{"kind":"textbox","id":"sh/netcjqxo","slide":6,"text":"实测亮温","textPreview":"实测亮温","textChars":4,"textLines":1,"bbox":[86,230,142,22]}
+{"kind":"textbox","id":"sh/of2tcvy9","slide":6,"text":"163条","textPreview":"163条","textChars":4,"textLines":1,"bbox":[86,256,142,38]}
+{"kind":"textbox","id":"sh/pgbul0fu","slide":6,"text":"2026-05-13至05-30","textPreview":"2026-05-13至05-30","textChars":16,"textLines":1,"bbox":[86,298,142,34]}
+{"kind":"shape","id":"sh/ep0b6lg7","slide":6,"bbox":[270,220,170,120]}
+{"kind":"textbox","id":"sh/fq9cfqxc","slide":6,"text":"ERA5同小时","textPreview":"ERA5同小时","textChars":7,"textLines":1,"bbox":[284,230,142,22]}
+{"kind":"textbox","id":"sh/0r2t8vyx","slide":6,"text":"139条","textPreview":"139条","textChars":4,"textLines":1,"bbox":[284,256,142,38]}
+{"kind":"textbox","id":"sh/1sbuh0fi","slide":6,"text":"严格UTC小时匹配","textPreview":"严格UTC小时匹配","textChars":9,"textLines":1,"bbox":[284,298,142,34]}
+{"kind":"shape","id":"sh/ql0b21gv","slide":6,"bbox":[468,220,170,120]}
+{"kind":"textbox","id":"sh/rm9sb6xg","slide":6,"text":"训练样本","textPreview":"训练样本","textChars":4,"textLines":1,"bbox":[482,230,142,22]}
+{"kind":"textbox","id":"sh/9gfeh4zy","slide":6,"text":"69条","textPreview":"69条","textChars":3,"textLines":1,"bbox":[482,256,142,38]}
+{"kind":"textbox","id":"sh/8f6x8jid","slide":6,"text":"11天，日期划分","textPreview":"11天，日期划分","textChars":8,"textLines":1,"bbox":[482,298,142,34]}
+{"kind":"shape","id":"sh/7exwfehs","slide":6,"bbox":[666,220,170,120]}
+{"kind":"textbox","id":"sh/mdof6907","slide":6,"text":"独立探空","textPreview":"独立探空","textChars":4,"textLines":1,"bbox":[680,230,142,22]}
+{"kind":"textbox","id":"sh/lcfed4z2","slide":6,"text":"6份","textPreview":"6份","textChars":2,"textLines":1,"bbox":[680,256,142,38]}
+{"kind":"textbox","id":"sh/kb6d4zih","slide":6,"text":"亮温差1-2小时","textPreview":"亮温差1-2小时","textChars":8,"textLines":1,"bbox":[680,298,142,34]}
+{"kind":"shape","id":"sh/zaxwbuhw","slide":6,"bbox":[864,220,170,120]}
+{"kind":"textbox","id":"sh/y94v2p0b","slide":6,"text":"通道","textPreview":"通道","textChars":2,"textLines":1,"bbox":[878,230,142,22]}
+{"kind":"textbox","id":"sh/x8ve9kzq","slide":6,"text":"21个","textPreview":"21个","textChars":3,"textLines":1,"bbox":[878,256,142,38]}
+{"kind":"textbox","id":"sh/c7md0zi5","slide":6,"text":"前14个兼容HATPRO","textPreview":"前14个兼容HATPRO","textChars":12,"textLines":1,"bbox":[878,298,142,34]}
+{"kind":"textbox","id":"sh/o3a5cjud","slide":6,"text":"通道分组","textPreview":"通道分组","textChars":4,"textLines":1,"bbox":[88,400,160,28]}
+{"kind":"shape","id":"sh/p4j6loby","slide":6,"bbox":[78,444,230,98]}
+{"kind":"textbox","id":"sh/21snatc7","slide":6,"text":"K-band","textPreview":"K-band","textChars":6,"textLines":1,"bbox":[88,455,210,24]}
+{"kind":"textbox","id":"sh/n21ojets","slide":6,"text":"22.24-31.40 GHz","textPreview":"22.24-31.40 GHz","textChars":15,"textLines":1,"bbox":[86,486,214,22]}
+{"kind":"textbox","id":"sh/0zq58ju1","slide":6,"text":"水汽 / 液态水","textPreview":"水汽 / 液态水","textChars":8,"textLines":1,"bbox":[86,512,214,22]}
+{"kind":"shape","id":"sh/10z6hobm","slide":6,"bbox":[323,444,230,98]}
+{"kind":"textbox","id":"sh/ed8n69cb","slide":6,"text":"V-band","textPreview":"V-band","textChars":6,"textLines":1,"bbox":[333,455,210,24]}
+{"kind":"textbox","id":"sh/fyhofetw","slide":6,"text":"51.26-58.00 GHz","textPreview":"51.26-58.00 GHz","textChars":15,"textLines":1,"bbox":[331,486,214,22]}
+{"kind":"textbox","id":"sh/kvu5k3ul","slide":6,"text":"温度廓线","textPreview":"温度廓线","textChars":4,"textLines":1,"bbox":[331,512,214,22]}
+{"kind":"shape","id":"sh/lw36d8b6","slide":6,"bbox":[568,444,135,98]}
+{"kind":"textbox","id":"sh/vq58j2d8","slide":6,"text":"89 GHz","textPreview":"89 GHz","textChars":6,"textLines":1,"bbox":[578,455,115,24]}
+{"kind":"textbox","id":"sh/upwraxwn","slide":6,"text":"窗口通道","textPreview":"窗口通道","textChars":4,"textLines":1,"bbox":[576,486,119,22]}
+{"kind":"textbox","id":"sh/hs7qlcve","slide":6,"text":"云液水 / 水汽","textPreview":"云液水 / 水汽","textChars":8,"textLines":1,"bbox":[576,512,119,22]}
+{"kind":"shape","id":"sh/gre9c7et","slide":6,"bbox":[718,444,210,98]}
+{"kind":"textbox","id":"sh/3up8nmd4","slide":6,"text":"183 GHz","textPreview":"183 GHz","textChars":7,"textLines":1,"bbox":[728,455,190,24]}
+{"kind":"textbox","id":"sh/itgrehwz","slide":6,"text":"184.31-190.31 GHz","textPreview":"184.31-190.31 GHz","textChars":17,"textLines":1,"bbox":[726,486,194,22]}
+{"kind":"textbox","id":"sh/5w7qpwva","slide":6,"text":"中高层湿度","textPreview":"中高层湿度","textChars":5,"textLines":1,"bbox":[726,512,194,22]}
+{"kind":"shape","id":"sh/4vy9grep","slide":6,"bbox":[943,444,135,98]}
+{"kind":"textbox","id":"sh/zyl8bid0","slide":6,"text":"229 GHz","textPreview":"229 GHz","textChars":7,"textLines":1,"bbox":[953,455,115,24]}
+{"kind":"textbox","id":"sh/yxc72dwf","slide":6,"text":"高频窗口","textPreview":"高频窗口","textChars":4,"textLines":1,"bbox":[951,486,119,22]}
+{"kind":"textbox","id":"sh/m9szm1kf","slide":6,"text":"水汽 / 云","textPreview":"水汽 / 云","textChars":6,"textLines":1,"bbox":[951,512,119,22]}
+{"kind":"image","id":"im/tob6lc7u","slide":6,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/6l0nax83","slide":6,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/7mtoj2po","slide":6,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"空间科学与技术学院","textShapes":29}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/kzmdova1","slide":7,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/eh0ba1sr","slide":7,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/baxkjqlk","slide":7,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/cbq1sv25","slide":7,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/eh4jil4r","slide":7,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/id4ju1oz","slide":7,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/p0zmlk7u","slide":7,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/x4j6p47q","slide":7,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/c3a5wzq5","slide":7,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/b2h4nupk","slide":7,"text":"方法尝试","textPreview":"方法尝试","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/a18nup8z","slide":7,"text":"OEM链路已经验证可行，但BRNN+OEM必须先解决通道自洽和误差协方差","textPreview":"OEM链路已经验证可行，但BRNN+OEM必须先解决通道自洽和误差协方差","textChars":36,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/lsj6t47m","slide":7,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/kra50jqh","slide":7,"text":"非自洽前向模型会让OEM把温度拉坏，因此不能直接把旧BRNN输出和任意前向模型拼接。","textPreview":"非自洽前向模型会让OEM把温度拉坏，因此不能直接把旧BRNN输出和任意前向模型拼接。","textChars":42,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/wneps3ap","slide":7,"bbox":[70,218,300,42]}
+{"kind":"textbox","id":"sh/honq18ru","slide":7,"text":"实验","textPreview":"实验","textChars":2,"textLines":1,"bbox":[78,224,284,32]}
+{"kind":"shape","id":"sh/ulc7qdsj","slide":7,"bbox":[370,218,160,42]}
+{"kind":"textbox","id":"sh/vm58zi94","slide":7,"text":"T变化","textPreview":"T变化","textChars":3,"textLines":1,"bbox":[378,224,144,32]}
+{"kind":"shape","id":"sh/8jupo3ad","slide":7,"bbox":[530,218,160,42]}
+{"kind":"textbox","id":"sh/9k3qx8ry","slide":7,"text":"RH变化","textPreview":"RH变化","textChars":4,"textLines":1,"bbox":[538,224,144,32]}
+{"kind":"shape","id":"sh/mxc7mts7","slide":7,"bbox":[690,218,160,42]}
+{"kind":"textbox","id":"sh/7yl8vy9s","slide":7,"text":"BT residual","textPreview":"BT residual","textChars":11,"textLines":1,"bbox":[698,224,144,32]}
+{"kind":"shape","id":"sh/sfy907ah","slide":7,"bbox":[850,218,170,42]}
+{"kind":"textbox","id":"sh/tg7q9sr2","slide":7,"text":"结论","textPreview":"结论","textChars":2,"textLines":1,"bbox":[858,224,154,32]}
+{"kind":"shape","id":"sh/na9sz6tk","slide":7,"bbox":[70,260,300,42]}
+{"kind":"textbox","id":"sh/290bq1cz","slide":7,"text":"Self-consistent simple RTM","textPreview":"Self-consistent simple RTM","textChars":26,"textLines":1,"bbox":[78,266,284,32]}
+{"kind":"shape","id":"sh/pcra1wba","slide":7,"bbox":[370,260,160,42]}
+{"kind":"textbox","id":"sh/obitsrup","slide":7,"text":"2.38→2.06K","textPreview":"2.38→2.06K","textChars":10,"textLines":1,"bbox":[378,266,144,32]}
+{"kind":"shape","id":"sh/betc36tg","slide":7,"bbox":[530,260,160,42]}
+{"kind":"textbox","id":"sh/adkbu1cv","slide":7,"text":"7.59→6.73%","textPreview":"7.59→6.73%","textChars":10,"textLines":1,"bbox":[538,266,144,32]}
+{"kind":"shape","id":"sh/xgbu5gbm","slide":7,"bbox":[690,260,160,42]}
+{"kind":"textbox","id":"sh/cf2twbu1","slide":7,"text":"1.50→0.54K","textPreview":"1.50→0.54K","textChars":10,"textLines":1,"bbox":[698,266,144,32]}
+{"kind":"shape","id":"sh/ripsrmtc","slide":7,"bbox":[850,260,170,42]}
+{"kind":"textbox","id":"sh/6hgbihcr","slide":7,"text":"算法闭环有效","textPreview":"算法闭环有效","textChars":6,"textLines":1,"bbox":[858,266,154,32]}
+{"kind":"shape","id":"sh/uponm90b","slide":7,"bbox":[70,302,300,42]}
+{"kind":"textbox","id":"sh/vah4fehw","slide":7,"text":"Self-consistent MonoRTM","textPreview":"Self-consistent MonoRTM","textChars":23,"textLines":1,"bbox":[78,308,284,32]}
+{"kind":"shape","id":"sh/gbq5ojih","slide":7,"bbox":[370,302,160,42]}
+{"kind":"textbox","id":"sh/hczmhoz2","slide":7,"text":"2.41→2.00K","textPreview":"2.41→2.00K","textChars":10,"textLines":1,"bbox":[378,308,144,32]}
+{"kind":"shape","id":"sh/6loni90f","slide":7,"bbox":[530,302,160,42]}
+{"kind":"textbox","id":"sh/7mx4buh0","slide":7,"text":"8.97→7.84%","textPreview":"8.97→7.84%","textChars":10,"textLines":1,"bbox":[538,308,144,32]}
+{"kind":"shape","id":"sh/8n65kzil","slide":7,"bbox":[690,302,160,42]}
+{"kind":"textbox","id":"sh/tofmd4z6","slide":7,"text":"6.41→0.75K","textPreview":"6.41→0.75K","textChars":10,"textLines":1,"bbox":[698,308,144,32]}
+{"kind":"shape","id":"sh/yh4nep0j","slide":7,"bbox":[850,302,170,42]}
+{"kind":"textbox","id":"sh/jix47uho","slide":7,"text":"物理链路有效","textPreview":"物理链路有效","textChars":6,"textLines":1,"bbox":[858,308,154,32]}
+{"kind":"shape","id":"sh/1c3qdsj6","slide":7,"bbox":[70,344,300,42]}
+{"kind":"textbox","id":"sh/0bupkn21","slide":7,"text":"Non-self-consistent","textPreview":"Non-self-consistent","textChars":19,"textLines":1,"bbox":[78,350,284,32]}
+{"kind":"shape","id":"sh/fal8bi1g","slide":7,"bbox":[370,344,160,42]}
+{"kind":"textbox","id":"sh/e9c7ixkv","slide":7,"text":"2.38→27.00K","textPreview":"2.38→27.00K","textChars":11,"textLines":1,"bbox":[378,350,144,32]}
+{"kind":"shape","id":"sh/d8jq9sja","slide":7,"bbox":[530,344,160,42]}
+{"kind":"textbox","id":"sh/s7apgn2p","slide":7,"text":"略改善","textPreview":"略改善","textChars":3,"textLines":1,"bbox":[538,350,144,32]}
+{"kind":"shape","id":"sh/r6187i14","slide":7,"bbox":[690,344,160,42]}
+{"kind":"textbox","id":"sh/q5s7edkj","slide":7,"text":"22.92→20.15K","textPreview":"22.92→20.15K","textChars":12,"textLines":1,"bbox":[698,350,144,32]}
+{"kind":"shape","id":"sh/54jq58je","slide":7,"bbox":[850,344,170,42]}
+{"kind":"textbox","id":"sh/4japc32t","slide":7,"text":"前向不匹配会崩","textPreview":"前向不匹配会崩","textChars":7,"textLines":1,"bbox":[858,350,154,32]}
+{"kind":"shape","id":"sh/gj2doje1","slide":7,"bbox":[96,410,440,130]}
+{"kind":"shape","id":"sh/hkvuxovm","slide":7,"bbox":[96,410,8,130]}
+{"kind":"textbox","id":"sh/uhkvm9wv","slide":7,"text":"BRNN在融合框架中的角色","textPreview":"BRNN在融合框架中的角色","textChars":13,"textLines":1,"bbox":[116,422,404,28]}
+{"kind":"textbox","id":"sh/fitcvedg","slide":7,"text":"不建议直接作为最终真值输出；更适合给OEM提供成都本地x_a，并由S_a描述先验可信度。","textPreview":"不建议直接作为最终真值输出；更适合给OEM提供成都本地x_a，并由S_a描述先验可信度。","textChars":44,"textLines":1,"bbox":[116,458,404,72]}
+{"kind":"shape","id":"sh/4nmdsjux","slide":7,"bbox":[590,410,440,130]}
+{"kind":"shape","id":"sh/povu1ovi","slide":7,"bbox":[590,410,8,130]}
+{"kind":"textbox","id":"sh/2l4vqtc7","slide":7,"text":"OEM在融合框架中的角色","textPreview":"OEM在融合框架中的角色","textChars":12,"textLines":1,"bbox":[610,422,404,28]}
+{"kind":"textbox","id":"sh/3mdczydc","slide":7,"text":"不是万能修正器；必须先估计通道偏差、S_e和Jacobian，否则会把亮温残差解释成错误廓线。","textPreview":"不是万能修正器；必须先估计通道偏差、S_e和Jacobian，否则会把亮温残差解释成错误廓线。","textChars":47,"textLines":1,"bbox":[610,458,404,72]}
+{"kind":"image","id":"im/bapkral4","slide":7,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/wbylkfmp","slide":7,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/xc72tk3a","slide":7,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":""}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"空间科学与技术学院","textShapes":22}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/tkby9kzm","slide":8,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/je9g3ahk","slide":8,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/id0fu50z","slide":8,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/o7ydoret","slide":8,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/n6pwfmd8","slide":8,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/lgbepgvm","slide":8,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/tw7e9gnq","slide":8,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/m9sb2x4v","slide":8,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/y5sbed4j","slide":8,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/z61s7il4","slide":8,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/07atgnmp","slide":8,"text":"结果分析","textPreview":"结果分析","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/l8ja9s3a","slide":8,"text":"旧站点反演算法直接迁移到成都失败，本地重训后才形成可用基线","textPreview":"旧站点反演算法直接迁移到成都失败，本地重训后才形成可用基线","textChars":29,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/q18bad4n","slide":8,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/b2hs3il8","slide":8,"text":"这说明模型主要学到了站点-仪器-标签体系的联合分布，而不是可无条件跨站使用的通用反演函数。","textPreview":"这说明模型主要学到了站点-仪器-标签体系的联合分布，而不是可无条件跨站使用的通用反演函数。","textChars":45,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/2ts769o3","slide":8,"bbox":[600,236,180,46]}
+{"kind":"textbox","id":"sh/pwjqho7u","slide":8,"text":"阶段","textPreview":"阶段","textChars":2,"textLines":1,"bbox":[608,242,164,36]}
+{"kind":"shape","id":"sh/4vap8j69","slide":8,"bbox":[780,236,115,46]}
+{"kind":"textbox","id":"sh/fq1obeps","slide":8,"text":"T RMSE","textPreview":"T RMSE","textChars":6,"textLines":1,"bbox":[788,242,99,36]}
+{"kind":"shape","id":"sh/up872987","slide":8,"bbox":[895,236,115,46]}
+{"kind":"textbox","id":"sh/hsjqd47y","slide":8,"text":"RH RMSE","textPreview":"RH RMSE","textChars":7,"textLines":1,"bbox":[903,242,99,36]}
+{"kind":"shape","id":"sh/grap4zqd","slide":8,"bbox":[1010,236,205,46]}
+{"kind":"textbox","id":"sh/72ho7upg","slide":8,"text":"判断","textPreview":"判断","textChars":2,"textLines":1,"bbox":[1018,242,189,36]}
+{"kind":"shape","id":"sh/6187yp8b","slide":8,"bbox":[600,282,180,46]}
+{"kind":"textbox","id":"sh/cvmdsb2h","slide":8,"text":"旧checkpoint迁移","textPreview":"旧checkpoint迁移","textChars":13,"textLines":1,"bbox":[608,288,164,36]}
+{"kind":"shape","id":"sh/xwvelwj2","slide":8,"bbox":[780,282,115,46]}
+{"kind":"textbox","id":"sh/at4vq1kr","slide":8,"text":"29.376K","textPreview":"29.376K","textChars":7,"textLines":1,"bbox":[788,288,99,36]}
+{"kind":"shape","id":"sh/budwj61c","slide":8,"bbox":[895,282,115,46]}
+{"kind":"textbox","id":"sh/kjmdwbit","slide":8,"text":"42.496%","textPreview":"42.496%","textChars":7,"textLines":1,"bbox":[903,288,99,36]}
+{"kind":"shape","id":"sh/lkvepgje","slide":8,"bbox":[1010,282,205,46]}
+{"kind":"textbox","id":"sh/yx4vu10n","slide":8,"text":"不可用","textPreview":"不可用","textChars":3,"textLines":1,"bbox":[1018,288,189,36]}
+{"kind":"shape","id":"sh/zidwn618","slide":8,"bbox":[600,328,180,46]}
+{"kind":"textbox","id":"sh/0n2dkr2p","slide":8,"text":"成都ERA5混合","textPreview":"成都ERA5混合","textChars":8,"textLines":1,"bbox":[608,334,164,36]}
+{"kind":"shape","id":"sh/1obudcju","slide":8,"bbox":[780,328,115,46]}
+{"kind":"textbox","id":"sh/hk3ah8by","slide":8,"text":"1.479K","textPreview":"1.479K","textChars":6,"textLines":1,"bbox":[788,334,99,36]}
+{"kind":"shape","id":"sh/gjuto3ud","slide":8,"bbox":[895,328,115,46]}
+{"kind":"textbox","id":"sh/filsfyts","slide":8,"text":"20.966%","textPreview":"20.966%","textChars":7,"textLines":1,"bbox":[903,334,99,36]}
+{"kind":"shape","id":"sh/uhsbmtc7","slide":8,"bbox":[1010,328,205,46]}
+{"kind":"textbox","id":"sh/po3ulsbu","slide":8,"text":"阶段基线","textPreview":"阶段基线","textChars":4,"textLines":1,"bbox":[1018,334,189,36]}
+{"kind":"shape","id":"sh/4nutsnu9","slide":8,"bbox":[600,374,180,46]}
+{"kind":"textbox","id":"sh/3mlcjit4","slide":8,"text":"物理48层探空","textPreview":"物理48层探空","textChars":7,"textLines":1,"bbox":[608,380,164,36]}
+{"kind":"shape","id":"sh/2lcbqdcj","slide":8,"bbox":[780,374,115,46]}
+{"kind":"textbox","id":"sh/dcnupsb6","slide":8,"text":"1.532K","textPreview":"1.532K","textChars":6,"textLines":1,"bbox":[788,380,99,36]}
+{"kind":"shape","id":"sh/cbetwnul","slide":8,"bbox":[895,374,115,46]}
+{"kind":"textbox","id":"sh/axo7qps3","slide":8,"text":"23.754%","textPreview":"23.754%","textChars":7,"textLines":1,"bbox":[903,380,99,36]}
+{"kind":"shape","id":"sh/vyx8ju9o","slide":8,"bbox":[1010,374,205,46]}
+{"kind":"textbox","id":"sh/wzq9szat","slide":8,"text":"OEM主网格","textPreview":"OEM主网格","textChars":6,"textLines":1,"bbox":[1018,380,189,36]}
+{"kind":"textbox","id":"sh/x0zql4re","slide":8,"text":"核心解释：跨站泛化失败不是单一模型问题，而是通道、亮温定标、地面海拔、气候水汽结构、垂直层定义和训练标签共同变化。","textPreview":"核心解释：跨站泛化失败不是单一模型问题，而是通道、亮温定标、地面海拔、气候水汽结构、垂直层定义和训练标签共同变化。","textChars":57,"textLines":1,"bbox":[92,580,1010,48]}
+{"kind":"chart","id":"ch/3u50vixw","slide":8,"name":"","chartType":"bar","bbox":[80,230,500,300]}
+{"kind":"image","id":"im/4budgbmh","slide":8,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/3alcn65w","slide":8,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/29cve1ob","slide":8,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":""}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"空间科学与技术学院","textShapes":11}
+{"kind":"shape","id":"sh/mdonql4z","slide":9,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/9gzml0nq","slide":9,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/ah8nu54b","slide":9,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/oza1gfyh","slide":9,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/3y107axw","slide":9,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/0ru1ozyp","slide":9,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/lsn2h4fa","slide":9,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/98ji147e","slide":9,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/2l4faloj","slide":9,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/apofe5of","slide":9,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/bqxg7q50","slide":9,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/cr6xgv6l","slide":9,"text":"原因诊断","textPreview":"原因诊断","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/xcfy90n6","slide":9,"text":"当前结果“不合适”的第一原因是样本不足，第二原因是BRNN跨站泛化失效","textPreview":"当前结果“不合适”的第一原因是样本不足，第二原因是BRNN跨站泛化失效","textChars":35,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/qtkf21ob","slide":9,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/rutwv65w","slide":9,"text":"69条训练样本可以验证流程，但不足以训练稳定的深层非线性映射。","textPreview":"69条训练样本可以验证流程，但不足以训练稳定的深层非线性映射。","textChars":31,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/mdsnatcn","slide":9,"bbox":[585,220,460,105]}
+{"kind":"shape","id":"sh/903ml8be","slide":9,"bbox":[585,220,8,105]}
+{"kind":"textbox","id":"sh/8zu5c3ut","slide":9,"text":"训练样本要求","textPreview":"训练样本要求","textChars":6,"textLines":1,"bbox":[605,232,424,28]}
+{"kind":"textbox","id":"sh/v2l4nitk","slide":9,"text":"BRNN需要覆盖季节、天气型、湿度层结、云/雨和仪器状态；当前16天资料无法覆盖这些变化。","textPreview":"BRNN需要覆盖季节、天气型、湿度层结、云/雨和仪器状态；当前16天资料无法覆盖这些变化。","textChars":45,"textLines":1,"bbox":[605,268,424,47]}
+{"kind":"shape","id":"sh/u1cnedcz","slide":9,"bbox":[585,350,460,105]}
+{"kind":"shape","id":"sh/h43mp8ba","slide":9,"bbox":[585,350,8,105]}
+{"kind":"textbox","id":"sh/w3u5g3u5","slide":9,"text":"泛化失败表现","textPreview":"泛化失败表现","textChars":6,"textLines":1,"bbox":[605,362,424,28]}
+{"kind":"textbox","id":"sh/j6l4ritg","slide":9,"text":"旧模型迁移成都T RMSE达到29.376K，说明输入分布已经离开原训练域。","textPreview":"旧模型迁移成都T RMSE达到29.376K，说明输入分布已经离开原训练域。","textChars":38,"textLines":1,"bbox":[605,398,424,47]}
+{"kind":"shape","id":"sh/i5cnidcv","slide":9,"bbox":[585,480,460,105]}
+{"kind":"shape","id":"sh/0bel8na9","slide":9,"bbox":[585,480,8,105]}
+{"kind":"textbox","id":"sh/1wnm1sru","slide":9,"text":"标签不确定性","textPreview":"标签不确定性","textChars":6,"textLines":1,"bbox":[605,492,424,28]}
+{"kind":"textbox","id":"sh/e9w36ds3","slide":9,"text":"ERA5不是绝对真值；探空与亮温差1-2小时，对湿度尤其敏感。","textPreview":"ERA5不是绝对真值；探空与亮温差1-2小时，对湿度尤其敏感。","textChars":31,"textLines":1,"bbox":[605,528,424,47]}
+{"kind":"chart","id":"ch/r2lsrahk","slide":9,"name":"","chartType":"bar","bbox":[80,225,440,285]}
+{"kind":"image","id":"im/szqtczy9","slide":9,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/7ehs3uh4","slide":9,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/6d8bapgj","slide":9,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":""}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"空间科学与技术学院","textShapes":6}
+{"kind":"shape","id":"sh/ydcnatkn","slide":10,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/l036l83y","slide":10,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/725onyl4","slide":10,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/m1cnetkj","slide":10,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/r6pcv6lw","slide":10,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/ozitcv29","slide":10,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/p0ru503u","slide":10,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/xwnupgvy","slide":10,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/q9srixs3","slide":10,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/exsrmhsf","slide":10,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/zyl8vmt0","slide":10,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/0zu9ora5","slide":10,"text":"通道利用","textPreview":"通道利用","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/103qxcbq","slide":10,"text":"21通道没有完全转化为有效信息，高频通道目前还不能直接证明稳定增益","textPreview":"21通道没有完全转化为有效信息，高频通道目前还不能直接证明稳定增益","textChars":33,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/u187adsv","slide":10,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/f2h8jitg","slide":10,"text":"高频通道有物理潜力，但样本、QC和前向模型没有到位时，网络很容易学不到可靠贡献。","textPreview":"高频通道有物理潜力，但样本、QC和前向模型没有到位时，网络很容易学不到可靠贡献。","textChars":40,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"textbox","id":"sh/algfy50n","slide":10,"text":"判断：前14通道可先进入MonoRTM/OEM；89/183/229 GHz需要独立的前向模拟、OMB偏差和误差协方差验证。","textPreview":"判断：前14通道可先进入MonoRTM/OEM；89/183/229 GHz需要独立的前向模拟、OMB偏差和误差协方差验证。","textChars":62,"textLines":1,"bbox":[84,580,1040,42]}
+{"kind":"chart","id":"ch/ba1ovqxk","slide":10,"name":"","chartType":"bar","bbox":[72,220,520,310]}
+{"kind":"image","id":"im/s3axkfad","slide":10,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/r2hwru98","slide":10,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/618fipsn","slide":10,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":""}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"空间科学与技术学院","textShapes":23}
+{"kind":"shape","id":"sh/250zy18b","slide":11,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/98rytw72","slide":11,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/72t03qp0","slide":11,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/61kzalof","slide":11,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/ofqtgnyt","slide":11,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/nehs7iho","slide":11,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/cn6t83y1","slide":11,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/dofa18z6","slide":11,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/tsnip0ny","slide":11,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/m58fih43","slide":11,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/eh8fex47","slide":11,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/z2hw72lc","slide":11,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/03qxg7mx","slide":11,"text":"数据处理","textPreview":"数据处理","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/14ze9c3i","slide":11,"text":"物理48层优化提升了处理一致性，也让后续OEM状态向量更合理","textPreview":"物理48层优化提升了处理一致性，也让后续OEM状态向量更合理","textChars":30,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/ydcfq1kb","slide":11,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/jylwj6lw","slide":11,"text":"真正的层平均替代简单高度点插值，同时删除地下ERA5气压层并用T/log(q)/log(P)处理湿度。 ","textPreview":"真正的层平均替代简单高度点插值，同时删除地下ERA5气压层并用T/log(q)/log(P)处理湿度。","textChars":52,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/3qhsfypc","slide":11,"bbox":[610,220,220,42]}
+{"kind":"textbox","id":"sh/ip8bmtor","slide":11,"text":"模型","textPreview":"模型","textChars":2,"textLines":1,"bbox":[618,226,204,32]}
+{"kind":"shape","id":"sh/5sjah872","slide":11,"bbox":[830,220,125,42]}
+{"kind":"textbox","id":"sh/4rato36h","slide":11,"text":"T RMSE","textPreview":"T RMSE","textChars":6,"textLines":1,"bbox":[838,226,109,32]}
+{"kind":"shape","id":"sh/v2hsbyp0","slide":11,"bbox":[955,220,125,42]}
+{"kind":"textbox","id":"sh/u18bit8f","slide":11,"text":"RH RMSE","textPreview":"RH RMSE","textChars":7,"textLines":1,"bbox":[963,226,109,32]}
+{"kind":"shape","id":"sh/h4zado76","slide":11,"bbox":[1080,220,150,42]}
+{"kind":"textbox","id":"sh/g3qtkj6l","slide":11,"text":"RH Bias","textPreview":"RH Bias","textChars":7,"textLines":1,"bbox":[1088,226,134,32]}
+{"kind":"shape","id":"sh/fy1cnipk","slide":11,"bbox":[610,262,220,42]}
+{"kind":"textbox","id":"sh/exsbudoz","slide":11,"text":"原93层映射","textPreview":"原93层映射","textChars":6,"textLines":1,"bbox":[618,268,204,32]}
+{"kind":"shape","id":"sh/c3mpof6h","slide":11,"bbox":[830,262,125,42]}
+{"kind":"textbox","id":"sh/x4vqhknm","slide":11,"text":"1.730K","textPreview":"1.730K","textChars":6,"textLines":1,"bbox":[838,268,109,32]}
+{"kind":"shape","id":"sh/a147m5ob","slide":11,"bbox":[955,262,125,42]}
+{"kind":"textbox","id":"sh/b2d8fa5w","slide":11,"text":"23.685%","textPreview":"23.685%","textChars":7,"textLines":1,"bbox":[963,268,109,32]}
+{"kind":"shape","id":"sh/k7mpsfmd","slide":11,"bbox":[1080,262,150,42]}
+{"kind":"textbox","id":"sh/l8fqlkny","slide":11,"text":"-8.075%","textPreview":"-8.075%","textChars":7,"textLines":1,"bbox":[1088,268,134,32]}
+{"kind":"shape","id":"sh/y547qp47","slide":11,"bbox":[610,304,220,42]}
+{"kind":"textbox","id":"sh/z6d8ju5s","slide":11,"text":"旧48点映射","textPreview":"旧48点映射","textChars":6,"textLines":1,"bbox":[618,310,204,32]}
+{"kind":"shape","id":"sh/8b69wzm9","slide":11,"bbox":[830,304,125,42]}
+{"kind":"textbox","id":"sh/twfqp4nu","slide":11,"text":"1.561K","textPreview":"1.561K","textChars":6,"textLines":1,"bbox":[838,310,109,32]}
+{"kind":"shape","id":"sh/hgryt0b2","slide":11,"bbox":[955,304,125,42]}
+{"kind":"textbox","id":"sh/wfihkvah","slide":11,"text":"25.260%","textPreview":"25.260%","textChars":7,"textLines":1,"bbox":[963,310,109,32]}
+{"kind":"shape","id":"sh/ve9grqtw","slide":11,"bbox":[1080,304,150,42]}
+{"kind":"textbox","id":"sh/ud0zi5sb","slide":11,"text":"-9.867%","textPreview":"-9.867%","textChars":7,"textLines":1,"bbox":[1088,310,134,32]}
+{"kind":"shape","id":"sh/5kbyxkby","slide":11,"bbox":[610,346,220,42]}
+{"kind":"textbox","id":"sh/4j2hofad","slide":11,"text":"优化物理48层","textPreview":"优化物理48层","textChars":7,"textLines":1,"bbox":[618,352,204,32]}
+{"kind":"shape","id":"sh/jitgvats","slide":11,"bbox":[830,346,125,42]}
+{"kind":"textbox","id":"sh/ihkzm5sn","slide":11,"text":"1.532K","textPreview":"1.532K","textChars":6,"textLines":1,"bbox":[838,352,109,32]}
+{"kind":"shape","id":"sh/lo7ylgbu","slide":11,"bbox":[955,346,125,42]}
+{"kind":"textbox","id":"sh/knyxcba9","slide":11,"text":"23.754%","textPreview":"23.754%","textChars":7,"textLines":1,"bbox":[963,352,109,32]}
+{"kind":"shape","id":"sh/atwvmh87","slide":11,"bbox":[1080,346,150,42]}
+{"kind":"textbox","id":"sh/bu5wfm9s","slide":11,"text":"-7.502%","textPreview":"-7.502%","textChars":7,"textLines":1,"bbox":[1088,352,134,32]}
+{"kind":"shape","id":"sh/cfedorqx","slide":11,"bbox":[610,420,490,112]}
+{"kind":"shape","id":"sh/xgnehwri","slide":11,"bbox":[610,420,8,112]}
+{"kind":"textbox","id":"sh/yhwvq183","slide":11,"text":"为什么仍采用物理48层","textPreview":"为什么仍采用物理48层","textChars":11,"textLines":1,"bbox":[630,432,454,28]}
+{"kind":"textbox","id":"sh/zipwjm9o","slide":11,"text":"RH RMSE与原93层差异无统计意义，但T更好、RH Bias更小、层定义与OEM兼容，因此作为下一阶段主基线。","textPreview":"RH RMSE与原93层差异无统计意义，但T更好、RH Bias更小、层定义与OEM兼容，因此作为下一阶段主基线。","textChars":57,"textLines":1,"bbox":[630,468,454,54]}
+{"kind":"image","id":"im/orqlgnad","slide":11,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/3qhk7its","slide":11,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/2p83edsn","slide":11,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":""}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"空间科学与技术学院","textShapes":6}
+{"kind":"shape","id":"sh/q903ad4n","slide":12,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/b6d4f2lc","slide":12,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/wvupgz6t","slide":12,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/bulo7u58","slide":12,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/0nap8f6l","slide":12,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/1oj61kn6","slide":12,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/hkbm5wzu","slide":12,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/alwbitsn","slide":12,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/mhcbe9sr","slide":12,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/nilsnetc","slide":12,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/ojutgjah","slide":12,"text":"误差瓶颈","textPreview":"误差瓶颈","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/9k3apob2","slide":12,"text":"主要短板集中在5-8 km湿度：不是层数问题，而是中高层水汽信息不足","textPreview":"主要短板集中在5-8 km湿度：不是层数问题，而是中高层水汽信息不足","textChars":34,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/6dgbqdsv","slide":12,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/7epczitg","slide":12,"text":"独立温江探空只有6份，但高度分布已经暴露出明确瓶颈。 ","textPreview":"独立温江探空只有6份，但高度分布已经暴露出明确瓶颈。","textChars":27,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"textbox","id":"sh/q5c7m5wb","slide":12,"text":"解释：5-8 km湿度受183 GHz信息、云雨QC、ERA5标签误差和探空时间差共同影响；仅改插值方法不能根治。","textPreview":"解释：5-8 km湿度受183 GHz信息、云雨QC、ERA5标签误差和探空时间差共同影响；仅改插值方法不能根治。","textChars":57,"textLines":1,"bbox":[92,585,1020,42]}
+{"kind":"chart","id":"ch/fmp8jal0","slide":12,"name":"","chartType":"bar","bbox":[72,225,465,305]}
+{"kind":"image","id":"im/4relsru9","slide":12,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/3q54jmto","slide":12,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/2pw3qhc3","slide":12,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":""}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"空间科学与技术学院","textShapes":24}
+{"kind":"shape","id":"sh/p4r6p8by","slide":13,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/gzy5s3a1","slide":13,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/1076lobm","slide":13,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/hcfy9k3u","slide":13,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/u9ofyp43","slide":13,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/lkvy103m","slide":13,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/kjmxsfm1","slide":13,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/cnqh8fux","slide":13,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/jqlkfyds","slide":13,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/re5kjydo","slide":13,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/6dwjqtw3","slide":13,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/tgn2l8vu","slide":13,"text":"改进方向","textPreview":"改进方向","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/sfe1s3e9","slide":13,"text":"后续改进要按“数据可靠性 → 先验稳定性 → OEM物理闭环 → 高频通道增益”推进","textPreview":"后续改进要按“数据可靠性 → 先验稳定性 → OEM物理闭环 → 高频通道增益”推进","textChars":42,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/7i107edk","slide":13,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/mhsje9wz","slide":13,"text":"先补地基，再上复杂模型；否则模型结构越复杂，误差解释越困难。 ","textPreview":"先补地基，再上复杂模型；否则模型结构越复杂，误差解释越困难。","textChars":31,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/y1wju94v","slide":13,"bbox":[75,235,175,185]}
+{"kind":"textbox","id":"sh/z25kne5g","slide":13,"text":"P0","textPreview":"P0","textChars":2,"textLines":1,"bbox":[87,248,55,28]}
+{"kind":"textbox","id":"sh/03e1wjm1","slide":13,"text":"扩大样本","textPreview":"扩大样本","textChars":4,"textLines":1,"bbox":[87,292,145,28]}
+{"kind":"textbox","id":"sh/l4n2po3m","slide":13,"text":"3-6个月连续亮温+ERA5\n覆盖季节和天气型","textPreview":"3-6个月连续亮温+ERA5 | 覆盖季节和天气型","textChars":23,"textLines":2,"bbox":[87,335,145,68]}
+{"kind":"shape","id":"sh/m5gjyt4r","slide":13,"bbox":[250,327,32,0]}
+{"kind":"shape","id":"sh/n6pkrelc","slide":13,"bbox":[287,235,175,185]}
+{"kind":"textbox","id":"sh/8ry10jmx","slide":13,"text":"P0","textPreview":"P0","textChars":2,"textLines":1,"bbox":[299,248,55,28]}
+{"kind":"textbox","id":"sh/9s72to3i","slide":13,"text":"时间/QC","textPreview":"时间/QC","textChars":5,"textLines":1,"bbox":[299,292,145,28]}
+{"kind":"textbox","id":"sh/atgj2t43","slide":13,"text":"统一UTC/北京时\n探空匹配压到±30min","textPreview":"统一UTC/北京时 | 探空匹配压到±30min","textChars":22,"textLines":2,"bbox":[299,335,145,68]}
+{"kind":"shape","id":"sh/vupkvylo","slide":13,"bbox":[462,327,32,0]}
+{"kind":"shape","id":"sh/50behwr2","slide":13,"bbox":[499,235,175,185]}
+{"kind":"textbox","id":"sh/4z2d8rah","slide":13,"text":"P1","textPreview":"P1","textChars":2,"textLines":1,"bbox":[511,248,55,28]}
+{"kind":"textbox","id":"sh/jytcfmtw","slide":13,"text":"补地面变量","textPreview":"补地面变量","textChars":5,"textLines":1,"bbox":[511,292,145,28]}
+{"kind":"textbox","id":"sh/ixkv6hsb","slide":13,"text":"surface pressure\n2m T/dewpoint或仪器T/RH/P","textPreview":"surface pressure | 2m T/dewpoint或仪器T/RH/P","textChars":39,"textLines":2,"bbox":[511,335,145,68]}
+{"kind":"shape","id":"sh/t4velwry","slide":13,"bbox":[674,327,32,0]}
+{"kind":"shape","id":"sh/s3mdcrad","slide":13,"bbox":[711,235,175,185]}
+{"kind":"textbox","id":"sh/r2dwjm98","slide":13,"text":"P1","textPreview":"P1","textChars":2,"textLines":1,"bbox":[723,248,55,28]}
+{"kind":"textbox","id":"sh/614va1sn","slide":13,"text":"前14通道OEM","textPreview":"前14通道OEM","textChars":8,"textLines":1,"bbox":[723,292,145,28]}
+{"kind":"textbox","id":"sh/1svepgra","slide":13,"text":"估计S_a/S_e/OMB\nMonoRTM真实观测闭环","textPreview":"估计S_a/S_e/OMB | MonoRTM真实观测闭环","textChars":27,"textLines":2,"bbox":[723,335,145,68]}
+{"kind":"shape","id":"sh/g7mdgbap","slide":13,"bbox":[886,327,32,0]}
+{"kind":"shape","id":"sh/0buxcfil","slide":13,"bbox":[923,235,175,185]}
+{"kind":"textbox","id":"sh/lc3ylkz6","slide":13,"text":"P2","textPreview":"P2","textChars":2,"textLines":1,"bbox":[935,248,55,28]}
+{"kind":"textbox","id":"sh/y9cfa50v","slide":13,"text":"高频验证","textPreview":"高频验证","textChars":4,"textLines":1,"bbox":[935,292,145,28]}
+{"kind":"textbox","id":"sh/zalgjahg","slide":13,"text":"89/183/229 GHz\n前向模型与消融检验","textPreview":"89/183/229 GHz | 前向模型与消融检验","textChars":24,"textLines":2,"bbox":[935,335,145,68]}
+{"kind":"shape","id":"sh/8zexgzix","slide":13,"bbox":[100,480,460,105]}
+{"kind":"shape","id":"sh/90nypkzi","slide":13,"bbox":[100,480,8,105]}
+{"kind":"textbox","id":"sh/mdwfep0r","slide":13,"text":"短期目标","textPreview":"短期目标","textChars":4,"textLines":1,"bbox":[120,492,424,28]}
+{"kind":"textbox","id":"sh/ne5gnuhc","slide":13,"text":"以前14通道完成成都真实观测OEM POC，证明BRNN/Ridge先验能被物理前向稳定修正。","textPreview":"以前14通道完成成都真实观测OEM POC，证明BRNN/Ridge先验能被物理前向稳定修正。","textChars":47,"textLines":1,"bbox":[120,528,424,47]}
+{"kind":"shape","id":"sh/43ax4vit","slide":13,"bbox":[620,480,460,105]}
+{"kind":"shape","id":"sh/p4jed0zy","slide":13,"bbox":[620,480,8,105]}
+{"kind":"textbox","id":"sh/7y90jy1w","slide":13,"text":"论文目标","textPreview":"论文目标","textChars":4,"textLines":1,"bbox":[640,492,424,28]}
+{"kind":"textbox","id":"sh/6x0jqtkb","slide":13,"text":"建立可解释的NN+OEM框架：给出通道贡献、误差来源、S_a/S_e估计和独立探空验证。","textPreview":"建立可解释的NN+OEM框架：给出通道贡献、误差来源、S_a/S_e估计和独立探空验证。","textChars":44,"textLines":1,"bbox":[640,528,424,47]}
+{"kind":"image","id":"im/xc7m543a","slide":13,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/a9w3ap4j","slide":13,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/ba543ul4","slide":13,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":""}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"空间科学与技术学院","textShapes":12}
+{"kind":"shape","id":"sh/idgvmx8r","slide":14,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/5grehs7i","slide":14,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/zi5c3y98","slide":14,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/ehwvat8n","slide":14,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/c3e1gjyd","slide":14,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/b2507exs","slide":14,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/0buh8zy5","slide":14,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/1w3i14fq","slide":14,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/hsvy50re","slide":14,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/atg3idk7","slide":14,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/yxgnmxkj","slide":14,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/jyp4fil4","slide":14,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/kzy5on2p","slide":14,"text":"实验结果","textPreview":"实验结果","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/lkrmhsju","slide":14,"text":"训练过程和预测散点说明：模型能学习总体结构，但误差仍随高度和变量分布变化","textPreview":"训练过程和预测散点说明：模型能学习总体结构，但误差仍随高度和变量分布变化","textChars":36,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/6l0nqxkf","slide":14,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/7m94j210","slide":14,"text":"这页用于汇报时展示“不是只报RMSE”，而是有训练稳定性、预测相关性和剖面形态证据。","textPreview":"这页用于汇报时展示“不是只报RMSE”，而是有训练稳定性、预测相关性和剖面形态证据。","textChars":42,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/fi5432t4","slide":14,"bbox":[78,505,315,92]}
+{"kind":"shape","id":"sh/uhw3axcj","slide":14,"bbox":[78,505,8,92]}
+{"kind":"textbox","id":"sh/h4nm5sba","slide":14,"text":"训练曲线","textPreview":"训练曲线","textChars":4,"textLines":1,"bbox":[98,517,279,28]}
+{"kind":"textbox","id":"sh/gjelc7up","slide":14,"text":"小样本下需要观察验证集是否震荡，不能只看训练误差下降。","textPreview":"小样本下需要观察验证集是否震荡，不能只看训练误差下降。","textChars":27,"textLines":1,"bbox":[98,553,279,34]}
+{"kind":"shape","id":"sh/365472tg","slide":14,"bbox":[446,505,315,92]}
+{"kind":"shape","id":"sh/25w3excv","slide":14,"bbox":[446,505,8,92]}
+{"kind":"textbox","id":"sh/p87m9cb6","slide":14,"text":"预测散点","textPreview":"预测散点","textChars":4,"textLines":1,"bbox":[466,517,279,28]}
+{"kind":"textbox","id":"sh/47y5g7u1","slide":14,"text":"T相对稳定，RH散点更分散，说明湿度非线性和标签噪声更强。","textPreview":"T相对稳定，RH散点更分散，说明湿度非线性和标签噪声更强。","textChars":29,"textLines":1,"bbox":[466,553,279,34]}
+{"kind":"shape","id":"sh/jal4vidw","slide":14,"bbox":[815,505,315,92]}
+{"kind":"shape","id":"sh/i9c32dcr","slide":14,"bbox":[815,505,8,92]}
+{"kind":"textbox","id":"sh/ofq1cja9","slide":14,"text":"样例廓线","textPreview":"样例廓线","textChars":4,"textLines":1,"bbox":[835,517,279,28]}
+{"kind":"textbox","id":"sh/9gji5oru","slide":14,"text":"剖面形态能暴露高度段偏差，比单个全层RMSE更适合诊断。","textPreview":"剖面形态能暴露高度段偏差，比单个全层RMSE更适合诊断。","textChars":28,"textLines":1,"bbox":[835,553,279,34]}
+{"kind":"textbox","id":"sh/mt8ja9sj","slide":14,"text":"图片来源：results/chengdu_era5_figures/01_brnn_training_curves.png、03_prediction_scatter.png、04_example_profiles.png","textPreview":"图片来源：results/chengdu_era5_figures/01_brnn_training_curves.png、03_prediction_scatter.png、04_example_profiles.png","textChars":111,"textLines":1,"bbox":[62,686,1120,20]}
+{"kind":"image","id":"im/cfm9kra9","slide":14,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/rudsrm9o","slide":14,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/qt4ri1s3","slide":14,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":""}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"空间科学与技术学院","textShapes":7}
+{"kind":"shape","id":"sh/65gnqlk7","slide":15,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/t87ml0ji","slide":15,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/na5476l8","slide":15,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/m9c3e1kn","slide":15,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/wrm9kvep","slide":15,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/vqdsrqx4","slide":15,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/0z29cbyh","slide":15,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/l0bqlgf2","slide":15,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/1kjyt83e","slide":15,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/uh4v2pkj","slide":15,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/ilov6pkv","slide":15,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/jmxwzu1g","slide":15,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/4n6d8z21","slide":15,"text":"探空验证","textPreview":"探空验证","textChars":4,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/5ofe14j6","slide":15,"text":"独立温江探空对比显示：温度已有可用基础，湿度中高层仍是主要短板","textPreview":"独立温江探空对比显示：温度已有可用基础，湿度中高层仍是主要短板","textChars":31,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/6p8va9kr","slide":15,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/rqhw3e1c","slide":15,"text":"独立测试只有6份探空，因此不夸大统计显著性；重点是用剖面图定位误差来源。","textPreview":"独立测试只有6份探空，因此不夸大统计显著性；重点是用剖面图定位误差来源。","textChars":36,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"textbox","id":"sh/f6dcnetg","slide":15,"text":"从图上看，物理48层方案把T Bias压到+0.250 K，但RH仍存在约-7.5%的干偏；5-8 km湿度误差最大，需要靠高频通道、QC和更强先验共同解决。","textPreview":"从图上看，物理48层方案把T Bias压到+0.250 K，但RH仍存在约-7.5%的干偏；5-8 km湿度误差最大，需要靠高频通道、QC和更强先验共同解决。","textChars":79,"textLines":1,"bbox":[82,560,1010,48]}
+{"kind":"textbox","id":"sh/e54ve9cv","slide":15,"text":"图片来源：results/chengdu_era5_layer48_optimized_evaluation/02_independent_sounding_comparison.png、04_sounding_profiles.png","textPreview":"图片来源：results/chengdu_era5_layer48_optimized_evaluation/02_independent_sounding_comparison.png、04_sounding_profiles.png","textChars":118,"textLines":1,"bbox":[62,686,1120,20]}
+{"kind":"image","id":"im/8z29cfu1","slide":15,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/7yt83adg","slide":15,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/mx0ra5cv","slide":15,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":""}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"空间科学与技术学院","textShapes":14}
+{"kind":"shape","id":"sh/zutgvm94","slide":16,"name":"矩形 4","bbox":[0,0,66.46,13.15]}
+{"kind":"shape","id":"sh/kv2h4rqp","slide":16,"name":"矩形 5","bbox":[0,24,66.46,13.15]}
+{"kind":"shape","id":"sh/ip4zel83","slide":16,"name":"矩形 7","bbox":[0,48,66.46,13.15]}
+{"kind":"shape","id":"sh/3qdg7qpo","slide":16,"name":"矩形 8","bbox":[-1.32,95.61,67.78,13.15]}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"矩形 9","bbox":[0,71.81,66.46,13.15]}
+{"kind":"shape","id":"sh/gnax8v6t","slide":16,"name":"直接连接符 12","bbox":[441.57,15.07,0,76.6]}
+{"kind":"textbox","id":"sh/bulg7u5g","slide":16,"name":"文本框 17","text":"空间科学与技术学院\nSchool of Aerospace Science and Technology","textPreview":"空间科学与技术学院 | School of Aerospace Science and Technology","textChars":52,"textLines":2,"bbox":[524.2,18.58,324.47,67.86]}
+{"kind":"shape","id":"sh/atczepob","slide":16,"name":"矩形 18","bbox":[838.67,0,441.33,77.35]}
+{"kind":"shape","id":"sh/mpgj6t8j","slide":16,"name":"矩形 19","bbox":[838.67,76.84,441.33,21.09]}
+{"kind":"textbox","id":"sh/tcbmdcre","slide":16,"name":"文本框 29","text":"研究内容","textPreview":"研究内容","textChars":4,"textLines":1,"bbox":[868.51,10.11,381.64,54.93]}
+{"kind":"shape","id":"sh/58bm9sr2","slide":16,"bbox":[838,0,442,77]}
+{"kind":"shape","id":"sh/47il0nah","slide":16,"bbox":[838,77,442,21]}
+{"kind":"textbox","id":"sh/j6947i9w","slide":16,"text":"结论","textPreview":"结论","textChars":2,"textLines":1,"bbox":[898,12,310,34]}
+{"kind":"textbox","id":"sh/i503ydsr","slide":16,"text":"阶段结论：成都站不能直接迁移旧模型，但已具备构建本地NN+OEM反演框架的条件","textPreview":"阶段结论：成都站不能直接迁移旧模型，但已具备构建本地NN+OEM反演框架的条件","textChars":39,"textLines":1,"bbox":[58,112,1120,44]}
+{"kind":"shape","id":"sh/p4vmlwrm","slide":16,"bbox":[58,158,260,6]}
+{"kind":"textbox","id":"sh/o3m5crq1","slide":16,"text":"下一步的关键不是继续堆模型，而是补样本、补QC、补前向模型闭环。 ","textPreview":"下一步的关键不是继续堆模型，而是补样本、补QC、补前向模型闭环。","textChars":33,"textLines":1,"bbox":[58,170,1100,30]}
+{"kind":"shape","id":"sh/wnadcrqh","slide":16,"bbox":[76,218,315,145]}
+{"kind":"shape","id":"sh/xoju5wr2","slide":16,"bbox":[76,218,8,145]}
+{"kind":"textbox","id":"sh/alsbahsb","slide":16,"text":"已经完成","textPreview":"已经完成","textChars":4,"textLines":1,"bbox":[96,230,279,28]}
+{"kind":"textbox","id":"sh/vm1c3m9w","slide":16,"text":"21通道配置、ERA5精确配对、本地训练、物理48层、独立探空评估。","textPreview":"21通道配置、ERA5精确配对、本地训练、物理48层、独立探空评估。","textChars":34,"textLines":1,"bbox":[96,266,279,87]}
+{"kind":"shape","id":"sh/kbudgrqt","slide":16,"bbox":[430,218,315,145]}
+{"kind":"shape","id":"sh/5c3u9wry","slide":16,"bbox":[430,218,8,145]}
+{"kind":"textbox","id":"sh/i9sve18n","slide":16,"text":"主要原因","textPreview":"主要原因","textChars":4,"textLines":1,"bbox":[450,230,279,28]}
+{"kind":"textbox","id":"sh/ja1c7m98","slide":16,"text":"小样本、跨站泛化、通道利用不足、湿度标签不确定和高频前向模型缺口。","textPreview":"小样本、跨站泛化、通道利用不足、湿度标签不确定和高频前向模型缺口。","textChars":33,"textLines":1,"bbox":[450,266,279,87]}
+{"kind":"shape","id":"sh/sfudkbqp","slide":16,"bbox":[784,218,315,145]}
+{"kind":"shape","id":"sh/tg3udgra","slide":16,"bbox":[784,218,8,145]}
+{"kind":"textbox","id":"sh/3apg3atc","slide":16,"text":"解决路径","textPreview":"解决路径","textChars":4,"textLines":1,"bbox":[804,230,279,28]}
+{"kind":"textbox","id":"sh/29wfa5sr","slide":16,"text":"扩大数据后以成都先验接前14通道OEM，再验证高频通道信息量。","textPreview":"扩大数据后以成都先验接前14通道OEM，再验证高频通道信息量。","textChars":31,"textLines":1,"bbox":[804,266,279,87]}
+{"kind":"textbox","id":"sh/pc7y5kbi","slide":16,"text":"建议汇报口径","textPreview":"建议汇报口径","textChars":6,"textLines":1,"bbox":[82,420,180,28]}
+{"kind":"textbox","id":"sh/obyxcfax","slide":16,"text":"当前结果的价值在于找到了不宜直接迁移的证据，并把下一阶段可实现的技术路线收敛到：成都本地统计先验 + 物理48层 + 前14通道OEM + 高频通道验证。","textPreview":"当前结果的价值在于找到了不宜直接迁移的证据，并把下一阶段可实现的技术路线收敛到：成都本地统计先验 + 物理48层 + 前14通道OEM + 高频通道验证。","textChars":77,"textLines":1,"bbox":[82,462,990,60]}
+{"kind":"textbox","id":"sh/f65wzqtg","slide":16,"text":"参考来源：Rodgers 2000 DOI 10.1142/9789812813718；GMD PAMTRA 2020 DOI 10.5194/gmd-13-4229-2020；GMD ARMS-gb 2025；AMT HATPRO/复杂地形/雨天低层温度/2026浮标MWR；Remote Sensing 2023广州ML、2025武汉ANN订正；项目Git提交4dc2262。","textPreview":"参考来源：Rodgers 2000 DOI 10.1142/9789812813718；GMD PAMTRA 2020 DOI 10.5194/gmd-13-4229-2020；GMD ARMS-gb 2025；AMT HATPRO/复杂地形/雨天低层温度/2026浮标MW...","textChars":190,"textLines":1,"bbox":[82,590,1030,64]}
+{"kind":"image","id":"im/ra58rqho","slide":16,"name":"图片 3","bbox":[86.31,18.82,78.18,78.18]}
+{"kind":"image","id":"im/sbep0vi9","slide":16,"name":"图片 10","bbox":[178.9,22.23,244.38,70.88]}
+{"kind":"image","id":"im/tcnqtgze","slide":16,"name":"图片 16","bbox":[450.3,8.87,73.9,82.02]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":""}

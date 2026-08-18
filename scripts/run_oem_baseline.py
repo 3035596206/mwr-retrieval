@@ -3,7 +3,7 @@
 
 Purpose:
   - Freeze all OEM parameters (seed, S_a, S_e, convergence thresholds)
-  - Run self-consistent MonoRTM OEM on ERA5 2013-01
+  - Run self-consistent ARTS OEM on ERA5 2013-01
   - Scale to n=100/200/500/744
   - Save per-sample diagnostics (prior/posterior, BT, AK, DOFS, cost)
   - Track failure samples explicitly
@@ -20,8 +20,6 @@ sys.path.insert(0, _PROJECT_ROOT)
 sys.path.insert(0, os.path.join(_PROJECT_ROOT, "src"))
 
 import numpy as np
-import matplotlib
-matplotlib.use("Agg")
 import config
 from forward_model import ForwardModel
 from oem_state import make_default_packer
@@ -49,7 +47,7 @@ BASELINE_CONFIG = {
     "cost_tol": 1e-3,
     "dx_tol": 1e-4,
     "gamma_init": 1.0,
-    "forward_backend": "simple",
+    "forward_backend": config.DEFAULT_FORWARD_BACKEND,
     "self_consistent": True,
     "perturb_T_std": 3.0,
     "perturb_RH_std": 10.0,
@@ -79,7 +77,13 @@ def run_baseline(n_samples, cfg, out_dir, verbose=False):
     n_samples = min(n_samples, n_total)
     indices = sorted(np.random.choice(n_total, n_samples, replace=False))
 
-    fm = ForwardModel(backend=cfg["forward_backend"], monortm_path=cfg.get("monortm_path"), tape3_path=cfg.get("tape3_path"))
+    fm = ForwardModel(
+        backend=cfg["forward_backend"],
+        monortm_path=cfg.get("monortm_path"),
+        tape3_path=cfg.get("tape3_path"),
+        arts_command=cfg.get("arts_command"),
+        elevation_angle_deg=cfg.get("elevation_angle_deg", 90.0),
+    )
     packer = make_default_packer()
     S_a = build_sa_exponential(packer, sigma_T=cfg["sigma_T"], sigma_RH=cfg["sigma_RH"])
     S_e = build_se_diagonal(fm, sigma_K=cfg["sigma_K"], sigma_V=cfg["sigma_V"])
@@ -229,13 +233,17 @@ def main():
     parser = argparse.ArgumentParser(description="OEM Baseline (fixed config)")
     parser.add_argument("--n-samples", type=int, default=100)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--forward", type=str, default="simple",
-                        choices=["simple", "monortm"])
+    parser.add_argument("--forward", type=str, default=config.DEFAULT_FORWARD_BACKEND,
+                        choices=["arts", "simple", "monortm"])
     parser.add_argument("--verbose", action="store_true")
     parser.add_argument("--monortm-path", type=str, default=None,
                         help="Path to MonoRTM executable")
     parser.add_argument("--tape3-path", type=str, default=None,
                         help="Path to TAPE3 binary file")
+    parser.add_argument("--arts-command", type=str, default=None,
+                        help="External ARTS runner command; reads profile JSON on stdin")
+    parser.add_argument("--elevation-angle", type=float, default=90.0,
+                        help="Ground-based elevation angle for ARTS [deg]")
     args = parser.parse_args()
 
     cfg = dict(BASELINE_CONFIG)
@@ -243,6 +251,8 @@ def main():
     cfg["forward_backend"] = args.forward
     cfg["monortm_path"] = args.monortm_path
     cfg["tape3_path"] = args.tape3_path
+    cfg["arts_command"] = args.arts_command
+    cfg["elevation_angle_deg"] = args.elevation_angle
     if args.forward != "simple":
         cfg["self_consistent"] = True
 

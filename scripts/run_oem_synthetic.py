@@ -5,7 +5,8 @@ Generates a synthetic truth profile, computes H(x_true), adds noise, perturbs
 the background, then runs OEM retrieval.  Produces diagnostic figures.
 
 Usage:
-    py scripts/run_oem_synthetic.py
+    py scripts/run_oem_synthetic.py --forward arts --arts-command "python run_arts_profile.py"
+    py scripts/run_oem_synthetic.py --forward simple
 """
 
 import sys, os
@@ -57,12 +58,17 @@ def perturb_background(x_true, packer, T_noise=3.0, RH_noise=10.0, seed=123):
     return x_a
 
 
-def run_closure_test(noise_levels=None):
+def run_closure_test(noise_levels=None, forward_backend=None, arts_command=None,
+                     elevation_angle_deg=90.0):
     """Run closure test at multiple noise levels and report results."""
     if noise_levels is None:
         noise_levels = [0.1, 0.5, 1.0, 2.0]
 
-    fm = ForwardModel(backend="simple")
+    fm = ForwardModel(
+        backend=forward_backend or config.DEFAULT_FORWARD_BACKEND,
+        arts_command=arts_command,
+        elevation_angle_deg=elevation_angle_deg,
+    )
     packer = make_default_packer()
     profile_true = generate_synthetic_truth()
     x_true = packer.pack(profile_true)
@@ -216,6 +222,16 @@ def make_diagnostic_plots(results, packer, profile_true, x_true, x_a, out_dir):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="OEM synthetic closure test")
+    parser.add_argument("--forward", default=config.DEFAULT_FORWARD_BACKEND,
+                        choices=["arts", "simple", "monortm"])
+    parser.add_argument("--arts-command", default=None,
+                        help="External ARTS runner command; reads profile JSON on stdin")
+    parser.add_argument("--elevation-angle", type=float, default=90.0,
+                        help="Ground-based elevation angle for ARTS [deg]")
+    args = parser.parse_args()
+
     out_dir = os.path.join(_PROJECT_ROOT, "results", "oem_synthetic")
 
     print("=" * 65)
@@ -225,6 +241,9 @@ def main():
 
     results, packer, profile_true, x_true, x_a = run_closure_test(
         noise_levels=[0.1, 0.5, 1.0, 2.0],
+        forward_backend=args.forward,
+        arts_command=args.arts_command,
+        elevation_angle_deg=args.elevation_angle,
     )
 
     print("\nGenerating diagnostic figures...")

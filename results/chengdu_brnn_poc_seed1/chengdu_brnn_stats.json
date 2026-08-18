@@ -1,0 +1,204 @@
+{
+  "status": "proof_of_concept",
+  "warning": "Only 21 anonymous BT channels and 30 matched sounding groups are available. This is an adaptation/feasibility result, not a replacement for MP-3000A v4.",
+  "configuration": {
+    "seed": 1,
+    "max_delta_hours": 3.0,
+    "hidden_size": 64,
+    "dropout": 0.3,
+    "batch_size": 16,
+    "learning_rate": 0.0005,
+    "max_epochs": 300,
+    "patience": 35,
+    "n_channels": 21
+  },
+  "dataset": {
+    "n_observations_total": 163,
+    "n_matched_samples": 83,
+    "n_sounding_groups": 18,
+    "train_samples": 56,
+    "val_samples": 11,
+    "test_samples": 16,
+    "train_groups": 12,
+    "val_groups": 2,
+    "test_groups": 4,
+    "match_delta_hours_mean": 1.6506024599075317,
+    "match_delta_hours_max": 3.0
+  },
+  "split": {
+    "train_groups": [
+      "2026051800",
+      "2026051912",
+      "2026052000",
+      "2026052012",
+      "2026052500",
+      "2026052512",
+      "2026052612",
+      "2026052700",
+      "2026052800",
+      "2026052900",
+      "2026052912",
+      "2026053000"
+    ],
+    "val_groups": [
+      "2026051600",
+      "2026052600"
+    ],
+    "test_groups": [
+      "2026051900",
+      "2026052412",
+      "2026052812",
+      "2026053012"
+    ]
+  },
+  "metrics": {
+    "model_sample": {
+      "T": {
+        "rmse": 2.312633991241455,
+        "mae": 1.862506628036499,
+        "bias": -0.5750389099121094
+      },
+      "RH": {
+        "rmse": 20.675384521484375,
+        "mae": 15.926604270935059,
+        "bias": 2.089390516281128
+      }
+    },
+    "model_grouped": {
+      "n_groups": 4,
+      "T": {
+        "rmse": 2.120765209197998,
+        "mae": 1.715008020401001,
+        "bias": -0.16234616935253143
+      },
+      "RH": {
+        "rmse": 20.360578536987305,
+        "mae": 15.91065502166748,
+        "bias": -0.6597279906272888
+      }
+    },
+    "climatology_sample": {
+      "T": {
+        "rmse": 2.1874985694885254,
+        "mae": 1.7569383382797241,
+        "bias": -0.4593510031700134
+      },
+      "RH": {
+        "rmse": 20.43136978149414,
+        "mae": 15.25887680053711,
+        "bias": -1.0829153060913086
+      }
+    },
+    "climatology_grouped": {
+      "n_groups": 4,
+      "T": {
+        "rmse": 2.5116496086120605,
+        "mae": 2.0438990592956543,
+        "bias": -0.01610388793051243
+      },
+      "RH": {
+        "rmse": 20.127208709716797,
+        "mae": 15.572893142700195,
+        "bias": -3.7783584594726562
+      }
+    }
+  },
+  "height_metrics": [
+    {
+      "height_km": 0.0,
+      "T_rmse": 4.292128086090088,
+      "T_bias": -3.8775806427001953,
+      "RH_rmse": 11.542243957519531,
+      "RH_bias": 2.5598044395446777
+    },
+    {
+      "height_km": 0.5,
+      "T_rmse": 1.551883578300476,
+      "T_bias": -0.8941230773925781,
+      "RH_rmse": 12.690704345703125,
+      "RH_bias": -2.294995069503784
+    },
+    {
+      "height_km": 1.0,
+      "T_rmse": 1.7383830547332764,
+      "T_bias": 1.170400619506836,
+      "RH_rmse": 13.06053638458252,
+      "RH_bias": -6.051846504211426
+    },
+    {
+      "height_km": 2.0,
+      "T_rmse": 3.212451457977295,
+      "T_bias": -0.45527076721191406,
+      "RH_rmse": 34.156333923339844,
+      "RH_bias": 6.888547897338867
+    },
+    {
+      "height_km": 3.0,
+      "T_rmse": 1.3246492147445679,
+      "T_bias": 0.7670021057128906,
+      "RH_rmse": 21.061201095581055,
+      "RH_bias": -8.334379196166992
+    },
+    {
+      "height_km": 5.0,
+      "T_rmse": 3.0068345069885254,
+      "T_bias": -2.3566761016845703,
+      "RH_rmse": 16.177509307861328,
+      "RH_bias": 11.182096481323242
+    },
+    {
+      "height_km": 8.0,
+      "T_rmse": 1.6903647184371948,
+      "T_bias": -1.1468610763549805,
+      "RH_rmse": 30.168556213378906,
+      "RH_bias": 18.829666137695312
+    },
+    {
+      "height_km": 10.0,
+      "T_rmse": 3.005127429962158,
+      "T_bias": -0.43231868743896484,
+      "RH_rmse": 18.043174743652344,
+      "RH_bias": -3.5914695262908936
+    }
+  ],
+  "training": {
+    "brnn_T_0-2km": {
+      "best_epoch": 237,
+      "best_val": 0.0005074440268799663
+    },
+    "brnn_T_2-8km": {
+      "best_epoch": 231,
+      "best_val": 0.0002856290666386485
+    },
+    "brnn_T_8-10km": {
+      "best_epoch": 152,
+      "best_val": 0.00018713665485847741
+    },
+    "brnn_RH_0-2km": {
+      "best_epoch": 171,
+      "best_val": 0.012384666129946709
+    },
+    "brnn_RH_2-8km": {
+      "best_epoch": 130,
+      "best_val": 0.042150139808654785
+    },
+    "brnn_RH_8-10km": {
+      "best_epoch": 72,
+      "best_val": 0.046324849128723145
+    }
+  },
+  "skipped_profiles": {
+    "2026051318": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026051318.txt: 0",
+    "2026051518": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026051518.txt: 0",
+    "2026051818": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026051818.txt: 0",
+    "2026051918": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026051918.txt: 0",
+    "2026052018": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052018.txt: 0",
+    "2026052100": "Sounding does not reach 10 km AGL: D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052100.txt",
+    "2026052118": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052118.txt: 0",
+    "2026052518": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052518.txt: 0",
+    "2026052618": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052618.txt: 0",
+    "2026052718": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052718.txt: 0",
+    "2026052818": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052818.txt: 0",
+    "2026052918": "Too few valid levels in D:\\project-504\\wenjiang_sounding\\温江\\UPAR_WEA_CHN_MUL_FTM_SEC-56187-2026052918.txt: 0"
+  }
+}

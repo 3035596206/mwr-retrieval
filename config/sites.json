@@ -1,0 +1,44 @@
+{
+  "sites": [
+    {
+      "site_id": "chengdu",
+      "name": "Chengdu radiometer site",
+      "network": "local",
+      "latitude": null,
+      "longitude": null,
+      "altitude_m": 548.0,
+      "timezone": "Asia/Shanghai",
+      "aliases": ["成都"]
+    },
+    {
+      "site_id": "wenjiang",
+      "name": "Wenjiang radiosonde site",
+      "network": "local",
+      "latitude": null,
+      "longitude": null,
+      "altitude_m": null,
+      "timezone": "Asia/Shanghai",
+      "aliases": ["温江"]
+    },
+    {
+      "site_id": "beijing-nanjiao",
+      "name": "Beijing Nanjiao",
+      "network": "beijing-mwr",
+      "latitude": 39.8,
+      "longitude": 116.47,
+      "altitude_m": 32.0,
+      "timezone": "Asia/Shanghai",
+      "aliases": ["nanjiao"]
+    },
+    {
+      "site_id": "zhangjiakou",
+      "name": "Zhangjiakou radiosonde site",
+      "network": "radiosonde",
+      "latitude": 40.78,
+      "longitude": 114.88,
+      "altitude_m": 774.0,
+      "timezone": "Asia/Shanghai",
+      "aliases": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "run_id": "20260804T080357Z-d95345bd",
+  "pipeline": "scripts/validate_chengdu_realdata_arts.py",
+  "generated_at_utc": "2026-08-04T08:04:00.222467+00:00",
+  "inputs": {
+    "bridge_dataset": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_bridge/run_id=20260804T075728Z-d5b0fa9c/bridge_dataset.npz",
+    "bridge_run_id": "20260804T075728Z-d5b0fa9c"
+  },
+  "outputs": {
+    "predictions": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_arts_validation/run_id=20260804T080357Z-d95345bd/arts_validation_predictions.npz",
+    "stats": "/mnt/d/project-504/mwr-retrieval-main/results/chengdu_realdata_arts_validation/run_id=20260804T080357Z-d95345bd/arts_validation_stats.json"
+  },
+  "summary": {
+    "status": "chengdu_realdata_arts_validation_complete",
+    "n_success": 20,
+    "n_failed": 0,
+    "overall_rmse_obs_minus_arts_k": 9.950088786421617
+  },
+  "catalog_registration": {
+    "status": "registered",
+    "data_root": "/mnt/d/project-504-data",
+    "project_id": "project-brnn",
+    "processing_run_id": "20260804T080357Z-d95345bd",
+    "input_asset_id": "4c163386-897c-43a6-8b98-eadbde0e6e41",
+    "output_asset_id": "f7c7081c-4248-4a96-b0bd-203f499cdf13",
+    "output_asset_uri": "legacy://results/chengdu_realdata_arts_validation/run_id=20260804T080357Z-d95345bd/arts_validation_predictions.npz"
+  }
+}

@@ -1,0 +1,117 @@
+[
+  {
+    "seed": 42,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 297,
+        "best_val": 0.013619493693113327,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 55,
+        "best_val": 0.11484453827142715,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 51,
+        "best_val": 0.08429332077503204,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      }
+    }
+  },
+  {
+    "seed": 1,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 251,
+        "best_val": 0.012753278017044067,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 12,
+        "best_val": 0.13503965735435486,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 15,
+        "best_val": 0.10338141769170761,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      }
+    }
+  },
+  {
+    "seed": 7,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 10,
+        "best_val": 0.05685286223888397,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 12,
+        "best_val": 0.13556043803691864,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 22,
+        "best_val": 0.09001413732767105,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      }
+    }
+  },
+  {
+    "seed": 21,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 247,
+        "best_val": 0.012371750548481941,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 13,
+        "best_val": 0.1412184089422226,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 14,
+        "best_val": 0.0960683524608612,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      }
+    }
+  },
+  {
+    "seed": 84,
+    "training": {
+      "brnn_RH_0-2km": {
+        "best_epoch": 258,
+        "best_val": 0.01029419619590044,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_2-8km": {
+        "best_epoch": 16,
+        "best_val": 0.12695111334323883,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      },
+      "brnn_RH_8-10km": {
+        "best_epoch": 21,
+        "best_val": 0.08812040090560913,
+        "target_mode": "rh",
+        "layer_weight_mode": "upper"
+      }
+    }
+  }
+]
